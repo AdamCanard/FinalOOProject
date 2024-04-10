@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using OOProject.Models;
 
 namespace OOProject
 {
@@ -7,6 +8,17 @@ namespace OOProject
         public static MauiApp CreateMauiApp()
         {
             DatabaseManager db = new DatabaseManager();
+
+            //Book book = new Book()
+            //{
+            //    ISBN = 1,
+            //    Quantity = 101,
+            //    Author = "Adam",
+            //    Title = "Title",
+            //    Genre = "Horror"
+                
+            //};
+            //db.UpdateBook(book);
 
             var builder = MauiApp.CreateBuilder();
             builder
