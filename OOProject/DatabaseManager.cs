@@ -73,6 +73,11 @@ namespace OOProject
             return this.database.Table<Fine>().ToList();
         }
 
+        public List<Fine> GetAllFinesByUser(User user)
+        {
+            return this.database.Table<Fine>().Where(fine => fine.LibraryID == user.LibraryID).ToList();
+        }
+
         //get fine by id
         public Fine GetFineByID(int id)
         {
@@ -103,11 +108,45 @@ namespace OOProject
             return this.database.Table<Rental>().ToList();
         }
 
+        public List<Rental> GetAllRentalByUser(User user)
+        {
+            return this.database.Table<Rental>().Where(rental => rental.LibraryId == user.LibraryID).ToList();
+        }
+
         //get rental by id
         public Rental GetRentalByID(int id)
         {
             return this.database.Table<Rental>().Where(rental => rental.RentalID == id).FirstOrDefault();
         }
 
+        //add user
+        public void AddUser(User user)
+        {
+            this.database.Insert(user);
+        }
+
+        //delete user
+        public void DeleteUser(int library_id)
+        {
+            this.database.Delete<User>(library_id);
+        }
+
+        //update user
+        public void UpdateUser(User user)
+        {
+            this.database.Update(user);
+        }
+
+        //get list of all Users
+        public List<User> GetAllUser()
+        {
+            return this.database.Table<User>().ToList();
+        }
+
+        //get User by id
+        public User GetUserByID(int library_id)
+        {
+            return this.database.Table<User>().Where(user => user.LibraryID == library_id).FirstOrDefault();
+        }
     }
 }
