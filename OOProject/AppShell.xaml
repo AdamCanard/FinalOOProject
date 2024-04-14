@@ -5,15 +5,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:OOProject"
     xmlns:views ="clr-namespace:OOProject.Views"
+    xmlns:bookView="clr-namespace:OOProject.Views.LibrarianView.BookView"
+    xmlns:userView="clr-namespace:OOProject.Views.LibrarianView.UserView"
     Shell.FlyoutBehavior="Flyout"
     Shell.TabBarIsVisible="False"
     BackgroundColor="#FF5555"
     Shell.TitleColor="White"
     Title="OOProject">
-    <!-- Testing navigation -->
-
+    
+    
+    <!-- All navigation paths -->
     <ShellContent Title="Login" Route="Login" ContentTemplate="{DataTemplate views:Login}"/>
     <ShellContent Title="MainPage" Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}"/>
+    <ShellContent Title="AddBook" Route="AddBook" ContentTemplate="{DataTemplate bookView:AddBook}"/>
+    <ShellContent Title="BookList" Route="BookList" ContentTemplate="{DataTemplate bookView:BookList}"/>
+    <ShellContent Title="EditBookDetails" Route="EditBookDetails" ContentTemplate="{DataTemplate bookView:EditBookDetails}"/>
+    <ShellContent Title="ViewBookDetails" Route="ViewBookDetails" ContentTemplate="{DataTemplate bookView:ViewBookDetails}"/>
+    <ShellContent Title="AddUser" Route="AddUser" ContentTemplate="{DataTemplate userView:AddUser}"/>
+    <ShellContent Title="UserList" Route="UserList" ContentTemplate="{DataTemplate userView:UserList}"/>
+    <ShellContent Title="EditUserDetails" Route="EditUserDetails" ContentTemplate="{DataTemplate userView:EditUserDetails}"/>
+    <ShellContent Title="ViewUserDetails" Route="ViewUserDetails" ContentTemplate="{DataTemplate userView:ViewUserDetails}"/>
 
     <Shell.FlyoutHeader>
         <Grid ColumnDefinitions="Auto,*" Padding="20">

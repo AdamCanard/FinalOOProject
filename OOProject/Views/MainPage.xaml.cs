@@ -10,6 +10,5 @@ public partial class MainPage : ContentPage
     private void CounterBtn_Clicked(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync("//Login");
-
     }
 }
