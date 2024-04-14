@@ -13,10 +13,16 @@
     BackgroundColor="#EBD9B4"
     Shell.TitleColor="Black"
     Title="OOProject">
-    
+
+    <FlyoutItem
+    Title="Items"
+    FlyoutDisplayOptions="AsSingleItem"
+    Route="Header_Items" />
+
     <!-- Application Pages -->
     <ShellContent Title="MainPage" Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}"/>
     <ShellContent Title="Login" Route="Login" ContentTemplate="{DataTemplate views:Login}"/>
+    <ShellContent Title="SearchBook" Route="SearchBook" ContentTemplate="{DataTemplate views:SearchBook}"/>
     <ShellContent Title="AddBook" Route="AddBook" ContentTemplate="{DataTemplate bookView:AddBook}"/>
     <ShellContent Title="BookList" Route="BookList" ContentTemplate="{DataTemplate bookView:BookList}"/>
     <ShellContent Title="EditBookDetails" Route="EditBookDetails" ContentTemplate="{DataTemplate bookView:EditBookDetails}"/>
