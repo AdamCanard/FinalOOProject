@@ -27,7 +27,9 @@ public partial class Login : ContentPage
         }
         else
         {
-            //TODO say try again onscreen
+            errorMessage.Text = "Incorrect ID or Password";
+            errorMessage.IsVisible = true;
+            confirmationMessage.IsVisible = false;
         }
         Shell.Current.GoToAsync("//MainPage");
 
