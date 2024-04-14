@@ -8,6 +8,12 @@ public partial class Login : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        Password.Text = string.Empty;
+    }
     private void LoginButton(object sender, EventArgs e)
     {
         DatabaseManager db = new DatabaseManager();
@@ -17,7 +23,9 @@ public partial class Login : ContentPage
         {
             if(user.Account == "Librarian")
             {
-                //TODO go to librarian Page
+                //TODO go to librarian Page -> The BookList is currently kind of the Main librarian page
+                Shell.Current.GoToAsync("//BookList");
+                return;
             }
             else
             {
