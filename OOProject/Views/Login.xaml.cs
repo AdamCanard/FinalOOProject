@@ -8,6 +8,12 @@ public partial class Login : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        Password.Text = string.Empty;
+    }
     private void LoginButton(object sender, EventArgs e)
     {
         DatabaseManager db = new DatabaseManager();
@@ -17,19 +23,37 @@ public partial class Login : ContentPage
         {
             if(user.Account == "Librarian")
             {
-                //TODO go to librarian Page
+
+                //TODO go to librarian Page -> The BookList is currently kind of the Main librarian page
+                Shell.Current.GoToAsync("//LibrarianMenu");
+                return;
             }
             else
             {
+                //Calculated new fines
+                //get all rentals from user
+                List<Rental> usersBooks = db.GetAllRentalByUser(user);
+
+                foreach(Rental rental in usersBooks)
+                {
+                    DateTime returnDate = DateTime.Parse(rental.ReturnDate);
+                    if (DateTime.Compare(returnDate, DateTime.Now) < 0)
+                    {
+                        
+                        List<Fine> fines = db.GetAllFines();
+                        Fine fine = new Fine(fines.Count, user.library_id, 10);
+                        db.AddFine(fine);
+                    }
+                }
                 //TODO go to student/instructor Page
             }
 
         }
         else
         {
-            //TODO say try again onscreen
+            errorMessage.Text = "Incorrect ID or Password";
+            errorMessage.IsVisible = true;
+            confirmationMessage.IsVisible = false;
         }
-        Shell.Current.GoToAsync("//MainPage");
-
     }
 }
