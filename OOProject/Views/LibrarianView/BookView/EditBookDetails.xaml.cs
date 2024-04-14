@@ -4,9 +4,8 @@ namespace OOProject.Views.LibrarianView.BookView;
 
 public partial class EditBookDetails : ContentPage
 {
-	public EditBookDetails(Book book)
+	public EditBookDetails()
 	{
 		InitializeComponent();
-		BindingContext = book;
 	}
 }

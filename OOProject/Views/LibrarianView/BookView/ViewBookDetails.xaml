@@ -24,7 +24,7 @@
                     FontAttributes="Bold"
                     WidthRequest="300"></Label>
                 <Label
-                    BindingContext="{Bindingzz}"
+                    BindingContext="{Binding}"
                     Text="{Binding Title}"
                     HorizontalTextAlignment="End"
                     FontSize="25"
