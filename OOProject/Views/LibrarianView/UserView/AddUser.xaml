@@ -3,10 +3,131 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.LibrarianView.UserView.AddUser"
              Title="AddUser">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="FrameNoBorder">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="BackgroundColor" Value="#FBF9F1"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout BackgroundColor="#FBF9F1">
+            <Grid>
+                <Image Source="registration_image.png"/>
+            </Grid>
+
+            <BoxView HeightRequest="60" BackgroundColor="Transparent"/>
+
+            <Label Text="* Select a membership type."
+                FontAttributes="Bold" 
+                FontSize="20"
+                HorizontalOptions="Center"
+                   Margin="0,0,0,20"></Label>
+
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <CheckBox></CheckBox>
+                <CheckBox></CheckBox>
+                <CheckBox></CheckBox>
+            </HorizontalStackLayout>
+
+            <Label Text="* Please enter user information"
+                FontAttributes="Bold" 
+                FontSize="20"
+                HorizontalOptions="Center"
+                   Margin="20"></Label>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="User ID" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                         Placeholder="ID *Required*" 
+                         WidthRequest="300"
+                         FontSize="20"
+                         HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Password" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                         Placeholder="PW *Required*" 
+                         WidthRequest="300"
+                         FontSize="20"
+                         HorizontalOptions="Center"></Entry>
+                            </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Name" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                         Placeholder="Name*Required*" 
+                         WidthRequest="300"
+                         FontSize="20"
+                         HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Date of Birth" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                         Placeholder="Stock *Required*" 
+                         WidthRequest="300"
+                         FontSize="20"
+                         HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Phone" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                         Placeholder="Stock *Required*" 
+                         WidthRequest="300"
+                         FontSize="20"
+                         HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="E-mail" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                         Placeholder="Stock *Required*" 
+                         WidthRequest="300"
+                         FontSize="20"
+                         HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Home Address" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                         Placeholder="Stock *Required*" 
+                         WidthRequest="300"
+                         FontSize="20"
+                         HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <BoxView HeightRequest="20" BackgroundColor="Transparent"/>
+
+            <Button
+                 Text="Register"
+                 FontAttributes="Bold"
+                 FontSize="20"
+                 SemanticProperties.Hint="Goes to Main Page"
+                 WidthRequest="150"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 BackgroundColor="#B0A695"
+                 />
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
