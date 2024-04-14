@@ -24,6 +24,18 @@ namespace OOProject.Models
 
         public string Account { get; set; }
 
+        public User() { }
+
+        public User(int id, string name, string email, string password, string address, string account) 
+        {
+            LibraryID = id;
+            Name = name;
+            Email = email;
+            Password = password;
+            Address = address;
+            Account = account;
+        }
+
         public List<Book> DisplayBooks(DatabaseManager db)
         {
             return db.GetAllBooks();

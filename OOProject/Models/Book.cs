@@ -15,6 +15,16 @@ namespace OOProject.Models
         public string Author { get; set; }
         public string Genre { get; set; }
 
+        public Book() { }
+        public Book(int isbn, int quant, string title, string author, string cat)
+        {
+            ISBN = isbn;
+            Quantity = quant;
+            Title = title;
+            Author = author;
+            Genre = cat;
+        }
+
         public override string ToString()
         {
             return $"ISBN: {ISBN}\t" +
