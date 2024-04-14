@@ -5,8 +5,14 @@
              Title="Login">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="Welcome to the Login Page!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <Button
+            x:Name="CounterBtn"
+            Text="Click me" 
+            SemanticProperties.Hint="Goes to Main Page"
+            Clicked="OnCounterClicked"
+            HorizontalOptions="Fill" />
     </VerticalStackLayout>
 </ContentPage>

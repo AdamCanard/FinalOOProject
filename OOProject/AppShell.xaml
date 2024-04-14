@@ -4,12 +4,30 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:OOProject"
-    Shell.FlyoutBehavior="Disabled"
+    xmlns:views ="clr-namespace:OOProject.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="False"
+    BackgroundColor="#FF5555"
+    Shell.TitleColor="White"
     Title="OOProject">
+    <!-- Testing navigation -->
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <ShellContent Title="Login" Route="Login" ContentTemplate="{DataTemplate views:Login}"/>
+    <ShellContent Title="MainPage" Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}"/>
+
+    <Shell.FlyoutHeader>
+        <Grid ColumnDefinitions="Auto,*" Padding="20">
+            <Image Source="airplain_mark.png"
+               Grid.Column="0"
+               Aspect="AspectFill"
+               HeightRequest="50"/>
+            <Label Grid.Column="1"
+               Text="Library Manager"
+               FontAttributes="Bold"
+               FontSize="Subtitle"
+               Padding="20"
+               VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
 
 </Shell>
