@@ -29,6 +29,21 @@ public partial class Login : ContentPage
             }
             else
             {
+                //Calculated new fines
+                //get all rentals from user
+                List<Rental> usersBooks = db.GetAllRentalByUser(user);
+
+                foreach(Rental rental in usersBooks)
+                {
+                    DateTime returnDate = DateTime.Parse(rental.ReturnDate);
+                    if (DateTime.Compare(returnDate, DateTime.Now) < 0)
+                    {
+                        
+                        List<Fine> fines = db.GetAllFines();
+                        Fine fine = new Fine(fines.Count, user.library_id, 10);
+                        db.AddFine(fine);
+                    }
+                }
                 //TODO go to student/instructor Page
             }
 
@@ -39,7 +54,6 @@ public partial class Login : ContentPage
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
-        Shell.Current.GoToAsync("//MainPage");
 
     }
 }
