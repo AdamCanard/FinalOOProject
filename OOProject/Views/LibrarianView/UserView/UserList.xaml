@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:OOProject.Models"
              x:Class="OOProject.Views.LibrarianView.UserView.UserList"
              Title="UserList">
+    <ContentPage.BindingContext>
+        <viewModels:Lists></viewModels:Lists>
+    </ContentPage.BindingContext>
     <ScrollView>
         <VerticalStackLayout>
             <HorizontalStackLayout HorizontalOptions="Center">
@@ -42,24 +46,25 @@
             <Label Text="Results" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold" Margin="0,10"></Label>
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
                 <ScrollView Orientation="Both">
-                    <!--<CollectionView ItemsSource="{Binding BooksList}">
+                    <CollectionView ItemsSource="{Binding UsersList}">
                         <CollectionView.ItemTemplate>
-                            <DataTemplate>-->
+                            <DataTemplate>
                                 <Frame>
-                                    <!--<HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-                                        <Label Text="{Binding ISBN}" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
-                                        <Label Text="{Binding Title}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
-                                        <Label Text="{Binding Quantity}" WidthRequest="50" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Label Text="{Binding Author}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Label Text="{Binding Genre}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Button Clicked="ViewBookDetails_Navigation" Text="Details"  FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
-                                    </HorizontalStackLayout>-->
+                                    <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                                        <Label Text="{Binding library_id}" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
+                                        <Label Text="{Binding Name}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
+                                        <Label Text="{Binding Email}" WidthRequest="50" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding Password}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding Address}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding Account}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                     </HorizontalStackLayout>
                                 </Frame>
-                            <!--</DataTemplate>
+                            </DataTemplate>
                         </CollectionView.ItemTemplate>
-                    </CollectionView>-->
+                    </CollectionView>
                 </ScrollView>
             </Frame>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
