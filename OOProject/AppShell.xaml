@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:OOProject"
     xmlns:views ="clr-namespace:OOProject.Views"
+    xmlns:librarianView="clr-namespace:OOProject.Views.LibrarianView"
     xmlns:bookView="clr-namespace:OOProject.Views.LibrarianView.BookView"
     xmlns:userView="clr-namespace:OOProject.Views.LibrarianView.UserView"
     Shell.FlyoutBehavior="Flyout"
@@ -23,6 +24,7 @@
     <ShellContent Title="AddUser" Route="AddUser" ContentTemplate="{DataTemplate userView:AddUser}"/>
     <ShellContent Title="UserList" Route="UserList" ContentTemplate="{DataTemplate userView:UserList}"/>
     <ShellContent Title="ViewUserDetails" Route="ViewUserDetails" ContentTemplate="{DataTemplate userView:ViewUserDetails}"/>
+    <ShellContent Title="LibrarianMenu" Route="LibrarianMenu" ContentTemplate="{DataTemplate librarianView:LibrarianMenu }"/>
 
     <Shell.FlyoutHeader>
         <Grid ColumnDefinitions="Auto,*" Padding="20">

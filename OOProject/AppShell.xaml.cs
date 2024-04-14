@@ -1,4 +1,5 @@
 ﻿using OOProject.Views;
+using OOProject.Views.LibrarianView;
 using OOProject.Views.LibrarianView.BookView;
 using OOProject.Views.LibrarianView.UserView;
 
@@ -20,6 +21,7 @@ namespace OOProject
             Routing.RegisterRoute(nameof(UserList), typeof(UserList));
             Routing.RegisterRoute(nameof(EditUserDetails), typeof(EditUserDetails));
             Routing.RegisterRoute(nameof(ViewUserDetails), typeof(ViewUserDetails));
+            Routing.RegisterRoute(nameof(LibrarianMenu), typeof(LibrarianMenu));
 
         }
     }
