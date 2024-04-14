@@ -54,7 +54,6 @@ public partial class Login : ContentPage
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
-        Shell.Current.GoToAsync("//MainPage");
 
     }
 }
