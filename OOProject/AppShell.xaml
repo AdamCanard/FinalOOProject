@@ -22,7 +22,6 @@
     <ShellContent Title="ViewBookDetails" Route="ViewBookDetails" ContentTemplate="{DataTemplate bookView:ViewBookDetails}"/>
     <ShellContent Title="AddUser" Route="AddUser" ContentTemplate="{DataTemplate userView:AddUser}"/>
     <ShellContent Title="UserList" Route="UserList" ContentTemplate="{DataTemplate userView:UserList}"/>
-    <ShellContent Title="EditUserDetails" Route="EditUserDetails" ContentTemplate="{DataTemplate userView:EditUserDetails}"/>
     <ShellContent Title="ViewUserDetails" Route="ViewUserDetails" ContentTemplate="{DataTemplate userView:ViewUserDetails}"/>
 
     <Shell.FlyoutHeader>

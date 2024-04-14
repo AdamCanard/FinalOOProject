@@ -4,33 +4,33 @@
              x:Class="OOProject.Views.MainPage"
              Title="MainPage">
     <ScrollView>
-        <VerticalStackLayout
-        Padding="30,0"
-        Spacing="25">
-        
-            <Image
-            Source="dotnet_bot.png"
-            HeightRequest="185"
-            Aspect="AspectFit"
-            SemanticProperties.Description="dot net bot in a race car number eight" />
+        <VerticalStackLayout BackgroundColor="#FBF9F1">
+            <Grid>
+                <Image Source="main_image.png"/>
+            </Grid>
+
+            <BoxView HeightRequest="60" BackgroundColor="Transparent"/>
 
             <Label
-            Text="Hello, World!"
-            Style="{StaticResource Headline}"
-            SemanticProperties.HeadingLevel="Level1" />
+            Text="Please Log In"
+            FontAttributes="Bold"
+            FontSize="35"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"/>
 
-            <Label
-            Text="Welcome to &#10;NEWPAGE"
-            Style="{StaticResource SubHeadline}"
-            SemanticProperties.HeadingLevel="Level2"
-            SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+            <BoxView HeightRequest="40" BackgroundColor="Transparent"/>
 
             <Button
             x:Name="CounterBtn"
             Text="Login" 
             SemanticProperties.Hint="Goes to Login Page"
             Clicked="CounterBtn_Clicked"
-            HorizontalOptions="Fill" />
+            WidthRequest="200"
+            HeightRequest="200"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            BackgroundColor="#D9D9D9"
+            TextColor="Black"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
