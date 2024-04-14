@@ -4,14 +4,24 @@
              x:Class="OOProject.Views.LibrarianView.BookView.AddBook"
              Style="{StaticResource MyPageStyle}"
              Title="AddBook">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="FrameNoBorder">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="BackgroundColor" Value="#FBF9F1"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ScrollView>
         <VerticalStackLayout>
             <Label 
                 Padding="0, 20"
                 Text ="ADD BOOK" 
                 FontAttributes="Bold" 
-                FontSize="50"
-                FontFamily="TimesNewRoman"
+                FontSize="40"
                 HorizontalOptions="Center"></Label>
             <Label 
                  Padding="0, 20"
@@ -19,62 +29,67 @@
                  VerticalOptions="Center" 
                  HorizontalOptions="Center"></Label>
 
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}" >
                 <HorizontalStackLayout>
                     <Label Text="ISBN:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
                         Placeholder="ISBN" 
                         WidthRequest="300"
                         FontSize="20"
-                        HorizontalOptions="Center"></Entry>
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
                 </HorizontalStackLayout>
             </Frame>
 
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
                 <HorizontalStackLayout>
                     <Label Text="Title:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
                         Placeholder="Title" 
                         WidthRequest="300"
                         FontSize="20"
-                        HorizontalOptions="Center"></Entry>
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
                 </HorizontalStackLayout>
             </Frame>
 
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
                 <HorizontalStackLayout>
                     <Label Text="Category:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
                         Placeholder="Category" 
                         WidthRequest="300"
                         FontSize="20"
-                        HorizontalOptions="Center"></Entry>
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
                 </HorizontalStackLayout>
             </Frame>
 
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
                 <HorizontalStackLayout>
                     <Label Text="Author:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
                         Placeholder="Author" 
                         WidthRequest="300"
                         FontSize="20"
-                        HorizontalOptions="Center"></Entry>
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
                 </HorizontalStackLayout>
             </Frame>
 
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
                 <HorizontalStackLayout>
                     <Label Text="Publisher:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
                         Placeholder="Publisher" 
                         WidthRequest="300"
                         FontSize="20"
-                        HorizontalOptions="Center"></Entry>
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
                 </HorizontalStackLayout>
             </Frame>
 
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
                 <HorizontalStackLayout>
                     <Label Text="Year of Publication:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
@@ -82,18 +97,20 @@
                         Placeholder="Year of Publication" 
                         WidthRequest="300"
                         FontSize="20"
-                        HorizontalOptions="Center"></Entry>
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
                 </HorizontalStackLayout>
             </Frame>
 
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
                 <HorizontalStackLayout>
                     <Label Text="Stock:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
                         Placeholder="Stock" 
                         WidthRequest="300"
                         FontSize="20"
-                        HorizontalOptions="Center"></Entry>
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
                 </HorizontalStackLayout>
             </Frame>
             <Button

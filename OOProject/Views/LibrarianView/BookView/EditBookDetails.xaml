@@ -3,10 +3,145 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.LibrarianView.BookView.EditBookDetails"
              Title="EditBookDetails">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="FrameNoBorder">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="BackgroundColor" Value="#FBF9F1"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout BackgroundColor="#FBF9F1">
+            <Label 
+                Padding="0, 20"
+                Text ="Edit BOOK" 
+                FontAttributes="Bold" 
+                FontSize="40"
+                HorizontalOptions="Center"></Label>
+            <Label 
+                 Padding="0, 20"
+                 Text="*Please enter book information"
+                 VerticalOptions="Center" 
+                 HorizontalOptions="Center"></Label>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}" >
+                <HorizontalStackLayout>
+                    <Label Text="ISBN:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                        Placeholder="ISBN" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
+                <HorizontalStackLayout>
+                    <Label Text="Title:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                        Placeholder="Title" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
+                <HorizontalStackLayout>
+                    <Label Text="Category:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                        Placeholder="Category" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
+                <HorizontalStackLayout>
+                    <Label Text="Author:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                        Placeholder="Author" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
+                <HorizontalStackLayout>
+                    <Label Text="Publisher:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                        Placeholder="Publisher" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
+                <HorizontalStackLayout>
+                    <Label Text="Year of Publication:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+ 
+                        Placeholder="Year of Publication" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5" Style="{StaticResource FrameNoBorder}">
+                <HorizontalStackLayout>
+                    <Label Text="Stock:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                        Placeholder="Stock" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"
+                        BackgroundColor="White"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button
+                    Grid.Column="0"
+                    Text="Edit"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="10"
+                    WidthRequest="100"
+                    FontAttributes="Bold"
+                    BackgroundColor="#B0A695"
+                ></Button>
+
+                <Button
+                    Grid.Column="1"
+                    Text="Delete"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="10"
+                    WidthRequest="100"
+                    FontAttributes="Bold"
+                    BackgroundColor="#B0A695"
+                    ></Button>
+            </Grid>
+            
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

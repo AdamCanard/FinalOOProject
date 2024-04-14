@@ -12,7 +12,7 @@
     BackgroundColor="#EBD9B4"
     Shell.TitleColor="Black"
     Title="OOProject">
-    
+
     <!-- Application Pages -->
     <ShellContent Title="MainPage" Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}"/>
     <ShellContent Title="Login" Route="Login" ContentTemplate="{DataTemplate views:Login}"/>
@@ -22,21 +22,14 @@
     <ShellContent Title="ViewBookDetails" Route="ViewBookDetails" ContentTemplate="{DataTemplate bookView:ViewBookDetails}"/>
     <ShellContent Title="AddUser" Route="AddUser" ContentTemplate="{DataTemplate userView:AddUser}"/>
     <ShellContent Title="UserList" Route="UserList" ContentTemplate="{DataTemplate userView:UserList}"/>
-    <ShellContent Title="EditUserDetails" Route="EditUserDetails" ContentTemplate="{DataTemplate userView:EditUserDetails}"/>
     <ShellContent Title="ViewUserDetails" Route="ViewUserDetails" ContentTemplate="{DataTemplate userView:ViewUserDetails}"/>
 
     <Shell.FlyoutHeader>
-        <Grid ColumnDefinitions="Auto,*" Padding="20">
-            <Image Source="airplain_mark.png"
-               Grid.Column="0"
-               Aspect="AspectFill"
-               HeightRequest="50"/>
-            <Label Grid.Column="1"
+        <Label Grid.Column="1"
                Text="G1 Library"
                FontAttributes="Bold"
                FontSize="Subtitle"
                Padding="20"
                VerticalOptions="Center"/>
-        </Grid>
     </Shell.FlyoutHeader>
 </Shell>

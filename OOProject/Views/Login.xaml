@@ -3,40 +3,66 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.Login"
              Title="Login">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to the Login Page!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        
-        <Frame Padding="10,0,10,5" HorizontalOptions="Center">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="FrameNoBorder">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="BackgroundColor" Value="#FBF9F1"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout BackgroundColor="#FBF9F1">
+        <Grid>
+            <Image Source="login_image.png"/>
+        </Grid>
+
+        <BoxView HeightRequest="60" BackgroundColor="Transparent"/>
+
+        <Frame Padding="10,0,10,5" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource FrameNoBorder}">
             <VerticalStackLayout>
-                <Label Text="Your ID " HeightRequest="30" FontSize="20"></Label>
+                <Label Text="Your ID " HeightRequest="30" FontSize="20" ></Label>
                 <Entry x:Name="ID" 
                    Placeholder="ID" 
-                   WidthRequest="300"
+                   WidthRequest="400"
                    FontSize="20"
-                   HorizontalOptions="Center"></Entry>
+                   HorizontalOptions="Center"
+                   BackgroundColor="White"></Entry>
             </VerticalStackLayout>
         </Frame>
 
-        <Frame Padding="10,0,10,5" HorizontalOptions="Center">
+        <BoxView HeightRequest="20" BackgroundColor="Transparent"/>
+
+        <Frame Padding="10,0,10,5" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource FrameNoBorder}">
             <VerticalStackLayout>
-                <Label Text="Password: " HeightRequest="30" FontSize="20"></Label>
+                <Label Text="Password " HeightRequest="30" FontSize="20"></Label>
                 <Entry x:Name="Password" 
                    Placeholder="Password" 
-                   WidthRequest="300"
+                   WidthRequest="400"
                    FontSize="20"
-                   HorizontalOptions="Center"></Entry>
+                   HorizontalOptions="Center"
+                   BackgroundColor="White"></Entry>
             </VerticalStackLayout>
         </Frame>
+
+        <BoxView HeightRequest="20" BackgroundColor="Transparent"/>
 
         <Button
             x:Name="userLogin"
-            Text="Log in" 
+            Text="Log In"
+            FontAttributes="Bold"
+            FontSize="20"
             SemanticProperties.Hint="Goes to Main Page"
             Clicked="LoginButton"
+            WidthRequest="150"
             HorizontalOptions="Center"
+            VerticalOptions="Center"
+            BackgroundColor="#B0A695"
             />
     </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

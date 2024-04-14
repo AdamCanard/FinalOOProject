@@ -4,9 +4,33 @@
              x:Class="OOProject.Views.LibrarianView.BookView.BookList"
              Title="BookList">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label 
+                    Text="Book List"
+                    FontSize="30"       
+                    FontAttributes="Bold" 
+                    Padding="20"
+                    HorizontalOptions="CenterAndExpand">
+            </Label>
+
+            <Button
+                    x:Name="BookAdd"
+                    Clicked="AddBooks"
+                    Text="ADD"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"
+                    Margin="10"
+                    WidthRequest="100"
+                    FontAttributes="Bold"
+                    BackgroundColor="#B0A695"></Button>
+        </StackLayout>
+
+        <SearchBar></SearchBar>
+
+        <ListView></ListView>
+
     </VerticalStackLayout>
+    
+    
 </ContentPage>

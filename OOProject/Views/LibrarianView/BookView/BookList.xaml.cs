@@ -6,4 +6,9 @@ public partial class BookList : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void AddBooks(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//AddBook");
+    }
 }
