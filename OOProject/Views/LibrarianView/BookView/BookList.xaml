@@ -45,7 +45,7 @@
             
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
                 <ScrollView Orientation="Both">
-                    <CollectionView ItemsSource="{Binding Books}">
+                    <CollectionView ItemsSource="{Binding BooksList}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame>
