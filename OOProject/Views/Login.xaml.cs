@@ -24,7 +24,7 @@ public partial class Login : ContentPage
             if(user.Account == "Librarian")
             {
                 //TODO go to librarian Page -> The BookList is currently kind of the Main librarian page
-                Shell.Current.GoToAsync("//BookList");
+                Shell.Current.GoToAsync("//LibrarianMenu");
                 return;
             }
             else
