@@ -56,8 +56,8 @@
                                         <Label Text="{Binding Quantity}" WidthRequest="50" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Label Text="{Binding Author}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Label Text="{Binding Genre}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Button x:Name="ViewDetails_BookList" Clicked="ViewBookDetails_Navigation" CommandParameter="{Binding .}" Text="Details"  FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
-                                        <Button x:Name="EditDetails_BookList" Clicked="EditBookDetails_Navigation" CommandParameter="{Binding .}" Text="Edit" FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
+                                        <Button Clicked="ViewBookDetails_Navigation" Text="Details"  FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
+                                        <Button Clicked="EditBookDetails_Navigation" Text="Edit" FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
                                     </HorizontalStackLayout>
                                 </Frame>
                             </DataTemplate>
