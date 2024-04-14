@@ -9,14 +9,13 @@
     xmlns:userView="clr-namespace:OOProject.Views.LibrarianView.UserView"
     Shell.FlyoutBehavior="Flyout"
     Shell.TabBarIsVisible="False"
-    BackgroundColor="#FF5555"
-    Shell.TitleColor="White"
+    BackgroundColor="#EBD9B4"
+    Shell.TitleColor="Black"
     Title="OOProject">
     
-    
-    <!-- All navigation paths -->
-    <ShellContent Title="Login" Route="Login" ContentTemplate="{DataTemplate views:Login}"/>
+    <!-- Application Pages -->
     <ShellContent Title="MainPage" Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}"/>
+    <ShellContent Title="Login" Route="Login" ContentTemplate="{DataTemplate views:Login}"/>
     <ShellContent Title="AddBook" Route="AddBook" ContentTemplate="{DataTemplate bookView:AddBook}"/>
     <ShellContent Title="BookList" Route="BookList" ContentTemplate="{DataTemplate bookView:BookList}"/>
     <ShellContent Title="EditBookDetails" Route="EditBookDetails" ContentTemplate="{DataTemplate bookView:EditBookDetails}"/>
@@ -33,12 +32,11 @@
                Aspect="AspectFill"
                HeightRequest="50"/>
             <Label Grid.Column="1"
-               Text="Library Manager"
+               Text="G1 Library"
                FontAttributes="Bold"
                FontSize="Subtitle"
                Padding="20"
                VerticalOptions="Center"/>
         </Grid>
     </Shell.FlyoutHeader>
-
 </Shell>

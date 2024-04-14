@@ -27,11 +27,10 @@
 
             <Button
             x:Name="CounterBtn"
-            Text="Click me" 
+            Text="Login" 
             SemanticProperties.Hint="Goes to Login Page"
             Clicked="CounterBtn_Clicked"
             HorizontalOptions="Fill" />
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
