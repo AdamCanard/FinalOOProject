@@ -8,11 +8,35 @@
             Text="Welcome to the Login Page!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        
+        <Frame Padding="10,0,10,5" HorizontalOptions="Center">
+            <VerticalStackLayout>
+                <Label Text="Your ID " HeightRequest="30" FontSize="20"></Label>
+                <Entry x:Name="ID" 
+                   Placeholder="ID" 
+                   WidthRequest="300"
+                   FontSize="20"
+                   HorizontalOptions="Center"></Entry>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Frame Padding="10,0,10,5" HorizontalOptions="Center">
+            <VerticalStackLayout>
+                <Label Text="Password: " HeightRequest="30" FontSize="20"></Label>
+                <Entry x:Name="Password" 
+                   Placeholder="Password" 
+                   WidthRequest="300"
+                   FontSize="20"
+                   HorizontalOptions="Center"></Entry>
+            </VerticalStackLayout>
+        </Frame>
+
         <Button
-            x:Name="CounterBtn"
-            Text="Click me" 
+            x:Name="userLogin"
+            Text="Log in" 
             SemanticProperties.Hint="Goes to Main Page"
-            Clicked="OnCounterClicked"
-            HorizontalOptions="Fill" />
+            Clicked="LoginButton"
+            HorizontalOptions="Center"
+            />
     </VerticalStackLayout>
 </ContentPage>
