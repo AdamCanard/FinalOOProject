@@ -19,6 +19,8 @@ namespace OOProject
 
         }
 
+        
+
         //add new Book
         public void AddBook(Book book)
         {
@@ -75,7 +77,7 @@ namespace OOProject
 
         public List<Fine> GetAllFinesByUser(User user)
         {
-            return this.Database.Table<Fine>().Where(fine => fine.LibraryID == user.LibraryID).ToList();
+            return this.Database.Table<Fine>().Where(fine => fine.LibraryID == user.library_id).ToList();
         }
 
         //get fine by id
@@ -110,7 +112,7 @@ namespace OOProject
 
         public List<Rental> GetAllRentalByUser(User user)
         {
-            return this.Database.Table<Rental>().Where(rental => rental.LibraryId == user.LibraryID).ToList();
+            return this.Database.Table<Rental>().Where(rental => rental.LibraryId == user.library_id).ToList();
         }
 
         //get rental by id
@@ -146,7 +148,7 @@ namespace OOProject
         //get User by id
         public User GetUserByID(int library_id)
         {
-            return this.Database.Table<User>().Where(user => user.LibraryID == library_id).FirstOrDefault();
+            return this.Database.Table<User>().Where(user => user.library_id == library_id).FirstOrDefault();
         }
     }
 }

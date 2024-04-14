@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.LibrarianView.BookView.AddBook"
              Style="{StaticResource MyPageStyle}"
-             Title="AddBook">
+             Title="AddBook"
+             >
     <ScrollView>
         <VerticalStackLayout>
             <Label 

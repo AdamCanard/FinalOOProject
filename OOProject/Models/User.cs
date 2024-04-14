@@ -8,7 +8,7 @@ namespace OOProject.Models
 
         [Required]
         [PrimaryKey, AutoIncrement]
-        public int LibraryID{ get; set; }
+        public int library_id{ get; set; }
 
         [Required]
         public string Name { get; set; }
@@ -28,7 +28,7 @@ namespace OOProject.Models
 
         public User(int id, string name, string email, string password, string address, string account) 
         {
-            LibraryID = id;
+            library_id = id;
             Name = name;
             Email = email;
             Password = password;
@@ -44,7 +44,7 @@ namespace OOProject.Models
 
         public override string ToString()
         {
-            return $"Id: {LibraryID}\t" +
+            return $"Id: {library_id}\t" +
                 $"Name: {Name}\t" +
                 $"Email: {Email}\t" +
                 $"Address: {Address}\t" +
