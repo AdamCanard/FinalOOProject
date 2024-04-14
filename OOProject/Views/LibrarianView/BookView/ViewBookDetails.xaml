@@ -6,7 +6,7 @@
              Title="ViewBookDetails"
              MaximumWidthRequest="1000">
     <ContentPage.BindingContext>
-        <viewModels:TestingLists></viewModels:TestingLists>
+        <viewModels:Book></viewModels:Book>
     </ContentPage.BindingContext>
     <ScrollView>
         <VerticalStackLayout>
@@ -24,8 +24,8 @@
                     FontAttributes="Bold"
                     WidthRequest="300"></Label>
                 <Label
-                    BindingContext="{Binding FirstBook.Title}"
-                    Text="{Binding}"
+                    BindingContext="{Bindingzz}"
+                    Text="{Binding Title}"
                     HorizontalTextAlignment="End"
                     FontSize="25"
                     FontAttributes="Bold"
@@ -39,7 +39,7 @@
                     FontAttributes="Italic"
                     WidthRequest="300"></Label>
                 <Label
-                    BindingContext="{Binding FirstBook.ISBN}"
+                    BindingContext="{Binding SelectedBook.ISBN}"
                     Text="{Binding}"
                     HorizontalTextAlignment="End"
                     FontSize="15"
@@ -54,7 +54,7 @@
                         FontAttributes="None"
                         WidthRequest="300"></Label>
                 <Label
-                        BindingContext="{Binding FirstBook.Author}"
+                        BindingContext="{Binding SelectedBook.Author}"
                         Text="{Binding}"
                         HorizontalTextAlignment="End"
                         FontSize="15"
@@ -69,7 +69,7 @@
                     FontAttributes="None"
                     WidthRequest="300"></Label>
                 <Label
-                    BindingContext="{Binding FirstBook.Genre}"
+                    BindingContext="{Binding SelectedBook.Genre}"
                     Text="{Binding}"
                     HorizontalTextAlignment="End"
                     FontSize="15"
@@ -84,7 +84,7 @@
                     FontAttributes="Bold"
                     WidthRequest="300"></Label>
                 <Label
-                    BindingContext="{Binding FirstBook.Quantity}"
+                    BindingContext="{Binding SelectedBook.Quantity}"
                     Text="{Binding}"
                     HorizontalTextAlignment="End"
                     FontSize="20"
