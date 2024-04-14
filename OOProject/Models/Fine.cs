@@ -1,5 +1,7 @@
 ﻿using SQLite;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
+using System.Xml.Linq;
 
 namespace OOProject.Models
 {
@@ -15,6 +17,14 @@ namespace OOProject.Models
         [Required]
         public int Amount { get; set; }
 
+        public Fine() { }
+
+        public Fine(int fineid, int library_id, int amount)
+        {
+            FineId = fineid;
+            LibraryID = library_id;
+            Amount = amount;
+        }
 
         public override string ToString()
         {
