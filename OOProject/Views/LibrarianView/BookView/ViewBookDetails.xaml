@@ -81,7 +81,7 @@
                 <Label
                     Text="Stock"
                     FontSize="15"
-                    FontAttributes="None"
+                    FontAttributes="Bold"
                     WidthRequest="300"></Label>
                 <Label
                     BindingContext="{Binding FirstBook.Quantity}"
@@ -112,15 +112,15 @@
             </HorizontalStackLayout>
 
             <Label 
-                Margin="25"
+                Margin="0, 20, 0, 0"
                 Text="Rental List"
                 HorizontalOptions="Center"
                 FontSize="30"
                 FontAttributes="Bold"></Label>
             
-            <HorizontalStackLayout HorizontalOptions="Center" Margin="30">
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 40">
                 <Entry
-                    Placeholder="ID, Name or Account Type"
+                    Placeholder="ID, Name,Account Type, etc..."
                     WidthRequest="480"
                     FontSize="20"
                     HorizontalOptions="Center"></Entry>

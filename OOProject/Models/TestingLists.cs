@@ -13,7 +13,10 @@ namespace OOProject.Models
 
         public List<Book> Books { get; set; } =
         [
-            new(1001, 10, "Court of Thorns and Roses", "Potato", "Sexy Stuff"),
+            new(1001, 10, "History of World War II", "Somebody", "History"),
+            new(1002, 5, "Harry Potter", "J. K. Rowling", "Fantasy"),
+            new(1003, 2, "Eragorn", "Who knows", "Fantasy"),
+            new(1001, 10, "History of World War II", "Somebody", "History"),
             new(1002, 5, "Harry Potter", "J. K. Rowling", "Fantasy"),
             new(1003, 2, "Eragorn", "Who knows", "Fantasy")
         ];
