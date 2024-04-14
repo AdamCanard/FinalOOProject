@@ -10,143 +10,143 @@ namespace OOProject
 {
     public class DatabaseManager
     {
-        private SQLiteConnection database;
+        private SQLiteConnection Database { get; set; }
 
         public DatabaseManager()
         {
             Console.WriteLine(Constants.DatabasePath);
-            this.database = new SQLiteConnection(Constants.DatabasePath);
+            this.Database = new SQLiteConnection(Constants.DatabasePath);
 
         }
 
         //add new Book
         public void AddBook(Book book)
         {
-            this.database.Insert(book);
+            this.Database.Insert(book);
         }
 
         //delete book
         public void DeleteBook(int ISBN)
         {
-            this.database.Delete<Book>(ISBN);
+            this.Database.Delete<Book>(ISBN);
         }
 
         //update Book
         public void UpdateBook(Book book)
         {
-            this.database.Update(book);
+            this.Database.Update(book);
         }
 
         //get list of all books
         public List<Book> GetAllBooks()
         {
-            return this.database.Table<Book>().ToList();
+            return this.Database.Table<Book>().ToList();
         }
 
         //get books by ISBN
         public Book GetBookByISBN(int ISBN)
         {
-            return this.database.Table<Book>().Where(book => book.ISBN == ISBN).FirstOrDefault();
+            return this.Database.Table<Book>().Where(book => book.ISBN == ISBN).FirstOrDefault();
         }
 
         //add new fine
         public void AddFine(Fine fine)
         {
-            this.database.Insert(fine);
+            this.Database.Insert(fine);
         }
 
         //delete fine
         public void DeleteFine(int fineID)
         {
-            this.database.Delete<Fine>(fineID);
+            this.Database.Delete<Fine>(fineID);
         }
 
         //update fine
         public void UpdateFine(Fine fine)
         {
-            this.database.Update(fine);
+            this.Database.Update(fine);
         }
 
         //get list of all fines
         public List<Fine> GetAllFines()
         {
-            return this.database.Table<Fine>().ToList();
+            return this.Database.Table<Fine>().ToList();
         }
 
         public List<Fine> GetAllFinesByUser(User user)
         {
-            return this.database.Table<Fine>().Where(fine => fine.LibraryID == user.LibraryID).ToList();
+            return this.Database.Table<Fine>().Where(fine => fine.LibraryID == user.LibraryID).ToList();
         }
 
         //get fine by id
         public Fine GetFineByID(int id)
         {
-            return this.database.Table<Fine>().Where(fine => fine.FineId == id).FirstOrDefault();
+            return this.Database.Table<Fine>().Where(fine => fine.FineId == id).FirstOrDefault();
         }
 
         //add new rental
         public void AddRental(Rental rental)
         {
-            this.database.Insert(rental);
+            this.Database.Insert(rental);
         }
 
         //delete rental
         public void DeleteRental(int rentalID)
         {
-            this.database.Delete<Rental>(rentalID);
+            this.Database.Delete<Rental>(rentalID);
         }
 
         //update Rental
         public void UpdateRental(Rental rental)
         {
-            this.database.Update(rental);
+            this.Database.Update(rental);
         }
 
         //get list of all rentals
         public List<Rental> GetAllRental()
         {
-            return this.database.Table<Rental>().ToList();
+            return this.Database.Table<Rental>().ToList();
         }
 
         public List<Rental> GetAllRentalByUser(User user)
         {
-            return this.database.Table<Rental>().Where(rental => rental.LibraryId == user.LibraryID).ToList();
+            return this.Database.Table<Rental>().Where(rental => rental.LibraryId == user.LibraryID).ToList();
         }
 
         //get rental by id
         public Rental GetRentalByID(int id)
         {
-            return this.database.Table<Rental>().Where(rental => rental.RentalID == id).FirstOrDefault();
+            return this.Database.Table<Rental>().Where(rental => rental.RentalID == id).FirstOrDefault();
         }
 
         //add user
         public void AddUser(User user)
         {
-            this.database.Insert(user);
+            this.Database.Insert(user);
         }
 
         //delete user
         public void DeleteUser(int library_id)
         {
-            this.database.Delete<User>(library_id);
+            this.Database.Delete<User>(library_id);
         }
 
         //update user
         public void UpdateUser(User user)
         {
-            this.database.Update(user);
+            this.Database.Update(user);
         }
 
         //get list of all Users
         public List<User> GetAllUser()
         {
-            return this.database.Table<User>().ToList();
+            return this.Database.Table<User>().ToList();
         }
 
         //get User by id
         public User GetUserByID(int library_id)
         {
-            return this.database.Table<User>().Where(user => user.LibraryID == library_id).FirstOrDefault();
+            return this.Database.Table<User>().Where(user => user.LibraryID == library_id).FirstOrDefault();
         }
     }
 }
