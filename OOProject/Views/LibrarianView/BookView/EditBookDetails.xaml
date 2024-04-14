@@ -2,11 +2,120 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.LibrarianView.BookView.EditBookDetails"
+             Style="{StaticResource MyPageStyle}"
              Title="EditBookDetails">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
+                 Padding="0, 20"
+                 Text ="EDIT BOOK DETAILS   " 
+                 FontAttributes="Bold" 
+                 FontSize="50"
+                 FontFamily="TimesNewRoman"
+                 HorizontalOptions="Center"></Label>
+            <Label 
+                  Padding="0, 20"
+                  Text="*Change details or remove from inventory"
+                  VerticalOptions="Center" 
+                  HorizontalOptions="Center"></Label>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="ISBN:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                     Placeholder="ISBN" 
+                     WidthRequest="300"
+                     FontSize="20"
+                     HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Title:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                     Placeholder="Title" 
+                     WidthRequest="300"
+                     FontSize="20"
+                     HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Category:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                     Placeholder="Category" 
+                     WidthRequest="300"
+                     FontSize="20"
+                     HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Author:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                     Placeholder="Author" 
+                     WidthRequest="300"
+                     FontSize="20"
+                     HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Publisher:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                     Placeholder="Publisher" 
+                     WidthRequest="300"
+                     FontSize="20"
+                     HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Year of Publication:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+ 
+                     Placeholder="Year of Publication" 
+                     WidthRequest="300"
+                     FontSize="20"
+                     HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Stock:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                     Placeholder="Stock" 
+                     WidthRequest="300"
+                     FontSize="20"
+                     HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Button
+                     Text="Add"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="10, 10"
+                     WidthRequest="100"
+                     FontAttributes="Bold"
+                     BackgroundColor="#B0A695"
+                     ></Button>
+                <Button
+                     Text="Delete"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center"
+                     Margin="10"
+                     WidthRequest="100"
+                     FontAttributes="Bold"
+                     BackgroundColor="#B0A695"
+                     ></Button>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
