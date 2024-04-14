@@ -5,7 +5,7 @@
              x:Class="OOProject.Views.LibrarianView.BookView.BookList"
              Title="BookList">
     <ContentPage.BindingContext>
-        <viewModels:TestingLists></viewModels:TestingLists>
+        <viewModels:Lists></viewModels:Lists>
     </ContentPage.BindingContext>
     <ScrollView>
         <VerticalStackLayout>
