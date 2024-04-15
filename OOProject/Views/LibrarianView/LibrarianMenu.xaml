@@ -4,94 +4,103 @@
              x:Class="OOProject.Views.LibrarianView.LibrarianMenu"
              Title="LibrarianMenu">
     <ScrollView>
-        <VerticalStackLayout>
-            <Label 
-                Text="Librarian Management Menu"
-                FontSize="50"
-                FontAttributes="Bold"
-                Margin="10"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-   
+        <VerticalStackLayout HorizontalOptions="Center" Spacing="30" BackgroundColor="#FBF9F1">
+            <Grid>
+                <Image Source="work_image.png" />
+            </Grid>
+
+            <Label Text="BOOK MENU" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <HorizontalStackLayout Spacing="30" HorizontalOptions="Center">    
             <Button
-                Text="Add Books to the library" 
+                Text="Add Books" 
                 Clicked="Librarian_AddBook"
-                WidthRequest="200"
-                HeightRequest="200"
+                WidthRequest="150"
+                HeightRequest="150"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="#D9D9D9"
-                TextColor="Black"/>
+                TextColor="Black"
+                FontAttributes="Bold"/>
 
             <Button
-                Text="View Book Inventory" 
+                Text="Book Inventory" 
                 Clicked="Librarian_BookList"
-                WidthRequest="200"
-                HeightRequest="200"
+                WidthRequest="150"
+                HeightRequest="150"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="#D9D9D9"
-                TextColor="Black"/>
+                TextColor="Black"
+                FontAttributes="Bold"/>
         
             <Button
-                Text="Edit Book Details" 
+                Text="Edit Book" 
                 Clicked="Librarian_EditBookDetails"
-                WidthRequest="200"
-                HeightRequest="200"
+                WidthRequest="150"
+                HeightRequest="150"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="#D9D9D9"
-                TextColor="Black"/>
+                TextColor="Black"
+                FontAttributes="Bold"/>
 
             <Button
-                Text="View Book Details"
+                Text="Book Details"
                 Clicked="Librarian_ViewBookDetails"
-                WidthRequest="200"
-                HeightRequest="200"
+                WidthRequest="150"
+                HeightRequest="150"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 BackgroundColor="#D9D9D9"
                 TextColor="Black"/>
+            </HorizontalStackLayout>
 
-            <Button
+            <Label Text="USER MENU" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <HorizontalStackLayout Spacing="30" HorizontalOptions="Center">
+                <Button
                 Text="Add User" 
                 Clicked="Librarian_AddUser"
-                WidthRequest="200"
-                HeightRequest="200"
+                WidthRequest="150"
+                HeightRequest="150"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                BackgroundColor="#D9D9D9"
-                TextColor="Black"/>
+                BackgroundColor="#9BB8CD"
+                TextColor="Black"
+                FontAttributes="Bold"/>
             
             <Button
-                Text="View List of Users" 
+                Text="Users List" 
                 Clicked="Librarian_UserList"
-                WidthRequest="200"
-                HeightRequest="200"
+                WidthRequest="150"
+                HeightRequest="150"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                BackgroundColor="#D9D9D9"
-                TextColor="Black"/>
+                BackgroundColor="#9BB8CD"
+                TextColor="Black"
+                FontAttributes="Bold"/>
 
             <Button
-                Text="Edit User Details" 
+                Text="Edit User" 
                 Clicked="Librarian_ViewUserDetails"
-                WidthRequest="200"
-                HeightRequest="200"
+                WidthRequest="150"
+                HeightRequest="150"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                BackgroundColor="#D9D9D9"
-                TextColor="Black"/>
+                BackgroundColor="#9BB8CD"
+                TextColor="Black"
+                FontAttributes="Bold"/>
 
             <Button
-                Text="View User Details" 
+                Text="User Details" 
                 Clicked="Librarian_EditUserDetails"
-                WidthRequest="200"
-                HeightRequest="200"
+                WidthRequest="150"
+                HeightRequest="150"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
-                BackgroundColor="#D9D9D9"
-                TextColor="Black"/>
+                BackgroundColor="#9BB8CD"
+                TextColor="Black"
+                FontAttributes="Bold"/>
+            </HorizontalStackLayout>
             
         </VerticalStackLayout>
     </ScrollView>

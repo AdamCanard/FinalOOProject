@@ -124,7 +124,8 @@
                     WidthRequest="480"
                     FontSize="20"
                     HorizontalOptions="Center"></Entry>
-                            <Button
+                <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
+                <Button
                     Text="Search"
                     FontAttributes="Bold"
                     FontSize="20"

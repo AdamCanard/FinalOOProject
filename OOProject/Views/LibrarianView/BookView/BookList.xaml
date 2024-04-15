@@ -35,6 +35,7 @@
                     WidthRequest="480"
                     FontSize="20"
                     HorizontalOptions="Center"></Entry>
+                <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
                     Clicked="Search_Books"
                     Text="Search"
