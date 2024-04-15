@@ -106,6 +106,7 @@
                      FontAttributes="Bold"
                      BackgroundColor="#B0A695"
                      ></Button>
+                <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
                      Text="Delete"
                      HorizontalOptions="Center"

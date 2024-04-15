@@ -15,13 +15,16 @@
                     Placeholder="Title, Author, Category, etc..."
                     WidthRequest="480"
                     FontSize="20"
-                    HorizontalOptions="Center"></Entry>
+                    HorizontalOptions="Center"
+                    ></Entry>
+                <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
                     Text="Search"
                     FontAttributes="Bold"
                     FontSize="20"
                     WidthRequest="120"
-                    BackgroundColor="#B0A695"></Button>
+                    BackgroundColor="#B0A695"
+                    ></Button>
             </HorizontalStackLayout>
             
                         <Label Text="Results" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold" Margin="0,10"></Label>
