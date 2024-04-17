@@ -40,9 +40,8 @@ public partial class Login : ContentPage
                     if (DateTime.Compare(returnDate, DateTime.Now) < 0)
                     {
                         
-                        List<Fine> fines = db.GetAllFines();
-                        Fine fine = new Fine(fines.Count, user.library_id, 10);
-                        db.AddFine(fine);
+                        List<Fine> fines = FineManager.Fines;
+                        FineManager.AddFine(fines.Count, user.library_id, 10);
                     }
                 }
                 //TODO go to student/instructor Page
