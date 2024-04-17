@@ -22,13 +22,13 @@ namespace OOProject
         {
             Book newBook = new(isbn, quant, title, author, genre);
             Database.AddBook(newBook);
-            Books = Database.GetAllBooks();
+            UpdateBooksList();
         }
 
         public static void DeleteBook(int isbn)
         {
             Database.DeleteBook(isbn);
-            Books = Database.GetAllBooks();
+            UpdateBooksList();
         }
 
         public static void UpdateBook(int bookToUpdateIsbn, int? quant, string? title, string? author, string? genre)
@@ -40,6 +40,11 @@ namespace OOProject
             bookToUpdate.Genre = genre ?? bookToUpdate.Genre;
             
             Database.UpdateBook(bookToUpdate);
+            UpdateBooksList();
+        }
+
+        public static void UpdateBooksList()
+        {
             Books = Database.GetAllBooks();
         }
     }
