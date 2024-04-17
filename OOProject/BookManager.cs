@@ -18,9 +18,9 @@ namespace OOProject
             return retrievedBook;
         }
 
-        public  static void AddNewBook(int isbn, int quant, string title, string author, string cat)
+        public  static void AddNewBook(int isbn, int quant, string title, string author, string genre)
         {
-            Book newBook = new(isbn, quant, title, author, cat);
+            Book newBook = new(isbn, quant, title, author, genre);
             Database.AddBook(newBook);
             Books = Database.GetAllBooks();
         }
@@ -33,7 +33,7 @@ namespace OOProject
 
         public static void UpdateBook(int bookToUpdateIsbn, int? quant, string? title, string? author, string? genre)
         {
-            Book bookToUpdate = Database.GetBookByISBN(bookToUpdateIsbn);
+            Book bookToUpdate = GetBookByISBN(bookToUpdateIsbn);
             bookToUpdate.Quantity = quant ?? bookToUpdate.Quantity;
             bookToUpdate.Title = title ?? bookToUpdate.Title;
             bookToUpdate.Author = author ?? bookToUpdate.Author;
