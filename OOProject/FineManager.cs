@@ -17,13 +17,13 @@ public class FineManager
     {
         Fine newFine = new Fine(id, libraryId, amount);
         Database.AddFine(newFine);
-        Fines = Database.GetAllFines();
+        UpdateFinesList();
     }
 
     public static void DeleteFine(int id)
     {
         Database.DeleteFine(id);
-        Fines = Database.GetAllFines();
+        UpdateFinesList();
     }
 
     public static void UpdateFine(int fineToUpdateId, int? libraryId, int? amount)
@@ -40,6 +40,11 @@ public class FineManager
         retrievedFine.Amount = amount ?? retrievedFine.Amount;
         
         Database.UpdateFine(retrievedFine);
+        UpdateFinesList();
+    }
+
+    public static void UpdateFinesList()
+    {
         Fines = Database.GetAllFines();
     }
 }
