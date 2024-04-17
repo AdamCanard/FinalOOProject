@@ -20,6 +20,8 @@ namespace OOProject.Models
 
         [Required]
         public string ReturnDate { get; set; }
+        
+        public Rental(){}
 
         public Rental(int rentalId, int libraryId, int isbn, string dateOfRent, string returnDate)
         {
