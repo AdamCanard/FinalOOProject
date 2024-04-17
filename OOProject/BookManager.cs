@@ -23,18 +23,24 @@ namespace OOProject
             Book newBook = new(isbn, quant, title, author, cat);
             Database.AddBook(newBook);
             Books = Database.GetAllBooks();
-            return;
         }
 
         public static void DeleteBook(int isbn)
         {
             Database.DeleteBook(isbn);
+            Books = Database.GetAllBooks();
         }
 
-        public static void UpdateBook(int isbn, int quant, string title, string author, string cat)
+        public static void UpdateBook(int bookToUpdateIsbn, int? quant, string? title, string? author, string? genre)
         {
-            Book updatedBook = new Book(isbn, quant, title, author, cat);
-            Database.UpdateBook(updatedBook);
+            Book bookToUpdate = Database.GetBookByISBN(bookToUpdateIsbn);
+            bookToUpdate.Quantity = quant ?? bookToUpdate.Quantity;
+            bookToUpdate.Title = title ?? bookToUpdate.Title;
+            bookToUpdate.Author = author ?? bookToUpdate.Author;
+            bookToUpdate.Genre = genre ?? bookToUpdate.Genre;
+            
+            Database.UpdateBook(bookToUpdate);
+            Books = Database.GetAllBooks();
         }
     }
 }
