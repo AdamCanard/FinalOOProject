@@ -10,7 +10,7 @@ public partial class AddUser : ContentPage
     {
         base.OnAppearing();
 
-        UserManager.Users = UserManager.Database.GetAllUser();
+        UserManager.UpdateUserList();
         ID.Text = string.Empty;
         Password.Text = string.Empty;
         Name.Text = string.Empty;
