@@ -12,6 +12,58 @@ namespace OOProject
         public static DatabaseManager Database = new();
         public static List<User> Users = new(Database.GetAllUser());
 
+        public static List<User> SearchUsersPerParameter(string? library_id, string? name, string? email, string? address, string? account)
+        {
+            List<User> foundUsers = [];
+
+            foreach (var user in Users)
+            {
+                bool foundId = user.library_id.ToString().ToLower()
+                    .Contains((library_id ?? user.library_id.ToString()).ToLower());
+                bool foundName = user.Name.ToLower()
+                    .Contains((name ?? user.Name).ToLower());
+                bool foundEmail = user.Email.ToLower()
+                    .Contains((email ?? user.Email).ToLower());
+                bool foundAddress = user.Address.ToLower()
+                    .Contains((address ?? user.Address).ToLower());
+                bool foundAccount = user.Account.ToLower()
+                    .Contains((account ?? user.Account).ToLower());
+
+                if (foundId && foundName && foundEmail && foundAddress && foundAccount)
+                {
+                    foundUsers.Add(user);
+                }
+            }
+
+            return foundUsers;
+        }
+
+        public static List<User> SearchUsersGeneric(string searchQuery)
+        {
+            List<User> foundUsers = [];
+
+            foreach (var user in Users)
+            {
+                bool foundId = user.library_id.ToString().ToLower()
+                    .Contains(searchQuery.ToLower());
+                bool foundName = user.Name.ToLower()
+                    .Contains(searchQuery.ToLower());
+                bool foundEmail = user.Email.ToLower()
+                    .Contains(searchQuery.ToLower());
+                bool foundAddress = user.Address.ToLower()
+                    .Contains(searchQuery.ToLower());
+                bool foundAccount = user.Account.ToLower()
+                    .Contains(searchQuery.ToLower());
+
+                if (foundId || foundName || foundEmail || foundAddress || foundAccount)
+                {
+                    foundUsers.Add(user);
+                }
+            }
+
+            return foundUsers;
+        }
+
         public static void AddNewUser(int library_id, string name, string email, string password, string address, string account)
         {
             User newUser = new(library_id, name, email, password, address, account);
