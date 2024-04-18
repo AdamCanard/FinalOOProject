@@ -12,12 +12,40 @@ namespace OOProject
         public static DatabaseManager Database = new();
         public static List<Book> Books = new(Database.GetAllBooks());
 
-        public  static void AddNewBook(int isbn, int quant, string title, string author, string cat)
+        public static Book GetBookByISBN(int isbn)
         {
-            Book newBook = new(isbn, quant, title, author, cat);
+            Book retrievedBook = Database.GetBookByISBN(isbn);
+            return retrievedBook;
+        }
+
+        public  static void AddNewBook(int isbn, int quant, string title, string author, string genre)
+        {
+            Book newBook = new(isbn, quant, title, author, genre);
             Database.AddBook(newBook);
+            UpdateBooksList();
+        }
+
+        public static void DeleteBook(int isbn)
+        {
+            Database.DeleteBook(isbn);
+            UpdateBooksList();
+        }
+
+        public static void UpdateBook(int bookToUpdateIsbn, int? quant, string? title, string? author, string? genre)
+        {
+            Book bookToUpdate = GetBookByISBN(bookToUpdateIsbn);
+            bookToUpdate.Quantity = quant ?? bookToUpdate.Quantity;
+            bookToUpdate.Title = title ?? bookToUpdate.Title;
+            bookToUpdate.Author = author ?? bookToUpdate.Author;
+            bookToUpdate.Genre = genre ?? bookToUpdate.Genre;
+            
+            Database.UpdateBook(bookToUpdate);
+            UpdateBooksList();
+        }
+
+        public static void UpdateBooksList()
+        {
             Books = Database.GetAllBooks();
-            return;
         }
     }
 }
