@@ -24,7 +24,6 @@
                     FontAttributes="Bold"
                     WidthRequest="300"></Label>
                 <Label
-                    BindingContext="{Binding}"
                     Text="{Binding Title}"
                     HorizontalTextAlignment="End"
                     FontSize="25"
@@ -39,8 +38,7 @@
                     FontAttributes="Italic"
                     WidthRequest="300"></Label>
                 <Label
-                    BindingContext="{Binding SelectedBook.ISBN}"
-                    Text="{Binding}"
+                    Text="{Binding ISBN}"
                     HorizontalTextAlignment="End"
                     FontSize="15"
                     FontAttributes="Italic"
@@ -54,8 +52,7 @@
                         FontAttributes="None"
                         WidthRequest="300"></Label>
                 <Label
-                        BindingContext="{Binding SelectedBook.Author}"
-                        Text="{Binding}"
+                        Text="{Binding Author}"
                         HorizontalTextAlignment="End"
                         FontSize="15"
                         FontAttributes="None"
@@ -69,8 +66,7 @@
                     FontAttributes="None"
                     WidthRequest="300"></Label>
                 <Label
-                    BindingContext="{Binding SelectedBook.Genre}"
-                    Text="{Binding}"
+                    Text="{Binding Genre}"
                     HorizontalTextAlignment="End"
                     FontSize="15"
                     FontAttributes="None"
@@ -84,8 +80,7 @@
                     FontAttributes="Bold"
                     WidthRequest="300"></Label>
                 <Label
-                    BindingContext="{Binding SelectedBook.Quantity}"
-                    Text="{Binding}"
+                    Text="{Binding Quantity}"
                     HorizontalTextAlignment="End"
                     FontSize="20"
                     FontAttributes="Bold"

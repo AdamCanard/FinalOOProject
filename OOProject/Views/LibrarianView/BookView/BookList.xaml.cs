@@ -13,9 +13,17 @@ public partial class BookList : ContentPage
         Shell.Current.GoToAsync("//AddBook");
     }
 
-    private void ViewBookDetails_Navigation(object sender, EventArgs e)
+    private async void ViewBookDetails_Navigation(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//ViewBookDetails");
+        if (sender is Button button)
+        {
+            Book bookObject = (Book)button.BindingContext;
+            if (bookObject != null)
+            {
+                var bookDetailsPage = new ViewBookDetails(bookObject);
+                await Navigation.PushAsync(bookDetailsPage);
+            }
+        }
     }
 
     private void EditBookDetails_Navigation(object sender, EventArgs e)
