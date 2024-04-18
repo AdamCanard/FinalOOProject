@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:OOProject.Models"
              x:Class="OOProject.Views.LibrarianView.BookView.EditBookDetails"
              Style="{StaticResource MyPageStyle}"
              Title="EditBookDetails">
+    <ContentPage.BindingContext>
+        <models:Book/>
+    </ContentPage.BindingContext>
     <ScrollView>
         <VerticalStackLayout>
             <Label 
@@ -23,10 +27,12 @@
                 <HorizontalStackLayout>
                     <Label Text="ISBN:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                     Placeholder="ISBN" 
-                     WidthRequest="300"
-                     FontSize="20"
-                     HorizontalOptions="Center"></Entry>
+                        x:Name="ISBN_EditBook"
+                        Text="{Binding ISBN}"
+                        Placeholder="ISBN *Required*" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"></Entry>
                 </HorizontalStackLayout>
             </Frame>
 
@@ -34,10 +40,12 @@
                 <HorizontalStackLayout>
                     <Label Text="Title:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                     Placeholder="Title" 
-                     WidthRequest="300"
-                     FontSize="20"
-                     HorizontalOptions="Center"></Entry>
+                        x:Name="Title_EditBook"
+                        Text="{Binding Title}"
+                        Placeholder="Title" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"></Entry>
                 </HorizontalStackLayout>
             </Frame>
 
@@ -45,10 +53,12 @@
                 <HorizontalStackLayout>
                     <Label Text="Category:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                     Placeholder="Category" 
-                     WidthRequest="300"
-                     FontSize="20"
-                     HorizontalOptions="Center"></Entry>
+                        x:Name ="Category_EditBook"
+                        Text="{Binding Genre}"
+                        Placeholder="Category" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"></Entry>
                 </HorizontalStackLayout>
             </Frame>
 
@@ -56,33 +66,12 @@
                 <HorizontalStackLayout>
                     <Label Text="Author:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                     Placeholder="Author" 
-                     WidthRequest="300"
-                     FontSize="20"
-                     HorizontalOptions="Center"></Entry>
-                </HorizontalStackLayout>
-            </Frame>
-
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
-                <HorizontalStackLayout>
-                    <Label Text="Publisher:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
-                     Placeholder="Publisher" 
-                     WidthRequest="300"
-                     FontSize="20"
-                     HorizontalOptions="Center"></Entry>
-                </HorizontalStackLayout>
-            </Frame>
-
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
-                <HorizontalStackLayout>
-                    <Label Text="Year of Publication:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
- 
-                     Placeholder="Year of Publication" 
-                     WidthRequest="300"
-                     FontSize="20"
-                     HorizontalOptions="Center"></Entry>
+                        x:Name="Author_EditBook"
+                        Text="{Binding Author}"
+                        Placeholder="Author" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"></Entry>
                 </HorizontalStackLayout>
             </Frame>
 
@@ -90,32 +79,36 @@
                 <HorizontalStackLayout>
                     <Label Text="Stock:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                     Placeholder="Stock" 
-                     WidthRequest="300"
-                     FontSize="20"
-                     HorizontalOptions="Center"></Entry>
+                        x:Name="Quantity_EditBook"
+                        Text="{Binding Quantity}"
+                        Placeholder="Stock *Required*" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"></Entry>
                 </HorizontalStackLayout>
             </Frame>
+
             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
                 <Button
-                     Text="Add"
-                     HorizontalOptions="Center"
-                     VerticalOptions="Center"
-                     Margin="10, 10"
-                     WidthRequest="100"
-                     FontAttributes="Bold"
-                     BackgroundColor="#B0A695"
-                     ></Button>
+                    Text="Save"
+                    Clicked="Save_EditBook"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="10, 10"
+                    WidthRequest="100"
+                    FontAttributes="Bold"
+                    BackgroundColor="#B0A695"></Button>
                 <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
-                     Text="Delete"
-                     HorizontalOptions="Center"
-                     VerticalOptions="Center"
-                     Margin="10"
-                     WidthRequest="100"
-                     FontAttributes="Bold"
-                     BackgroundColor="#B0A695"
-                     ></Button>
+                    Text="Delete"
+                    Clicked="Delete_EditBook"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="10"
+                    WidthRequest="100"
+                    FontAttributes="Bold"
+                    BackgroundColor="Red"
+                    TextColor="White"></Button>
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

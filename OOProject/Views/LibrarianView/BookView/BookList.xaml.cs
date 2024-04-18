@@ -1,4 +1,5 @@
 using OOProject.Models;
+
 namespace OOProject.Views.LibrarianView.BookView;
 
 public partial class BookList : ContentPage
@@ -17,22 +18,38 @@ public partial class BookList : ContentPage
     {
         if (sender is Button button)
         {
-            Book bookObject = (Book)button.BindingContext;
-            if (bookObject != null)
+            Book book = (Book)button.BindingContext;
+            if (book != null)
             {
-                var bookDetailsPage = new ViewBookDetails(bookObject);
+                var bookDetailsPage = new ViewBookDetails(book);
                 await Navigation.PushAsync(bookDetailsPage);
             }
         }
     }
 
-    private void EditBookDetails_Navigation(object sender, EventArgs e)
+    private async void EditBookDetails_Navigation(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//EditBookDetails");
+        if (sender is Button button)
+        {
+            Book book = (Book)button.BindingContext;
+            if (book != null)
+            {
+                var editBookPage = new EditBookDetails(book);
+                await Navigation.PushAsync(editBookPage);
+            }
+        }
     }
 
     private void Search_Books(object sender, EventArgs e)
     {
+        BookManager.UpdateBooksList();
 
+        List<Book> completeList = BookManager.Books;
+        List<Book> foundBooks = new();
+        string searchQuery = SearchBarEntry.Text;
+
+        // SearchBook Method
+
+        BookSearchList.ItemsSource = foundBooks;
     }
 }
