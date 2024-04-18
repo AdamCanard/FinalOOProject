@@ -9,7 +9,7 @@
                 <Image Source="work_image.png" />
             </Grid>
 
-            <Label Text="BOOK MENU" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <Label Text="LIBRARIAN MENU" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center"/>
             <HorizontalStackLayout Spacing="30" HorizontalOptions="Center">    
             <Button
                 Text="Add Books" 
