@@ -32,13 +32,13 @@ public partial class EditBookDetails : ContentPage
         try
         {
             // throw an exception if the quantity is null or empty
-            if (string.IsNullOrEmpty(Quantity_EditBook.Text))
+            if (string.IsNullOrEmpty(Quantity_EditEntry.Text))
             {
                 throw new ArgumentException();
             }
 
             // throws a FormatException if the quantity is not a number
-            int newStock = Convert.ToInt32(Quantity_EditBook.Text);
+            int newStock = Convert.ToInt32(Quantity_EditEntry.Text);
 
             // throw an exception if the quantity is equal to or less than 0
             if (newStock <= 0) 
@@ -47,7 +47,7 @@ public partial class EditBookDetails : ContentPage
             }
 
             // Call the UpdateBook() method to save the changes made to the book object
-            BookManager.UpdateBook(BookToUpdate.ISBN, newStock, Title_EditBook.Text, Category_EditBook.Text);
+            BookManager.UpdateBook(BookToUpdate.ISBN, newStock, Title_EditEntry.Text, Category_EditEntry.Text);
             errorMessage.IsVisible = false;
             confirmationMessage.IsVisible = true;
 

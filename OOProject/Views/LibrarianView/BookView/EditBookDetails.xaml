@@ -27,7 +27,7 @@
                 <HorizontalStackLayout>
                     <Label Text="ISBN:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Label 
-                        x:Name="ISBN_EditBook"
+                        x:Name="ISBN_EditLabel"
                         Text="{Binding ISBN}"
                         WidthRequest="300"
                         FontSize="20"
@@ -39,7 +39,7 @@
                 <HorizontalStackLayout>
                     <Label Text="Title:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                        x:Name="Title_EditBook"
+                        x:Name="Title_EditEntry"
                         Text="{Binding Title}"
                         Placeholder="Title" 
                         WidthRequest="300"
@@ -52,7 +52,7 @@
                 <HorizontalStackLayout>
                     <Label Text="Category:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                        x:Name ="Category_EditBook"
+                        x:Name ="Category_EditEntry"
                         Text="{Binding Genre}"
                         Placeholder="Category" 
                         WidthRequest="300"
@@ -65,7 +65,7 @@
                 <HorizontalStackLayout>
                     <Label Text="Author:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Label 
-                        x:Name="Author_EditBook"
+                        x:Name="Author_EditLabel"
                         Text="{Binding Author}"
                         WidthRequest="300"
                         FontSize="20"
@@ -77,7 +77,7 @@
                 <HorizontalStackLayout>
                     <Label Text="Stock:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                        x:Name="Quantity_EditBook"
+                        x:Name="Quantity_EditEntry"
                         Text="{Binding Quantity}"
                         Placeholder="Stock *Required*" 
                         WidthRequest="300"
