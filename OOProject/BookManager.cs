@@ -74,12 +74,11 @@ namespace OOProject
             UpdateBooksList();
         }
 
-        public static void UpdateBook(int bookToUpdateIsbn, int? quant, string? title, string? author, string? genre)
+        public static void UpdateBook(int bookToUpdateIsbn, int? quant, string? title, string? genre)
         {
             Book bookToUpdate = GetBookByISBN(bookToUpdateIsbn);
             bookToUpdate.Quantity = quant ?? bookToUpdate.Quantity;
             bookToUpdate.Title = title ?? bookToUpdate.Title;
-            bookToUpdate.Author = author ?? bookToUpdate.Author;
             bookToUpdate.Genre = genre ?? bookToUpdate.Genre;
             
             Database.UpdateBook(bookToUpdate);
