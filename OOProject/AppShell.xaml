@@ -25,8 +25,6 @@
     <ShellContent Title="Login" Route="Login" ContentTemplate="{DataTemplate views:Login}"/>
     <ShellContent Title="AddBook" Route="AddBook" ContentTemplate="{DataTemplate bookView:AddBook}"/>
     <ShellContent Title="BookList" Route="BookList" ContentTemplate="{DataTemplate bookView:BookList}"/>
-    <ShellContent Title="EditBookDetails" Route="EditBookDetails" ContentTemplate="{DataTemplate bookView:EditBookDetails}"/>
-    <ShellContent Title="ViewBookDetails" Route="ViewBookDetails" ContentTemplate="{DataTemplate bookView:ViewBookDetails}"/>
     <ShellContent Title="AddUser" Route="AddUser" ContentTemplate="{DataTemplate userView:AddUser}"/>
     <ShellContent Title="UserList" Route="UserList" ContentTemplate="{DataTemplate userView:UserList}"/>
     <ShellContent Title="ViewUserDetails" Route="ViewUserDetails" ContentTemplate="{DataTemplate userView:ViewUserDetails}"/>

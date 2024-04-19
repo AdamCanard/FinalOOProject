@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:OOProject.Models"
+             xmlns:local="clr-namespace:OOProject"
              x:Class="OOProject.Views.LibrarianView.BookView.BookList"
              Title="BookList">
-    <ContentPage.BindingContext>
-        <viewModels:Lists></viewModels:Lists>
-    </ContentPage.BindingContext>
+    
     <ScrollView>
         <VerticalStackLayout>
             <HorizontalStackLayout HorizontalOptions="Center">
@@ -31,6 +29,7 @@
 
             <HorizontalStackLayout HorizontalOptions="Center" Margin="30">
                 <Entry
+                    x:Name="SearchBarEntry"
                     Placeholder="Title, Author, Category, etc..."
                     WidthRequest="480"
                     FontSize="20"
@@ -47,7 +46,7 @@
             
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
                 <ScrollView Orientation="Both">
-                    <CollectionView ItemsSource="{Binding BooksList}">
+                    <CollectionView x:Name="BookSearchList" ItemsSource="{x:Static local:BookManager.Books}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame>

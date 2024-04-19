@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:OOProject.Models"
+             xmlns:models="clr-namespace:OOProject.Models"
              x:Class="OOProject.Views.LibrarianView.BookView.ViewBookDetails"
              Title="ViewBookDetails"
              MaximumWidthRequest="1000">
     <ContentPage.BindingContext>
-        <viewModels:Book></viewModels:Book>
+        <models:Book/>
     </ContentPage.BindingContext>
     <ScrollView>
         <VerticalStackLayout>

@@ -20,7 +20,7 @@ namespace OOProject
                 bool foundIsbn = book.ISBN.ToString().ToLower().Contains((isbn ?? book.ISBN.ToString()).ToLower());
                 bool foundTitle = book.Title.ToLower().Contains((title ?? book.Title).ToLower());
                 bool foundAuthor = book.Author.ToLower().Contains((author ?? book.Author).ToLower());
-                bool foundGenre = book.Title.ToLower().Contains((genre ?? book.Genre).ToLower());
+                bool foundGenre = book.Genre.ToLower().Contains((genre ?? book.Genre).ToLower());
 
                 if (foundIsbn && foundTitle && foundAuthor && foundGenre)
                 {
@@ -34,13 +34,17 @@ namespace OOProject
         public static List<Book> SearchBooksGeneric(string searchQuery)
         {
             List<Book> foundBooks = [];
+            if (string.IsNullOrEmpty(searchQuery)) 
+            {
+                return Books;
+            }
 
             foreach (var book in Books)
             {
                 bool foundIsbn = book.ISBN.ToString().ToLower().Contains(searchQuery.ToLower());
                 bool foundTitle = book.Title.ToLower().Contains(searchQuery.ToLower());
                 bool foundAuthor = book.Author.ToLower().Contains(searchQuery.ToLower());
-                bool foundGenre = book.Title.ToLower().Contains(searchQuery.ToLower());
+                bool foundGenre = book.Genre.ToLower().Contains(searchQuery.ToLower());
 
                 if (foundIsbn || foundTitle || foundAuthor || foundGenre)
                 {
