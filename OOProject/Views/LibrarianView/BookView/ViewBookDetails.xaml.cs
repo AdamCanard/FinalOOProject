@@ -9,11 +9,12 @@ public partial class ViewBookDetails : ContentPage
 	{
 		InitializeComponent();
         BindingContext = book;
-	}
+        RentalList.ItemsSource = RentalManager.GetAllRentalsByBook(book.ISBN);
+    }
 
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        RentalList.ItemsSource = RentalManager.Rentals;
+        
     }
 }

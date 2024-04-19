@@ -20,6 +20,13 @@ public class RentalManager
         return retrievedRentals;
     }
 
+    public static List<Rental> GetAllRentalsByBook(int ISBN)
+    {
+        Book retrievedBook = Database.GetBookByISBN(ISBN);
+        List<Rental> retrievedRentals = Database.GetAllRentalByBook(retrievedBook);
+        return retrievedRentals;
+    }
+
     public static void AddRental(int id, int libraryID, int isbn, string rentDate, string returnDate)
     {
         Rental newRental = new Rental(id, libraryID, isbn, rentDate, returnDate);

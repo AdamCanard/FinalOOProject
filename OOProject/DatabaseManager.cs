@@ -116,6 +116,11 @@ namespace OOProject
             return this.Database.Table<Rental>().Where(rental => rental.library_id == user.library_id).ToList();
         }
 
+        public List<Rental> GetAllRentalByBook(Book book)
+        {
+            return this.Database.Table<Rental>().Where(rental => rental.ISBN == book.ISBN).ToList();
+        }
+
         //get rental by id
         public Rental GetRentalByID(int id)
         {
