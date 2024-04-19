@@ -36,7 +36,7 @@ public partial class Login : ContentPage
 
                 foreach(Rental rental in usersBooks)
                 {
-                    DateTime returnDate = DateTime.Parse(rental.ReturnDate);
+                    DateTime returnDate = DateTime.Parse(rental.return_date);
                     if (DateTime.Compare(returnDate, DateTime.Now) < 0)
                     {
                         

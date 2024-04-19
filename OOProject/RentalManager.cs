@@ -36,10 +36,10 @@ public class RentalManager
     public static void UpdateRental(int rentalToUpdateId, int? libraryID, int? isbn, string? rentDate, string? returnDate)
     {
         Rental rentalToUpdate = Database.GetRentalByID(rentalToUpdateId);
-        rentalToUpdate.LibraryId = libraryID ?? rentalToUpdate.LibraryId;
+        rentalToUpdate.library_id = libraryID ?? rentalToUpdate.library_id;
         rentalToUpdate.ISBN = isbn ?? rentalToUpdate.ISBN;
-        rentalToUpdate.DateOfRent = rentDate ?? rentalToUpdate.DateOfRent;
-        rentalToUpdate.ReturnDate = returnDate ?? rentalToUpdate.ReturnDate;
+        rentalToUpdate.date_of_rent = rentDate ?? rentalToUpdate.date_of_rent;
+        rentalToUpdate.return_date = returnDate ?? rentalToUpdate.return_date;
         
         Database.UpdateRental(rentalToUpdate);
         UpdateRentalsList();

@@ -107,18 +107,19 @@ namespace OOProject
         //get list of all rentals
         public List<Rental> GetAllRental()
         {
-            return this.Database.Table<Rental>().ToList();
+            List<Rental> temp = this.Database.Table<Rental>().ToList();
+            return temp;
         }
 
         public List<Rental> GetAllRentalByUser(User user)
         {
-            return this.Database.Table<Rental>().Where(rental => rental.LibraryId == user.library_id).ToList();
+            return this.Database.Table<Rental>().Where(rental => rental.library_id == user.library_id).ToList();
         }
 
         //get rental by id
         public Rental GetRentalByID(int id)
         {
-            return this.Database.Table<Rental>().Where(rental => rental.RentalID == id).FirstOrDefault();
+            return this.Database.Table<Rental>().Where(rental => rental.rental_id == id).FirstOrDefault();
         }
 
         //add user
