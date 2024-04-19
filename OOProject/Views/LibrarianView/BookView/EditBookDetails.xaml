@@ -99,8 +99,10 @@
                     FontAttributes="Bold"
                     BackgroundColor="#B0A695"></Button>
                 <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
+
                 <Button
                     Text="Delete"
+                    x:Name="Delete_Button"
                     Clicked="Delete_EditBook"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
@@ -108,8 +110,30 @@
                     WidthRequest="100"
                     FontAttributes="Bold"
                     BackgroundColor="Red"
-                    TextColor="White"></Button>
+                    TextColor="White"
+                    IsEnabled="True"></Button>
             </HorizontalStackLayout>
+            
+            <!-- Confirmation Message -->
+            <Label Text="Book has been succesfully updated." 
+                   x:Name="confirmationMessage" 
+                   HeightRequest="80" 
+                   FontSize="15" 
+                   TextColor="Blue"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   IsVisible="false"></Label>
+
+            <!-- Error Messages -->
+            <Label Text="Error Message" 
+                   x:Name="errorMessage" 
+                   HeightRequest="40" 
+                   FontSize="15" 
+                   TextColor="Red" 
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" 
+                   IsVisible="false"></Label>
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

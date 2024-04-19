@@ -1,53 +1,114 @@
 using OOProject.Models;
+using System.Linq;
 
 namespace OOProject.Views.LibrarianView.BookView;
 
 public partial class EditBookDetails : ContentPage
 {
-    public Book EditingBook { get; set; }
+    public Book BookToUpdate { get; set; }
 
 	public EditBookDetails(Book book)
 	{
 		InitializeComponent();
+        // Bind the object that was clicked to open this page and store it as a property to modify it
 		BindingContext = book;
-        EditingBook = book;
+        BookToUpdate = book;
+    }
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        // Reset the flags of the error/confirmation messages to be invisible and enable the delete button
+        Delete_Button.IsEnabled = true;
+        errorMessage.IsVisible = false;
+        confirmationMessage.IsVisible = false;
     }
 
     private void Save_EditBook(object sender, EventArgs e)
     {
         try
         {
-            if (Quantity_EditBook.Text == "0")
+            // throw an exception if the quantity is null or empty
+            if (string.IsNullOrEmpty(Quantity_EditBook.Text))
             {
-                throw new FormatException();
+                throw new ArgumentException();
             }
-            int stock = Convert.ToInt32(Quantity_EditBook.Text);
-            BookManager.UpdateBook(EditingBook.ISBN, stock, Title_EditBook.Text, Author_EditBook.Text, Category_EditBook.Text);
+
+            // throws a FormatException if the quantity is not a number
+            int newStock = Convert.ToInt32(Quantity_EditBook.Text);
+
+            // throw an exception if the quantity is equal to or less than 0
+            if (newStock <= 0) 
+            {
+                throw new ArgumentException();
+            }
+
+            // Call the UpdateBook() method to save the changes made to the book object
+            BookManager.UpdateBook(BookToUpdate.ISBN, newStock, Title_EditBook.Text, Author_EditBook.Text, Category_EditBook.Text);
+            errorMessage.IsVisible = false;
+            confirmationMessage.IsVisible = true;
         }
-        catch (NullReferenceException)
+        // Catches the exceptions and displays the appropiate text to the user.
+        catch (ArgumentException)
         {
-            //errorMessage.Text = "Please fill out all the required fields";
-            //errorMessage.IsVisible = true;
-            //confirmationMessage.IsVisible = false;
+            errorMessage.Text = "*Required* Quantity must be a positive integer.";
+            errorMessage.IsVisible = true;
+            confirmationMessage.IsVisible = false;
         }
         catch (FormatException)
         {
-            //errorMessage.Text = "Please enter a positive integer for the ISBN and the Quantity";
-            //errorMessage.IsVisible = true;
-            // confirmationMessage.IsVisible = false;
+            errorMessage.Text = "*Required* Quantity must be numeric.";
+            errorMessage.IsVisible = true;
+            confirmationMessage.IsVisible = false;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            // errorMessage.Text = "The ISBN number must be unique";
-            //errorMessage.IsVisible = true;
-            // confirmationMessage.IsVisible = false;
+            errorMessage.Text = ex.Message;
+            errorMessage.IsVisible = true;
+            confirmationMessage.IsVisible = false;
         }
     }
 
     private void Delete_EditBook(object sender, EventArgs e)
     {
+        // A flag that determines if later we will throw an exception or not
+        bool canDelete = true;
+
+        // Check if a this book has been rented in any of the rentals
+        foreach (Rental rental in RentalManager.Rentals) 
+        {
+            if (rental.ISBN == BookToUpdate.ISBN) 
+            {
+                canDelete = false;
+                Delete_Button.IsEnabled = false;
+                break;
+            }
+        }
+
+        // if there is a book a rental throw an exception
+        try
+        {
+            if (canDelete == false) 
+            {
+                throw new FeatureNotEnabledException();
+            }
+        }
+        catch (FeatureNotEnabledException) 
+        {
+            // This exception kind of works for this but we could create an exceptions class (I really dont want to) - Simon
+            errorMessage.Text = "Book cannot be deleted, as a copy has been rented out.";
+            errorMessage.IsVisible = true;
+            confirmationMessage.IsVisible = false;
+        }
+        catch (Exception ex)
+        {
+            errorMessage.Text = ex.Message;
+            errorMessage.IsVisible = true;
+            confirmationMessage.IsVisible = false;
+        }
+
         // Currently throwing an error - Needs Cascade deleting to preserve foreign key constraints
         // If we have extra time I would like to add a "Are you sure you want to delete this book" popout thingy - Simon
-        BookManager.DeleteBook(EditingBook.ISBN);
+        BookManager.DeleteBook(BookToUpdate.ISBN);
     }
 }

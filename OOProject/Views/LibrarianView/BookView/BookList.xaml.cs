@@ -9,6 +9,12 @@ public partial class BookList : ContentPage
 		InitializeComponent();
 	}
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+        BookSearchList.ItemsSource = BookManager.Books;
+    }
+
     private void AddBook_Navigation(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync("//AddBook");
@@ -42,14 +48,7 @@ public partial class BookList : ContentPage
 
     private void Search_Books(object sender, EventArgs e)
     {
-        BookManager.UpdateBooksList();
-
-        List<Book> completeList = BookManager.Books;
-        List<Book> foundBooks = new();
         string searchQuery = SearchBarEntry.Text;
-
-        // SearchBook Method
-
-        BookSearchList.ItemsSource = foundBooks;
+        BookSearchList.ItemsSource = BookManager.SearchBooksGeneric(searchQuery);
     }
 }
