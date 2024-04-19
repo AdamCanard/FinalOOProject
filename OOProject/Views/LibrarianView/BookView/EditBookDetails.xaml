@@ -88,13 +88,35 @@
                 </HorizontalStackLayout>
             </Frame>
 
+            <!-- Confirmation Message -->
+            <Label Text="Book has been succesfully updated." 
+                   x:Name="confirmationMessage" 
+                   Margin="5"
+                   HeightRequest="20" 
+                   FontSize="15" 
+                   TextColor="Green"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   IsVisible="false"></Label>
+
+            <!-- Error Messages -->
+            <Label Text="Error Message" 
+                   x:Name="errorMessage" 
+                   Margin="5"
+                   HeightRequest="40" 
+                   FontSize="15" 
+                   TextColor="Red" 
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" 
+                   IsVisible="false"></Label>
+
             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
                 <Button
                     Text="Save"
                     Clicked="Save_EditBook"
                     HorizontalOptions="Center"
                     VerticalOptions="Center"
-                    Margin="10, 10"
+                    Margin="10"
                     WidthRequest="100"
                     FontAttributes="Bold"
                     BackgroundColor="#B0A695"></Button>
@@ -113,27 +135,7 @@
                     TextColor="White"
                     IsEnabled="True"></Button>
             </HorizontalStackLayout>
-            
-            <!-- Confirmation Message -->
-            <Label Text="Book has been succesfully updated." 
-                   x:Name="confirmationMessage" 
-                   HeightRequest="80" 
-                   FontSize="15" 
-                   TextColor="Blue"
-                   HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center"
-                   IsVisible="false"></Label>
 
-            <!-- Error Messages -->
-            <Label Text="Error Message" 
-                   x:Name="errorMessage" 
-                   HeightRequest="40" 
-                   FontSize="15" 
-                   TextColor="Red" 
-                   HorizontalOptions="Center"
-                   HorizontalTextAlignment="Center" 
-                   IsVisible="false"></Label>
-            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -1,3 +1,4 @@
+using Microsoft.Maui.Graphics.Text;
 using OOProject.Models;
 using System.Linq;
 
@@ -18,10 +19,12 @@ public partial class EditBookDetails : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-        // Reset the flags of the error/confirmation messages to be invisible and enable the delete button
+        // Restore to default some UI visual settings
         Delete_Button.IsEnabled = true;
         errorMessage.IsVisible = false;
         confirmationMessage.IsVisible = false;
+        errorMessage.FontAttributes = FontAttributes.None;
+        confirmationMessage.TextColor = Colors.Green;
     }
 
     private void Save_EditBook(object sender, EventArgs e)
@@ -47,6 +50,16 @@ public partial class EditBookDetails : ContentPage
             BookManager.UpdateBook(BookToUpdate.ISBN, newStock, Title_EditBook.Text, Author_EditBook.Text, Category_EditBook.Text);
             errorMessage.IsVisible = false;
             confirmationMessage.IsVisible = true;
+
+            // This is to show a differences if you save once, then change the values, and then save again.
+            if (confirmationMessage.TextColor == Colors.Green) 
+            {
+                confirmationMessage.TextColor = Colors.Blue;
+            }
+            else
+            {
+                confirmationMessage.TextColor = Colors.Green;
+            }
         }
         // Catches the exceptions and displays the appropiate text to the user.
         catch (ArgumentException)
@@ -101,12 +114,14 @@ public partial class EditBookDetails : ContentPage
         catch (FeatureNotEnabledException) 
         {
             // This exception kind of works for this but we could create an exceptions class (I really dont want to) - Simon
-            errorMessage.Text = "Book cannot be deleted, as a copy has been rented out.";
+            errorMessage.Text = "Book cannot be deleted, as a copy has been rented out to a customer. \nEnsure all copies have been returned before deleting this book.";
+            errorMessage.FontAttributes = FontAttributes.Bold;
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
         catch (Exception ex)
         {
+            errorMessage.FontAttributes = FontAttributes.None;
             errorMessage.Text = ex.Message;
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
