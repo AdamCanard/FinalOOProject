@@ -26,13 +26,12 @@
             <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
                 <HorizontalStackLayout>
                     <Label Text="ISBN:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
+                    <Label 
                         x:Name="ISBN_EditBook"
                         Text="{Binding ISBN}"
-                        Placeholder="ISBN *Required*" 
                         WidthRequest="300"
                         FontSize="20"
-                        HorizontalOptions="Center"></Entry>
+                        HorizontalOptions="Center"></Label>
                 </HorizontalStackLayout>
             </Frame>
 
@@ -65,13 +64,12 @@
             <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
                 <HorizontalStackLayout>
                     <Label Text="Author:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
+                    <Label 
                         x:Name="Author_EditBook"
                         Text="{Binding Author}"
-                        Placeholder="Author" 
                         WidthRequest="300"
                         FontSize="20"
-                        HorizontalOptions="Center"></Entry>
+                        HorizontalOptions="Center"></Label>
                 </HorizontalStackLayout>
             </Frame>
 

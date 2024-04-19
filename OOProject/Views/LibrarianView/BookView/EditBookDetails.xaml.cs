@@ -47,11 +47,12 @@ public partial class EditBookDetails : ContentPage
             }
 
             // Call the UpdateBook() method to save the changes made to the book object
-            BookManager.UpdateBook(BookToUpdate.ISBN, newStock, Title_EditBook.Text, Author_EditBook.Text, Category_EditBook.Text);
+            BookManager.UpdateBook(BookToUpdate.ISBN, newStock, Title_EditBook.Text, Category_EditBook.Text);
             errorMessage.IsVisible = false;
             confirmationMessage.IsVisible = true;
 
             // This is to show a differences if you save once, then change the values, and then save again.
+            // So every instance something is changed there is a visual queue to the user.
             if (confirmationMessage.TextColor == Colors.Green) 
             {
                 confirmationMessage.TextColor = Colors.Blue;
