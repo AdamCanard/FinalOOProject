@@ -71,6 +71,7 @@ public partial class EditBookDetails : ContentPage
 
     private void Delete_EditBook(object sender, EventArgs e)
     {
+        RentalManager.UpdateRentalsList();
         // A flag that determines if later we will throw an exception or not
         bool canDelete = true;
 
@@ -92,6 +93,10 @@ public partial class EditBookDetails : ContentPage
             {
                 throw new FeatureNotEnabledException();
             }
+
+            // Currently throwing an error - Needs Cascade deleting to preserve foreign key constraints
+            // If we have extra time I would like to add a "Are you sure you want to delete this book" popout thingy - Simon
+            BookManager.DeleteBook(BookToUpdate.ISBN);
         }
         catch (FeatureNotEnabledException) 
         {
@@ -106,9 +111,5 @@ public partial class EditBookDetails : ContentPage
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
-
-        // Currently throwing an error - Needs Cascade deleting to preserve foreign key constraints
-        // If we have extra time I would like to add a "Are you sure you want to delete this book" popout thingy - Simon
-        BookManager.DeleteBook(BookToUpdate.ISBN);
     }
 }
