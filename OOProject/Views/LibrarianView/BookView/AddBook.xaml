@@ -12,7 +12,6 @@
                 Text ="ADD BOOK" 
                 FontAttributes="Bold" 
                 FontSize="50"
-                FontFamily="TimesNewRoman"
                 HorizontalOptions="Center"></Label>
             <Label 
                  Padding="0, 20"
