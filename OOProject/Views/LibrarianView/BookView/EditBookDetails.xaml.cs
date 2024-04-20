@@ -1,6 +1,4 @@
-using Microsoft.Maui.Graphics.Text;
 using OOProject.Models;
-using System.Linq;
 
 namespace OOProject.Views.LibrarianView.BookView;
 
@@ -109,8 +107,9 @@ public partial class EditBookDetails : ContentPage
             }
 
             // Currently throwing an error - Needs Cascade deleting to preserve foreign key constraints
-            // If we have extra time I would like to add a "Are you sure you want to delete this book" popout thingy - Simon
+            // If we have extra time I would like to add a "Are you sure you want to delete this book" popout - Simon
             BookManager.DeleteBook(BookToUpdate.ISBN);
+            Shell.Current.GoToAsync("//BookList");
         }
         catch (FeatureNotEnabledException) 
         {
