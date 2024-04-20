@@ -24,6 +24,7 @@
                     FontSize="30"
                     FontAttributes="Bold"
                     ></Label>
+                
                 <Button 
 
                     Clicked="AddUser_Navigation"
@@ -46,6 +47,7 @@
                     FontSize="20"
                     HorizontalOptions="Center"
                     BackgroundColor="White"></Entry>
+                <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
                     Text="Search"
                     Clicked="Search_Users"
