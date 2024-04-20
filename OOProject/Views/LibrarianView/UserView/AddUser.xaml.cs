@@ -9,11 +9,15 @@ public partial class AddUser : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-
+        Account.SelectedIndex = 3;
         UserManager.UpdateUserList();
     }
     private void AddButton_AddUser_Clicked(object sender, EventArgs e)
     {
+        if (Account.SelectedItem == null)
+        {
+            return;
+        }
         try
         {
             if (ID.Text == "")
@@ -21,8 +25,10 @@ public partial class AddUser : ContentPage
                 throw new FormatException();
             }
             int library_id = Convert.ToInt32(ID.Text);
-            
-            UserManager.AddNewUser(library_id, Name.Text, Email.Text, Password.Text, Address.Text, Account.Text);
+
+            string? AccountType = Account.SelectedItem.ToString();
+
+            UserManager.AddNewUser(library_id, Name.Text, Email.Text, Password.Text, Address.Text, AccountType);
             confirmationMessage.IsVisible = true;
             errorMessage.IsVisible = false;
         }
