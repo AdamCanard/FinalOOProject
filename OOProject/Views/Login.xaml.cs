@@ -45,6 +45,10 @@ public partial class Login : ContentPage
                     }
                 }
                 //TODO go to student/instructor Page
+                UserManager.CurrentUser = user;
+                Shell.Current.GoToAsync("//CustomerMenu");
+                
+                return;
             }
 
         }
