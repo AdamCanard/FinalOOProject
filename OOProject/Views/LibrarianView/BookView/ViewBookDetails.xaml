@@ -131,24 +131,27 @@
             </HorizontalStackLayout>
 
             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-                <Label Text="Rental ID" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="0,10" FontAttributes="Bold"/>
-                <Label Text="Library ID" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="10, 0" FontAttributes="Bold"/>
-                <Label Text="ISBN" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
-                <Label Text="Rental Date" WidthRequest="200" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
-                <Label Text="Return Date" WidthRequest="200" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
+                <Label Text="Rental ID" WidthRequest="80" FontSize="15" VerticalOptions="Center" Margin="0,10" FontAttributes="Bold"/>
+                <Label Text="Library ID" WidthRequest="80" FontSize="15" VerticalOptions="Center" Margin="10, 0" FontAttributes="Bold"/>
+                <Label Text="ISBN" WidthRequest="80" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
+                <Label Text="Rental Date" WidthRequest="150" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
+                <Label Text="Return Date" WidthRequest="150" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
+                <BoxView WidthRequest="200" Margin="20,0" BackgroundColor="White"/>
             </HorizontalStackLayout>
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
-                <ScrollView Orientation="Both">
+                <ScrollView Orientation="Vertical">
                     <CollectionView x:Name="RentalList" ItemsSource="{x:Static local:RentalManager.Rentals}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame>
                                     <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-                                        <Label Text="{Binding rental_id}" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
-                                        <Label Text="{Binding library_id}" WidthRequest="100" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
-                                        <Label Text="{Binding ISBN}" WidthRequest="100" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Label Text="{Binding date_of_rent}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Label Text="{Binding return_date}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding rental_id}" WidthRequest="80" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
+                                        <Label Text="{Binding library_id}" WidthRequest="80" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
+                                        <Label Text="{Binding ISBN}" WidthRequest="80" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding date_of_rent}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding return_date}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Button Clicked="ExtendBookDuration" Text="Extend" FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="10,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
+                                        <Button Clicked="ReturnBook" Text="Return" FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="10,0" TextColor="White" BackgroundColor="Red"/>
                                     </HorizontalStackLayout>
                                 </Frame>
                             </DataTemplate>
@@ -156,7 +159,6 @@
                     </CollectionView>
                 </ScrollView>
             </Frame>
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
