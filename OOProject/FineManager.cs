@@ -13,6 +13,12 @@ public class FineManager
         return retrievedFine;
     }
 
+    public static List<Fine> GetFineByUser(User user)
+    {
+        List<Fine> retrievedFines = Database.GetAllFinesByUser(user);
+        return retrievedFines;
+    }
+
     public static void AddFine(int id, int libraryId, int amount)
     {
         Fine newFine = new Fine(id, libraryId, amount);
@@ -29,15 +35,15 @@ public class FineManager
     public static void UpdateFine(int fineToUpdateId, int? libraryId, int? amount)
     {
         Fine retrievedFine = GetFineById(fineToUpdateId);
-        retrievedFine.LibraryID = libraryId ?? retrievedFine.LibraryID;
+        retrievedFine.library_id = libraryId ?? retrievedFine.library_id;
 
-        if (retrievedFine.Amount < 0)
+        if (retrievedFine.amount < 0)
         {
             Console.WriteLine("Amount to update fine with was less than 0, must be 0 or greater");
             return;
         }
         
-        retrievedFine.Amount = amount ?? retrievedFine.Amount;
+        retrievedFine.amount = amount ?? retrievedFine.amount;
         
         Database.UpdateFine(retrievedFine);
         UpdateFinesList();

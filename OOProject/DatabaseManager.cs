@@ -16,6 +16,7 @@ namespace OOProject
         {
             Console.WriteLine(Constants.DatabasePath);
             this.Database = new SQLiteConnection(Constants.DatabasePath);
+            
 
         }
 
@@ -77,13 +78,13 @@ namespace OOProject
 
         public List<Fine> GetAllFinesByUser(User user)
         {
-            return this.Database.Table<Fine>().Where(fine => fine.LibraryID == user.library_id).ToList();
+            return this.Database.Table<Fine>().Where(fine => fine.library_id == user.library_id).ToList();
         }
 
         //get fine by id
         public Fine GetFineByID(int id)
         {
-            return this.Database.Table<Fine>().Where(fine => fine.FineId == id).FirstOrDefault();
+            return this.Database.Table<Fine>().Where(fine => fine.fine_id == id).FirstOrDefault();
         }
 
         //add new rental
@@ -107,18 +108,24 @@ namespace OOProject
         //get list of all rentals
         public List<Rental> GetAllRental()
         {
-            return this.Database.Table<Rental>().ToList();
+            List<Rental> temp = this.Database.Table<Rental>().ToList();
+            return temp;
         }
 
         public List<Rental> GetAllRentalByUser(User user)
         {
-            return this.Database.Table<Rental>().Where(rental => rental.LibraryId == user.library_id).ToList();
+            return this.Database.Table<Rental>().Where(rental => rental.library_id == user.library_id).ToList();
+        }
+
+        public List<Rental> GetAllRentalByBook(Book book)
+        {
+            return this.Database.Table<Rental>().Where(rental => rental.ISBN == book.ISBN).ToList();
         }
 
         //get rental by id
         public Rental GetRentalByID(int id)
         {
-            return this.Database.Table<Rental>().Where(rental => rental.RentalID == id).FirstOrDefault();
+            return this.Database.Table<Rental>().Where(rental => rental.rental_id == id).FirstOrDefault();
         }
 
         //add user

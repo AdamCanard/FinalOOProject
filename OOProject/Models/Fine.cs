@@ -9,28 +9,28 @@ namespace OOProject.Models
     {
         [Required]
         [PrimaryKey, AutoIncrement]
-        public int FineId { get; set; }
+        public int fine_id { get; set; }
 
         [Required]
-        public int LibraryID { get; set; }
+        public int library_id { get; set; }
 
         [Required]
-        public int Amount { get; set; }
+        public int amount { get; set; }
 
         public Fine() { }
 
         public Fine(int fineid, int library_id, int amount)
         {
-            FineId = fineid;
-            LibraryID = library_id;
-            Amount = amount;
+            fine_id = fineid;
+            library_id = library_id;
+            amount = amount;
         }
 
         public override string ToString()
         {
-            return $"FineId: {FineId}\t" +
-                $"LibraryID: {LibraryID}\t" +
-                $"Amount: {Amount}";
+            return $"FineId: {fine_id}\t" +
+                $"LibraryID: {library_id}\t" +
+                $"Amount: {amount}";
         }
     }
 }
