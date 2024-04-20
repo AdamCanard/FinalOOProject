@@ -64,4 +64,10 @@ public partial class ViewBookDetails : ContentPage
             errorMessage.IsVisible = false;
         }
     }
+
+    private void Search_Rentals(object sender, EventArgs e)
+    {
+        string searchQuery = RentalSearchBarEntry.Text;
+        RentalList.ItemsSource = RentalManager.SearchRentalsGenericByBook(searchQuery, BookRef);
+    }
 }

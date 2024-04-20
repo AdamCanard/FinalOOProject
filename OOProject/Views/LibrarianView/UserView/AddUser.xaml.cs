@@ -40,7 +40,7 @@ public partial class AddUser : ContentPage
         }
         catch (Exception ex)
         {
-            errorMessage.Text = ex.ToString();
+            errorMessage.Text = ex.Message;
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }

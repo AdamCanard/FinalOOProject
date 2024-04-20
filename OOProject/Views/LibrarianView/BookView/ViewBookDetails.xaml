@@ -118,6 +118,7 @@
 
             <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 40">
                 <Entry
+                    x:Name="RentalSearchBarEntry"
                     Placeholder="ID, Name,Account Type, etc..."
                     WidthRequest="480"
                     FontSize="20"
@@ -125,6 +126,7 @@
                 <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
                     Text="Search"
+                    Clicked="Search_Rentals"
                     FontAttributes="Bold"
                     FontSize="20"
                     WidthRequest="120"
