@@ -130,6 +130,13 @@
                     BackgroundColor="#B0A695"></Button>
             </HorizontalStackLayout>
 
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                <Label Text="Rental ID" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="0,10" FontAttributes="Bold"/>
+                <Label Text="Library ID" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="10, 0" FontAttributes="Bold"/>
+                <Label Text="ISBN" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
+                <Label Text="Rental Date" WidthRequest="200" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
+                <Label Text="Return Date" WidthRequest="200" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
+            </HorizontalStackLayout>
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
                 <ScrollView Orientation="Both">
                     <CollectionView x:Name="RentalList" ItemsSource="{x:Static local:RentalManager.Rentals}">
@@ -137,8 +144,8 @@
                             <DataTemplate>
                                 <Frame>
                                     <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-                                        <Label Text="{Binding rental_id}" WidthRequest="50" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
-                                        <Label Text="{Binding library_id}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
+                                        <Label Text="{Binding rental_id}" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
+                                        <Label Text="{Binding library_id}" WidthRequest="100" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
                                         <Label Text="{Binding ISBN}" WidthRequest="100" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Label Text="{Binding date_of_rent}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Label Text="{Binding return_date}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
