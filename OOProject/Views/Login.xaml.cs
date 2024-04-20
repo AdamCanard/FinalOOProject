@@ -19,7 +19,7 @@ public partial class Login : ContentPage
         DatabaseManager db = new DatabaseManager();
         User user = db.GetUserByID(int.Parse(ID.Text));
         //User gives correct password for given ID
-        if(user.Password == Password.Text)
+        if(user.password == Password.Text)
         {
             if(user.Account == "Librarian")
             {

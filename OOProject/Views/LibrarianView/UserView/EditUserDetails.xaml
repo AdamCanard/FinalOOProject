@@ -2,7 +2,11 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.LibrarianView.UserView.EditUserDetails"
+             xmlns:models="clr-namespace:OOProject.Models"
              Title="EditUserDetails">
+    <ContentPage.BindingContext>
+        <models:User/>
+    </ContentPage.BindingContext>
     <VerticalStackLayout>
         <Label 
             Text="Welcome to .NET MAUI!"

@@ -18,6 +18,7 @@
                     FontAttributes="Bold"
                     ></Label>
                 <Button 
+                    Clicked="AddUser_Navigation"
                     Text="Add"  
                     HeightRequest="50"
                     FontAttributes="Bold"
@@ -52,12 +53,14 @@
                                 <Frame>
                                     <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
                                         <Label Text="{Binding library_id}" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
-                                        <Label Text="{Binding Name}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
-                                        <Label Text="{Binding Email}" WidthRequest="50" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Label Text="{Binding Password}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding name}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
+                                        <Label Text="{Binding email}" WidthRequest="50" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding password}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Label Text="{Binding Address}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Label Text="{Binding Account}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                     </HorizontalStackLayout>
+                                        <Button Clicked="ViewUserDetails_Navigation" Text="Details"  FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
+                                        <Button Clicked="EditUserDetails_Navigation" Text="Edit" FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
+                                    </HorizontalStackLayout>
                                 </Frame>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
