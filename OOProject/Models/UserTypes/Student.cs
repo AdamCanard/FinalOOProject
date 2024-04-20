@@ -17,11 +17,5 @@ namespace OOProject.Models.UserTypes
             this.fines = db.GetAllFinesByUser(user);
         }
 
-        public void BorrowBook(DatabaseManager db, Book book)
-        {
-            //check if fines
-            //no fines, create rental object
-        }
-
     }
 }
