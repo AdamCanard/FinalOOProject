@@ -22,6 +22,12 @@ public partial class AddBook : ContentPage
         errorMessage.IsVisible = false;
     }
 
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
+
+
     private void AddButton_AddBook_Clicked(object sender, EventArgs e)
     {
         try

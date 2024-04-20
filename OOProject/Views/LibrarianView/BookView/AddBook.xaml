@@ -5,6 +5,13 @@
              Style="{StaticResource MyPageStyle}"
              Title="AddBook"
              >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Menu"
+                 Clicked="Go_Menu_L"/>
+        <ToolbarItem Text="Log Out" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <VerticalStackLayout>
             <Label 

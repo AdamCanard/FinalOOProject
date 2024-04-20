@@ -21,6 +21,11 @@ public partial class ViewBookDetails : ContentPage
         errorMessage.IsVisible = false;
     }
 
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
+
     private void ExtendBookDuration(object sender, EventArgs e)
     {
         try

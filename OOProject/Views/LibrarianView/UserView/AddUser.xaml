@@ -5,6 +5,12 @@
              x:Class="OOProject.Views.LibrarianView.UserView.AddUser"
              Title="AddUser">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Menu"
+                 Clicked="Go_Menu_L"/>
+        <ToolbarItem Text="Log Out" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <VerticalStackLayout BackgroundColor="#FBF9F1">
             <Grid>

@@ -14,6 +14,12 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Menu"
+                 Clicked="Go_Menu_L"/>
+        <ToolbarItem Text="Log Out" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <VerticalStackLayout BackgroundColor="#FBF9F1">
             <HorizontalStackLayout HorizontalOptions="Center">
@@ -24,6 +30,7 @@
                     FontSize="30"
                     FontAttributes="Bold"
                     ></Label>
+                
                 <Button 
 
                     Clicked="AddUser_Navigation"
@@ -46,6 +53,7 @@
                     FontSize="20"
                     HorizontalOptions="Center"
                     BackgroundColor="White"></Entry>
+                <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
                     Text="Search"
                     Clicked="Search_Users"

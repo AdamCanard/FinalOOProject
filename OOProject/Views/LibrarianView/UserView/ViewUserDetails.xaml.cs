@@ -12,6 +12,10 @@ public partial class ViewUserDetails : ContentPage
         BindingContext = user;
         FineList.ItemsSource = FineManager.GetFineByUser(user);
     }
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
 
     private void Pay_Fine(object sender, EventArgs e)
     {

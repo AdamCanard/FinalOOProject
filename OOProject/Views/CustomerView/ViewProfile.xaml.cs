@@ -8,4 +8,10 @@ public partial class ViewProfile : ContentPage
         BindingContext = UserManager.CurrentUser;
         FineList.ItemsSource = FineManager.GetFineByUser(UserManager.CurrentUser);
     }
+
+
+    private void Go_Menu_C(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//CustomerMenu");
+    }
 }
