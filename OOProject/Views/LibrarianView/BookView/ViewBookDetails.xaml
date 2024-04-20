@@ -11,7 +11,7 @@
     </ContentPage.BindingContext>
     
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout BackgroundColor="#FBF9F1">
             <Label 
                 Margin="25"
                 Text="Book Details"
@@ -139,7 +139,7 @@
                 <Label Text="ISBN" WidthRequest="80" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
                 <Label Text="Rental Date" WidthRequest="150" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
                 <Label Text="Return Date" WidthRequest="150" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
-                <BoxView WidthRequest="200" Margin="20,0" BackgroundColor="White"/>
+                <BoxView WidthRequest="200" Margin="20,0" BackgroundColor="#FBF9F1"/>
             </HorizontalStackLayout>
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
                 <ScrollView Orientation="Vertical">

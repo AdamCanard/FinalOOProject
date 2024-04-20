@@ -4,7 +4,7 @@
              x:Class="OOProject.Views.CustomerView.BorrowBookDetails"
              Title="BorrowBookDetails">
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout BackgroundColor="#FBF9F1">
             <Label 
              Margin="25"
              Text="Book Details"

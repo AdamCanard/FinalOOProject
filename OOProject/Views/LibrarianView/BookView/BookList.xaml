@@ -4,9 +4,18 @@
              xmlns:local="clr-namespace:OOProject"
              x:Class="OOProject.Views.LibrarianView.BookView.BookList"
              Title="BookList">
-    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="FrameNoBorder">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="BackgroundColor" Value="#FBF9F1"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout BackgroundColor="#FBF9F1">
             <HorizontalStackLayout HorizontalOptions="Center">
                 <Label 
                     Margin="130, 20"
@@ -33,7 +42,8 @@
                     Placeholder="Title, Author, Category, etc..."
                     WidthRequest="480"
                     FontSize="20"
-                    HorizontalOptions="Center"></Entry>
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"></Entry>
                 <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
                     Clicked="Search_Books"
@@ -43,10 +53,28 @@
                     WidthRequest="120"
                     BackgroundColor="#B0A695"></Button>
             </HorizontalStackLayout>
-            
-            <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
+
+            <Frame HorizontalOptions="FillAndExpand" HeightRequest="500" Style="{StaticResource FrameNoBorder}">
                 <ScrollView Orientation="Both">
                     <CollectionView x:Name="BookSearchList" ItemsSource="{x:Static local:BookManager.Books}">
+                        <CollectionView.Header>
+                            <Grid HorizontalOptions="Center" VerticalOptions="StartAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="70"/>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="170"/>
+                                    <ColumnDefinition Width="160"/>
+                                    <ColumnDefinition Width="160"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="ISBN" FontAttributes="Bold" FontSize="20" HorizontalOptions="StartAndExpand"/>
+                                <Label Grid.Column="1" Text="Title" FontAttributes="Bold" FontSize="20" HorizontalOptions="StartAndExpand"/>
+                                <Label Grid.Column="2" Text="Qty" FontAttributes="Bold" FontSize="20" HorizontalOptions="StartAndExpand"/>
+                                <Label Grid.Column="3" Text="Author" FontAttributes="Bold" FontSize="20" HorizontalOptions="StartAndExpand"/>
+                                <Label Grid.Column="4" Text="Genre" FontAttributes="Bold" FontSize="20" HorizontalOptions="StartAndExpand"/>
+                            </Grid>
+                        </CollectionView.Header>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame>

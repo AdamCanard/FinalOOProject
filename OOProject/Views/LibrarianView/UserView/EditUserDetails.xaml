@@ -8,7 +8,7 @@
         <models:User/>
     </ContentPage.BindingContext>
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout BackgroundColor="#FBF9F1">
             <Label 
              Padding="0, 20"
              Text ="EDIT USER DETAILS   " 
