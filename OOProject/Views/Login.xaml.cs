@@ -23,7 +23,6 @@ public partial class Login : ContentPage
         {
             if(user.Account == "Librarian")
             {
-
                 //TODO go to librarian Page -> The BookList is currently kind of the Main librarian page
                 Shell.Current.GoToAsync("//LibrarianMenu");
                 return;
@@ -33,7 +32,7 @@ public partial class Login : ContentPage
                 //Calculated new fines
                 //get all rentals from user
                 List<Rental> usersBooks = db.GetAllRentalByUser(user);
-
+                
                 foreach(Rental rental in usersBooks)
                 {
                     DateTime returnDate = DateTime.Parse(rental.return_date);

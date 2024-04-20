@@ -20,6 +20,7 @@ public partial class ViewBookDetails : ContentPage
         
     }
 
+    // Extends the Book Rental duration
     private void ExtendBookDuration(object sender, EventArgs e)
     {
         if (sender is Button button)
@@ -30,6 +31,7 @@ public partial class ViewBookDetails : ContentPage
         }
     }
 
+    // Returns the book
     private void ReturnBook(object sender, EventArgs e)
     {
         if (sender is Button button)
