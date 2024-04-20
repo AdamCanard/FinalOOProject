@@ -54,4 +54,10 @@ public partial class UserList : ContentPage
         }
     }
 
+    private void Search_Users(object sender, EventArgs e)
+    {
+        string searchQuery = UserSearchBarEntry.Text;
+        UserSearchList.ItemsSource = UserManager.SearchUsersGeneric(searchQuery);
+    }
+
 }
