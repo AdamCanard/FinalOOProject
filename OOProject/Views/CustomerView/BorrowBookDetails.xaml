@@ -3,10 +3,95 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.CustomerView.BorrowBookDetails"
              Title="BorrowBookDetails">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
+             Margin="25"
+             Text="Book Details"
+             HorizontalOptions="Center"
+             FontSize="30"
+             FontAttributes="Bold"></Label>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                 Text="Book Title"
+                 FontSize="25"
+                 FontAttributes="Bold"
+                 WidthRequest="300"></Label>
+                <Label
+                 Text="{Binding Title}"
+                 HorizontalTextAlignment="End"
+                 FontSize="25"
+                 FontAttributes="Bold"
+                 WidthRequest="300"></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                 Text="ISBN"
+                 FontSize="15"
+                 FontAttributes="Italic"
+                 WidthRequest="300"></Label>
+                <Label
+                 Text="{Binding ISBN}"
+                 HorizontalTextAlignment="End"
+                 FontSize="15"
+                 FontAttributes="Italic"
+                 WidthRequest="300"></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                     Text="Author"
+                     FontSize="15"
+                     FontAttributes="None"
+                     WidthRequest="300"></Label>
+                <Label
+                     Text="{Binding Author}"
+                     HorizontalTextAlignment="End"
+                     FontSize="15"
+                     FontAttributes="None"
+                     WidthRequest="300"></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                 Text="Genre"
+                 FontSize="15"
+                 FontAttributes="None"
+                 WidthRequest="300"></Label>
+                <Label
+                 Text="{Binding Genre}"
+                 HorizontalTextAlignment="End"
+                 FontSize="15"
+                 FontAttributes="None"
+                 WidthRequest="300"></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                 Text="Stock"
+                 FontSize="15"
+                 FontAttributes="Bold"
+                 WidthRequest="300"></Label>
+                <Label
+                 Text="{Binding Quantity}"
+                 HorizontalTextAlignment="End"
+                 FontSize="20"
+                 FontAttributes="Bold"
+                 WidthRequest="300"></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="80,0" >
+                <Button 
+                 Text="Request rent"
+                 FontSize="20"
+                 FontAttributes="Bold"
+                 WidthRequest="200"
+                 TextColor="Red"
+                 BackgroundColor="#AFC8AD"
+                 Margin="10"></Button>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
