@@ -40,15 +40,15 @@ public class FineManager
     public static void UpdateFine(int fineToUpdateId, int? libraryId, int? amount)
     {
         Fine retrievedFine = GetFineById(fineToUpdateId);
-        retrievedFine.library_id = libraryId ?? retrievedFine.library_id;
+        retrievedFine.LibraryId = libraryId ?? retrievedFine.LibraryId;
 
-        if (retrievedFine.amount < 0)
+        if (retrievedFine.Amount < 0)
         {
             Console.WriteLine("Amount to update fine with was less than 0, must be 0 or greater");
             return;
         }
         
-        retrievedFine.amount = amount ?? retrievedFine.amount;
+        retrievedFine.Amount = amount ?? retrievedFine.Amount;
         
         Database.UpdateFine(retrievedFine);
         UpdateFinesList();

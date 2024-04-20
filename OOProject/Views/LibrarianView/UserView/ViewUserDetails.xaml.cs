@@ -26,7 +26,7 @@ public partial class ViewUserDetails : ContentPage
             if (fine != null)
             {
                 // Delete fine from database
-                FineManager.DeleteFine(fine.fine_id);
+                FineManager.DeleteFine(fine.FineId);
                 FineManager.UpdateFinesList();
                 
                 // Update fines list for user
