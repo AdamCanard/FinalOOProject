@@ -43,10 +43,28 @@
                     WidthRequest="120"
                     BackgroundColor="#B0A695"></Button>
             </HorizontalStackLayout>
-            
+
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
                 <ScrollView Orientation="Both">
                     <CollectionView x:Name="BookSearchList" ItemsSource="{x:Static local:BookManager.Books}">
+                        <CollectionView.Header>
+                            <Grid HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="170"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="200"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="ISBN" FontAttributes="Bold" FontSize="15" HorizontalOptions="CenterAndExpand"/>
+                                <Label Grid.Column="1" Text="Title" FontAttributes="Bold" FontSize="15" HorizontalOptions="CenterAndExpand"/>
+                                <Label Grid.Column="2" Text="Qty" FontAttributes="Bold" FontSize="15" HorizontalOptions="CenterAndExpand"/>
+                                <Label Grid.Column="3" Text="Author" FontAttributes="Bold" FontSize="15" HorizontalOptions="CenterAndExpand"/>
+                                <Label Grid.Column="4" Text="Genre" FontAttributes="Bold" FontSize="15" HorizontalOptions="CenterAndExpand"/>
+                            </Grid>
+                        </CollectionView.Header>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame>
@@ -56,7 +74,7 @@
                                         <Label Text="{Binding Quantity}" WidthRequest="50" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Label Text="{Binding Author}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Label Text="{Binding Genre}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Button Clicked="ViewBookDetails_Navigation" Text="Details"  FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
+                                        <Button Clicked="ViewBookDetails_Navigation" Text="Details" FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
                                         <Button Clicked="EditBookDetails_Navigation" Text="Edit" FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
                                     </HorizontalStackLayout>
                                 </Frame>
