@@ -67,7 +67,6 @@ public partial class ViewBookDetails : ContentPage
             BookRef.Quantity += 1;
             QuantityLabel.Text = BookRef.Quantity.ToString();
             BookManager.UpdateBook(BookRef.ISBN, BookRef.Quantity, BookRef.Title, BookRef.Genre);
-            RentalList.ItemsSource = null;
             RentalList.ItemsSource = RentalManager.GetAllRentalsByBook(BookRef.ISBN);
             confirmationMessage.Text = $"A copy of {BookRef.Title} has been returned.";
             confirmationMessage.IsVisible = true;

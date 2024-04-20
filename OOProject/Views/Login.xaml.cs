@@ -24,8 +24,23 @@ public partial class Login : ContentPage
         //User gives correct password for given ID
         if(user.password == Password.Text)
         {
+            // calculate all fines
             if(user.Account == "Librarian")
             {
+                foreach (User customer in db.GetAllUser())
+                {
+                    List<Rental> customerBooks = db.GetAllRentalByUser(customer);
+                    foreach (Rental rental in customerBooks)
+                    {
+                        DateTime returnDate = DateTime.Parse(rental.return_date);
+                        if (DateTime.Compare(returnDate, DateTime.Now) < 0)
+                        {
+
+                            List<Fine> fines = FineManager.Fines;
+                            FineManager.AddFine(fines.Count, customer.library_id, 10);
+                        }
+                    }
+                }
                 Shell.Current.GoToAsync("//LibrarianMenu");
                 return;
             }
