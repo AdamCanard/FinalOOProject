@@ -7,29 +7,29 @@ namespace OOProject.Models
     {
         [Required]
         [PrimaryKey, AutoIncrement]
-        public int RentalID { get; set; }
+        public int rental_id { get; set; }
 
         [Required]
-        public int LibraryId { get; set; }
+        public int library_id { get; set; }
 
         [Required]
         public int ISBN { get; set; }
 
         [Required]
-        public string DateOfRent { get; set; }
+        public string date_of_rent { get; set; }
 
         [Required]
-        public string ReturnDate { get; set; }
+        public string return_date { get; set; }
         
         public Rental(){}
 
         public Rental(int rentalId, int libraryId, int isbn, string dateOfRent, string returnDate)
         {
-            RentalID = rentalId;
-            LibraryId = libraryId;
+            rental_id = rentalId;
+            library_id = libraryId;
             ISBN = isbn;
-            DateOfRent = dateOfRent;
-            ReturnDate = returnDate;
+            date_of_rent = dateOfRent;
+            return_date = returnDate;
         }
     }
 }

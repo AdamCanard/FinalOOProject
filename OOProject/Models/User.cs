@@ -7,18 +7,18 @@ namespace OOProject.Models
     {
 
         [Required]
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int library_id{ get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string name { get; set; }
 
         [Required]
         [Unique]
-        public string Email { get; set; }
+        public string email { get; set; }
 
         [Required]
-        public string Password { get; set; }
+        public string password { get; set; }
 
         public string Address { get; set; }
 
@@ -29,9 +29,9 @@ namespace OOProject.Models
         public User(int id, string name, string email, string password, string address, string account) 
         {
             library_id = id;
-            Name = name;
-            Email = email;
-            Password = password;
+            this.name = name;
+            this.email = email;
+            this.password = password;
             Address = address;
             Account = account;
         }
@@ -45,8 +45,8 @@ namespace OOProject.Models
         public override string ToString()
         {
             return $"Id: {library_id}\t" +
-                $"Name: {Name}\t" +
-                $"Email: {Email}\t" +
+                $"Name: {name}\t" +
+                $"Email: {email}\t" +
                 $"Address: {Address}\t" +
                 $"Account: {Account}";
         }

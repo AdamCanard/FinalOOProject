@@ -2,11 +2,150 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.LibrarianView.UserView.EditUserDetails"
+             xmlns:models="clr-namespace:OOProject.Models"
              Title="EditUserDetails">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <ContentPage.BindingContext>
+        <models:User/>
+    </ContentPage.BindingContext>
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
+             Padding="0, 20"
+             Text ="EDIT USER DETAILS   " 
+             FontAttributes="Bold" 
+             FontSize="50"
+             FontFamily="TimesNewRoman"
+             HorizontalOptions="Center"></Label>
+            <Label 
+              Padding="0, 20"
+              Text="*Change details or remove from inventory"
+              VerticalOptions="Center" 
+              HorizontalOptions="Center"></Label>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Library ID:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Label 
+                    x:Name="library_id_EditLabel"
+                    Text="{Binding library_id}"
+                    WidthRequest="300"
+                    FontSize="20"
+                    HorizontalOptions="Center"></Label>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Name:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                    x:Name="name_EditEntry"
+                    Text="{Binding name}"
+                    Placeholder="Title" 
+                    WidthRequest="300"
+                    FontSize="20"
+                    HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Email:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                    x:Name ="email_EditEntry"
+                    Text="{Binding email}"
+                    Placeholder="Category" 
+                    WidthRequest="300"
+                    FontSize="20"
+                    HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Password:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                    x:Name="password_EditEntry"
+                    Text="{Binding password}"
+                    WidthRequest="300"
+                    FontSize="20"
+                    HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Address:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                    x:Name="Address_EditEntry"
+                    Text="{Binding Address}"
+                    Placeholder="Stock *Required*" 
+                    WidthRequest="300"
+                    FontSize="20"
+                    HorizontalOptions="Center"></Entry>
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
+                <HorizontalStackLayout>
+                    <Label Text="Account:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
+                    <Entry 
+                        x:Name="Account_EditEntry"
+                        Text="{Binding Account}"
+                        Placeholder="Stock *Required*" 
+                        WidthRequest="300"
+                        FontSize="20"
+                        HorizontalOptions="Center"></Entry> 
+                </HorizontalStackLayout>
+            </Frame>
+
+            <!-- Confirmation Message -->
+            <Label Text="Book has been succesfully updated." 
+               x:Name="confirmationMessage" 
+               Margin="5"
+               HeightRequest="20" 
+               FontSize="15" 
+               TextColor="Green"
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center"
+               IsVisible="false"></Label>
+
+            <!-- Error Messages -->
+            <Label Text="Error Message" 
+               x:Name="errorMessage" 
+               Margin="5"
+               HeightRequest="40" 
+               FontSize="15" 
+               TextColor="Red" 
+               HorizontalOptions="Center"
+               HorizontalTextAlignment="Center" 
+               IsVisible="false"></Label>
+
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                <Button
+                Text="Save"
+                Clicked="Save_EditUser"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="10"
+                WidthRequest="100"
+                FontAttributes="Bold"
+                BackgroundColor="#B0A695"></Button>
+                <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
+
+                <Button
+                Text="Delete"
+                x:Name="Delete_Button"
+                Clicked="Delete_EditUser"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="10"
+                WidthRequest="100"
+                FontAttributes="Bold"
+                BackgroundColor="Red"
+                TextColor="White"
+                IsEnabled="True"></Button>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

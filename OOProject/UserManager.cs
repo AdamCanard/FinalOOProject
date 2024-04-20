@@ -20,10 +20,10 @@ namespace OOProject
             {
                 bool foundId = user.library_id.ToString().ToLower()
                     .Contains((library_id ?? user.library_id.ToString()).ToLower());
-                bool foundName = user.Name.ToLower()
-                    .Contains((name ?? user.Name).ToLower());
-                bool foundEmail = user.Email.ToLower()
-                    .Contains((email ?? user.Email).ToLower());
+                bool foundName = user.name.ToLower()
+                    .Contains((name ?? user.name).ToLower());
+                bool foundEmail = user.email.ToLower()
+                    .Contains((email ?? user.email).ToLower());
                 bool foundAddress = user.Address.ToLower()
                     .Contains((address ?? user.Address).ToLower());
                 bool foundAccount = user.Account.ToLower()
@@ -46,9 +46,9 @@ namespace OOProject
             {
                 bool foundId = user.library_id.ToString().ToLower()
                     .Contains(searchQuery.ToLower());
-                bool foundName = user.Name.ToLower()
+                bool foundName = user.name.ToLower()
                     .Contains(searchQuery.ToLower());
-                bool foundEmail = user.Email.ToLower()
+                bool foundEmail = user.email.ToLower()
                     .Contains(searchQuery.ToLower());
                 bool foundAddress = user.Address.ToLower()
                     .Contains(searchQuery.ToLower());
@@ -87,9 +87,9 @@ namespace OOProject
             string? address, string? account)
         {
             User userToUpdate = GetUserByID(userToUpdateID);
-            userToUpdate.Name = name ?? userToUpdate.Name;
-            userToUpdate.Email = email ?? userToUpdate.Email;
-            userToUpdate.Password = password ?? userToUpdate.Password;
+            userToUpdate.name = name ?? userToUpdate.name;
+            userToUpdate.email = email ?? userToUpdate.email;
+            userToUpdate.password = password ?? userToUpdate.password;
             userToUpdate.Address = address ?? userToUpdate.Address;
             userToUpdate.Account = account ?? userToUpdate.Account;
             

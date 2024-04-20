@@ -2,12 +2,14 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:OOProject.Models"
+             xmlns:local="clr-namespace:OOProject"
              x:Class="OOProject.Views.LibrarianView.BookView.ViewBookDetails"
              Title="ViewBookDetails"
              MaximumWidthRequest="1000">
     <ContentPage.BindingContext>
         <models:Book/>
     </ContentPage.BindingContext>
+    
     <ScrollView>
         <VerticalStackLayout>
             <Label 
@@ -130,17 +132,16 @@
 
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
                 <ScrollView Orientation="Both">
-                    <CollectionView ItemsSource="{Binding Users}">
+                    <CollectionView x:Name="RentalList" ItemsSource="{x:Static local:RentalManager.Rentals}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame>
                                     <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-                                        <Label Text="{Binding LibraryID}" WidthRequest="50" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
-                                        <Label Text="{Binding Name}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
-                                        <Label Text="{Binding Account}" WidthRequest="100" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Label Text="{Binding Email}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Button Text="Extend"  FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
-                                        <Button Text="Return"  FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
+                                        <Label Text="{Binding rental_id}" WidthRequest="50" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
+                                        <Label Text="{Binding library_id}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
+                                        <Label Text="{Binding ISBN}" WidthRequest="100" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding date_of_rent}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding return_date}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                     </HorizontalStackLayout>
                                 </Frame>
                             </DataTemplate>

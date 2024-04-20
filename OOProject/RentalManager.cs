@@ -20,6 +20,13 @@ public class RentalManager
         return retrievedRentals;
     }
 
+    public static List<Rental> GetAllRentalsByBook(int ISBN)
+    {
+        Book retrievedBook = Database.GetBookByISBN(ISBN);
+        List<Rental> retrievedRentals = Database.GetAllRentalByBook(retrievedBook);
+        return retrievedRentals;
+    }
+
     public static void AddRental(int id, int libraryID, int isbn, string rentDate, string returnDate)
     {
         Rental newRental = new Rental(id, libraryID, isbn, rentDate, returnDate);
@@ -36,10 +43,10 @@ public class RentalManager
     public static void UpdateRental(int rentalToUpdateId, int? libraryID, int? isbn, string? rentDate, string? returnDate)
     {
         Rental rentalToUpdate = Database.GetRentalByID(rentalToUpdateId);
-        rentalToUpdate.LibraryId = libraryID ?? rentalToUpdate.LibraryId;
+        rentalToUpdate.library_id = libraryID ?? rentalToUpdate.library_id;
         rentalToUpdate.ISBN = isbn ?? rentalToUpdate.ISBN;
-        rentalToUpdate.DateOfRent = rentDate ?? rentalToUpdate.DateOfRent;
-        rentalToUpdate.ReturnDate = returnDate ?? rentalToUpdate.ReturnDate;
+        rentalToUpdate.date_of_rent = rentDate ?? rentalToUpdate.date_of_rent;
+        rentalToUpdate.return_date = returnDate ?? rentalToUpdate.return_date;
         
         Database.UpdateRental(rentalToUpdate);
         UpdateRentalsList();
