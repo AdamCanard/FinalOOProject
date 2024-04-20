@@ -36,12 +36,6 @@ namespace OOProject.Models
             Account = account;
         }
 
-        public List<Book> DisplayBooks(DatabaseManager db)
-        {
-            return db.GetAllBooks();
-
-        }
-
         public override string ToString()
         {
             return $"Id: {library_id}\t" +

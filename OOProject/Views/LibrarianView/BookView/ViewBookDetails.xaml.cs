@@ -26,6 +26,7 @@ public partial class ViewBookDetails : ContentPage
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
 
+    // Extends the Book Rental duration
     private void ExtendBookDuration(object sender, EventArgs e)
     {
         try
@@ -55,6 +56,7 @@ public partial class ViewBookDetails : ContentPage
         } 
     }
 
+    // Returns the book
     private void ReturnBook(object sender, EventArgs e)
     {
         if (sender is Button button)

@@ -33,8 +33,8 @@ public partial class Login : ContentPage
                 //Calculated new fines
                 //get all rentals from user
                 List<Rental> usersBooks = db.GetAllRentalByUser(user);
-
-                foreach (Rental rental in usersBooks)
+                
+                foreach(Rental rental in usersBooks)
                 {
                     DateTime returnDate = DateTime.Parse(rental.return_date);
                     if (DateTime.Compare(returnDate, DateTime.Now) < 0)

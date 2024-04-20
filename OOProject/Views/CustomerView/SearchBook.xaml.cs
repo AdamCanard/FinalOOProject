@@ -19,21 +19,25 @@ public partial class SearchBook : ContentPage
         Shell.Current.GoToAsync("//CustomerMenu");
     }
 
+    // Searches books database using the search query
     private void Search_Books(object sender, EventArgs e)
     {
         string searchQuery = SearchBarEntry.Text;
         BookSearchList.ItemsSource = BookManager.SearchBooksGeneric(searchQuery);
     }
 
+    // Borrows a book
     private void Borrow_Book_Button(object sender, EventArgs e)
     {
         if (sender is Button button)
         {
             try
             {
+                // Get respective book from event sender
                 Book book = (Book)button.BindingContext;
                 if (book != null)
                 {
+                    // check to make sure that user doesn't have any fines
                     List<Fine> userFines = FineManager.GetFineByUser(UserManager.CurrentUser);
                     if (userFines.Count > 0)
                     {
@@ -43,18 +47,27 @@ public partial class SearchBook : ContentPage
                     {
                         throw new FormatException();
                     }
-                    int lastRentalId = 1;
-                    RentalManager.Rentals.ForEach(r => { lastRentalId = r.rental_id; });
+                    
+                    // Find last rental in rental list and save its ID
+                    Rental lastRental = RentalManager.Rentals.Last();
+                    int lastRentalId = lastRental.rental_id;
 
-                    if (UserManager.CurrentUser.Account == "Instructor")
-                    {
-                        RentalManager.AddRental(lastRentalId + 1, UserManager.CurrentUser.library_id, book.ISBN, DateTime.Now.ToShortDateString(), DateTime.Now.AddDays(14).ToShortDateString());
-                    }
-                    else
-                    {
-                        RentalManager.AddRental(lastRentalId + 1, UserManager.CurrentUser.library_id, book.ISBN, DateTime.Now.ToShortDateString(), DateTime.Now.AddDays(7).ToShortDateString());
-                    }
-                    book.Quantity = book.Quantity - 1;
+                    // Choose days rented based on user account
+                    int daysRented = UserManager.CurrentUser.Account == "Instructor" ? 7 : 14;
+                    
+                    // Set rentDate to today
+                    string rentDate = DateTime.Now.ToShortDateString();
+                    
+                    // Set return date based on days rented
+                    string returnDate = DateTime.Now.AddDays(daysRented).ToShortDateString();
+                    
+                    // Add rental to database
+                    RentalManager.AddRental(lastRentalId + 1, UserManager.CurrentUser.library_id, book.ISBN, rentDate, returnDate);
+                    
+                    // lower the book quantity
+                    book.Quantity -= 1;
+                    
+                    // update persistence layer
                     BookManager.UpdateBook(book.ISBN, book.Quantity, book.Title, book.Genre);
                     BookSearchList.ItemsSource = BookManager.Books;
                     confirmationMessage.IsVisible = true;

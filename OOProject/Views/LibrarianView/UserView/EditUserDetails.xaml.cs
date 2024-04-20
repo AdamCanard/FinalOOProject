@@ -27,7 +27,8 @@ public partial class EditUserDetails : ContentPage
     {
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
-
+    
+    // Saves the currently edited user
     private void Save_EditUser(object sender, EventArgs e)
     {
         try
@@ -57,7 +58,6 @@ public partial class EditUserDetails : ContentPage
             {
                 throw new ArgumentException();
             }
-
             
             string Name = name_EditEntry.Text;
             string Account = Account_EditEntry.Text;
@@ -66,14 +66,13 @@ public partial class EditUserDetails : ContentPage
             string Email = email_EditEntry.Text;
 
             // Call the UpdateUser() method to save the changes made to the user object
-
             UserManager.UpdateUser(UserToUpdate.library_id, Name, Email, Password, Address, Account);
             errorMessage.IsVisible = false;
             confirmationMessage.IsVisible = true;
 
             // This is to show a differences if you save once, then change the values, and then save again.
             // So every instance something is changed there is a visual queue to the user.
-            if (confirmationMessage.TextColor == Colors.Green)
+            if (confirmationMessage.TextColor.Equals(Colors.Green))
             {
                 confirmationMessage.TextColor = Colors.Blue;
             }
@@ -82,7 +81,7 @@ public partial class EditUserDetails : ContentPage
                 confirmationMessage.TextColor = Colors.Green;
             }
         }
-        // Catches the exceptions and displays the appropiate text to the user.
+        // Catches the exceptions and displays the appropriate text to the user.
         catch (ArgumentException)
         {
             errorMessage.Text = "All Fields must be filled";
@@ -98,6 +97,7 @@ public partial class EditUserDetails : ContentPage
         }
     }
 
+    // Deletes the currently selected user
     private void Delete_EditUser(object sender, EventArgs e)
     {
         //User can only be deleted if they have no rentals or fines

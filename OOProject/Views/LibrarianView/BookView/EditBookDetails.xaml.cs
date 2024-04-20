@@ -5,7 +5,7 @@ namespace OOProject.Views.LibrarianView.BookView;
 public partial class EditBookDetails : ContentPage
 {
     public Book BookToUpdate { get; set; }
-
+    
 	public EditBookDetails(Book book)
 	{
 		InitializeComponent();
@@ -29,8 +29,7 @@ public partial class EditBookDetails : ContentPage
     {
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
-
-
+    // Saves the edited book
     private void Save_EditBook(object sender, EventArgs e)
     {
         try
@@ -57,7 +56,7 @@ public partial class EditBookDetails : ContentPage
 
             // This is to show a differences if you save once, then change the values, and then save again.
             // So every instance something is changed there is a visual queue to the user.
-            if (confirmationMessage.TextColor == Colors.Green) 
+            if (confirmationMessage.TextColor.Equals(Colors.Green)) 
             {
                 confirmationMessage.TextColor = Colors.Blue;
             }
@@ -87,6 +86,7 @@ public partial class EditBookDetails : ContentPage
         }
     }
 
+    // Delete the edited book
     private void Delete_EditBook(object sender, EventArgs e)
     {
         RentalManager.UpdateRentalsList();

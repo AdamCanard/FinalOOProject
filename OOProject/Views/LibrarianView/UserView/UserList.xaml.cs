@@ -17,6 +17,7 @@ public partial class UserList : ContentPage
     {
         base.OnAppearing();
 
+        // Update list of Users
         UserManager.UpdateUserList();
         UserSearchList.ItemsSource = UserManager.Users;
     }
@@ -26,12 +27,14 @@ public partial class UserList : ContentPage
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
 
+    // Move to the add user page
     private void AddUser_Navigation(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync("//AddUser");
     }
 
 
+    // Move to the ViewUserDetails page
     private async void ViewUserDetails_Navigation(object sender, EventArgs e)
     {
         if (sender is Button button)
@@ -45,6 +48,7 @@ public partial class UserList : ContentPage
         }
     }
 
+    // Move to the Edit User Details page
     private async void EditUserDetails_Navigation(object sender, EventArgs e)
     {
         if (sender is Button button)
@@ -58,6 +62,7 @@ public partial class UserList : ContentPage
         }
     }
 
+    // Searches the users
     private void Search_Users(object sender, EventArgs e)
     {
         string searchQuery = UserSearchBarEntry.Text;

@@ -14,6 +14,7 @@ namespace OOProject
         public static User CurrentUser;
         public static List<string> ValidAccountTypes = ["Librarian", "Instructor", "Student"];
 
+        // Search for users by each parameter
         public static List<User> SearchUsersPerParameter(string? library_id, string? name, string? email, string? address, string? account)
         {
             List<User> foundUsers = [];
@@ -40,6 +41,7 @@ namespace OOProject
             return foundUsers;
         }
 
+        // Searches for users with a single generic search query
         public static List<User> SearchUsersGeneric(string searchQuery)
         {
             List<User> foundUsers = [];
@@ -66,6 +68,7 @@ namespace OOProject
             return foundUsers;
         }
 
+        // Add a new user to the Database
         public static void AddNewUser(int library_id, string name, string email, string password, string address, string account)
         {
             User newUser = new(library_id, name, email, password, address, account);
@@ -73,18 +76,21 @@ namespace OOProject
             UpdateUserList();
         }
 
+        // Gets a user by their ID
         public static User GetUserByID(int id)
         {
             User retrievedUser = Database.GetUserByID(id);
             return retrievedUser;
         }
 
+        // Deletes a User from the Database
         public static void DeleteUser(int id)
         {
             Database.DeleteUser(id);
             UpdateUserList();
         }
 
+        // Updates a User in the Database
         public static void UpdateUser(int userToUpdateID, string? name, string? email, string? password,
             string? address, string? account)
         {
@@ -99,6 +105,7 @@ namespace OOProject
             UpdateUserList();
         }
 
+        // Update the local User list
         public static void UpdateUserList()
         {
             Users = Database.GetAllUser();

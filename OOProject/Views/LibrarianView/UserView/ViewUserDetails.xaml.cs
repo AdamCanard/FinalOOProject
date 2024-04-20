@@ -17,6 +17,7 @@ public partial class ViewUserDetails : ContentPage
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
 
+    // Pays the fine for respective user
     private void Pay_Fine(object sender, EventArgs e)
     {
         if (sender is Button button)
@@ -24,8 +25,11 @@ public partial class ViewUserDetails : ContentPage
             Fine fine = (Fine)button.BindingContext;
             if (fine != null)
             {
+                // Delete fine from database
                 FineManager.DeleteFine(fine.fine_id);
                 FineManager.UpdateFinesList();
+                
+                // Update fines list for user
                 FineList.ItemsSource = FineManager.GetFineByUser(currentUser);
             }
         }

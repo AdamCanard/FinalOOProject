@@ -7,11 +7,13 @@ public partial class CustomerMenu : ContentPage
 		InitializeComponent();
 	}
 
+    // Move to searchbook page
     private void Customer_SearchBook(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync("//SearchBook");
     }
 
+    // move to viewprofile page
     private void Customer_ViewProfile(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync("//ViewProfile");
