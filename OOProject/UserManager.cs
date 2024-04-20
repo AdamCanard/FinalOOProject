@@ -12,6 +12,7 @@ namespace OOProject
         public static DatabaseManager Database = new();
         public static List<User> Users = new(Database.GetAllUser());
         public static User CurrentUser;
+        public static List<string> ValidAccountTypes = ["Librarian", "Instructor", "Student"];
 
         // Search for users by each parameter
         public static List<User> SearchUsersPerParameter(string? library_id, string? name, string? email, string? address, string? account)

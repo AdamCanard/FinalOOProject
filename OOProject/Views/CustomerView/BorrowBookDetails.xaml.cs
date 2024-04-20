@@ -7,4 +7,9 @@ public partial class BorrowBookDetails : ContentPage
 	{
 		InitializeComponent();
     }
+
+    private void Go_Menu_C(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//CustomerMenu");
+    }
 }

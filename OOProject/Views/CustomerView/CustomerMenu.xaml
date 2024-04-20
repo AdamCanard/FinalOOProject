@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.CustomerView.CustomerMenu"
              Title="CustomerMenu">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Log Out" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <VerticalStackLayout HorizontalOptions="Center" Spacing="30" BackgroundColor="#FBF9F1">
             <Grid>

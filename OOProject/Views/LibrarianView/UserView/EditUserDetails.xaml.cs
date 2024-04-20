@@ -23,6 +23,11 @@ public partial class EditUserDetails : ContentPage
         confirmationMessage.TextColor = Colors.Green;
     }
 
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
+    
     // Saves the currently edited user
     private void Save_EditUser(object sender, EventArgs e)
     {

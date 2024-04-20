@@ -20,6 +20,11 @@ public partial class BookList : ContentPage
         BookSearchList.ItemsSource = BookManager.Books;
     }
 
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
+
     // Switch to AddBook page
     private async void AddBook_Navigation(object sender, EventArgs e)
     {

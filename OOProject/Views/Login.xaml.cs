@@ -13,6 +13,8 @@ public partial class Login : ContentPage
     {
         base.OnAppearing();
         Password.Text = string.Empty;
+        errorMessage.IsVisible = false;
+        confirmationMessage.IsVisible = false;
     }
     private void LoginButton(object sender, EventArgs e)
     {
@@ -23,7 +25,6 @@ public partial class Login : ContentPage
         {
             if(user.Account == "Librarian")
             {
-                //TODO go to librarian Page -> The BookList is currently kind of the Main librarian page
                 Shell.Current.GoToAsync("//LibrarianMenu");
                 return;
             }
@@ -38,20 +39,16 @@ public partial class Login : ContentPage
                     DateTime returnDate = DateTime.Parse(rental.return_date);
                     if (DateTime.Compare(returnDate, DateTime.Now) < 0)
                     {
-                        
+
                         List<Fine> fines = FineManager.Fines;
                         FineManager.AddFine(fines.Count, user.library_id, 10);
                     }
+
+                    UserManager.CurrentUser = user;
+                    Shell.Current.GoToAsync("//CustomerMenu");
                 }
-
-                //TODO go to student/instructor Page
-                UserManager.CurrentUser = user;
-                Shell.Current.GoToAsync("//CustomerMenu");
-                
                 return;
-
             }
-
         }
         else
         {

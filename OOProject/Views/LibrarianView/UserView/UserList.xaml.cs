@@ -22,6 +22,10 @@ public partial class UserList : ContentPage
         UserSearchList.ItemsSource = UserManager.Users;
     }
 
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
 
     // Move to the add user page
     private void AddUser_Navigation(object sender, EventArgs e)

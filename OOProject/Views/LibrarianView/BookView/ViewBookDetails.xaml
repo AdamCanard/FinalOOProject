@@ -9,7 +9,23 @@
     <ContentPage.BindingContext>
         <models:Book/>
     </ContentPage.BindingContext>
-    
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Menu"
+                 Clicked="Go_Menu_L"/>
+        <ToolbarItem Text="Log Out" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="FrameNoBorder">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="BackgroundColor" Value="#FBF9F1"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ScrollView>
         <VerticalStackLayout BackgroundColor="#FBF9F1">
             <Label 
@@ -89,41 +105,45 @@
                     WidthRequest="300"></Label>
             </HorizontalStackLayout>
 
-            <HorizontalStackLayout HorizontalOptions="Center" Margin="80,0" >
-                <Button 
-                    Text="Edit"
-                    FontSize="20"
-                    FontAttributes="Bold"
-                    WidthRequest="120"
-                    TextColor="Red"
-                    BackgroundColor="#AFC8AD"
-                    Margin="10"></Button>
-                <Button 
-                    Text="Delete"
-                    FontSize="20"
-                    FontAttributes="Bold"
-                    WidthRequest="120"
-                    TextColor="Red"
-                    BackgroundColor="#AFC8AD"
-                    Margin="10"></Button>
-            </HorizontalStackLayout>
+            <!-- Confirmation Messages -->
+            <Label Text="Confirmation Message" 
+                   x:Name="confirmationMessage" 
+                   HeightRequest="40" 
+                   FontSize="15" 
+                   TextColor="Blue"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   IsVisible="false"></Label>
+
+            <!-- Error Messages -->
+            <Label Text="Error Message" 
+                   x:Name="errorMessage" 
+                   HeightRequest="40" 
+                   FontSize="15" 
+                   TextColor="Red" 
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" 
+                   IsVisible="false"></Label>
 
             <Label 
-                Margin="0, 20, 0, 0"
+                Margin="0, 10, 0, 0"
                 Text="Rental List"
                 HorizontalOptions="Center"
                 FontSize="30"
                 FontAttributes="Bold"></Label>
-            
+
             <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 40">
                 <Entry
+                    x:Name="RentalSearchBarEntry"
                     Placeholder="ID, Name,Account Type, etc..."
                     WidthRequest="480"
                     FontSize="20"
-                    HorizontalOptions="Center"></Entry>
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"></Entry>
                 <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
                     Text="Search"
+                    Clicked="Search_Rentals"
                     FontAttributes="Bold"
                     FontSize="20"
                     WidthRequest="120"
@@ -138,7 +158,7 @@
                 <Label Text="Return Date" WidthRequest="150" FontSize="15" VerticalOptions="Center" Margin="10,0" FontAttributes="Bold"/>
                 <BoxView WidthRequest="200" Margin="20,0" BackgroundColor="#FBF9F1"/>
             </HorizontalStackLayout>
-            <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
+            <Frame HorizontalOptions="FillAndExpand" HeightRequest="500" Style="{StaticResource FrameNoBorder}">
                 <ScrollView Orientation="Vertical">
                     <CollectionView x:Name="RentalList" ItemsSource="{x:Static local:RentalManager.Rentals}">
                         <CollectionView.ItemTemplate>
@@ -159,6 +179,7 @@
                     </CollectionView>
                 </ScrollView>
             </Frame>
+            <Label Margin ="10" Text="Note: Return dates with an '*' symbol indicate that they have been extended, and can no longer be extended again"></Label>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -19,8 +19,15 @@
         <models:User/>
     </ContentPage.BindingContext>
 
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Menu"
+                 Clicked="Go_Menu_C"/>
+        <ToolbarItem Text="Log Out" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
-        <VerticalStackLayout>
+        <VerticalStackLayout BackgroundColor="#FBF9F1">
             <Label 
             Margin="25"
             Text="User Details"
@@ -124,7 +131,8 @@
                 Placeholder="ID, Name,Account Type, etc..."
                 WidthRequest="480"
                 FontSize="20"
-                HorizontalOptions="Center"></Entry>
+                HorizontalOptions="Center"
+                BackgroundColor="White"></Entry>
                 <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
                 Text="Search"

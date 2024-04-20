@@ -14,6 +14,11 @@ public partial class SearchBook : ContentPage
         BookSearchList.ItemsSource = BookManager.Books;
     }
 
+    private void Go_Menu_C(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//CustomerMenu");
+    }
+
     // Searches books database using the search query
     private void Search_Books(object sender, EventArgs e)
     {

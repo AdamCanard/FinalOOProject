@@ -9,13 +9,21 @@ public partial class AddUser : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
-
+        Account.SelectedIndex = 3;
         UserManager.UpdateUserList();
     }
-    
+
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
     // Adds the User to the Database based on the data input
     private void AddButton_AddUser_Clicked(object sender, EventArgs e)
     {
+        if (Account.SelectedItem == null)
+        {
+            return;
+        }
         try
         {
             // Check if ID text is empty
@@ -26,9 +34,10 @@ public partial class AddUser : ContentPage
             }
             // Try to convert ID text to int32
             int library_id = Convert.ToInt32(ID.Text);
-            
-            // Create new user with ID and other information
-            UserManager.AddNewUser(library_id, Name.Text, Email.Text, Password.Text, Address.Text, Account.Text);
+
+            string? AccountType = Account.SelectedItem.ToString();
+
+            UserManager.AddNewUser(library_id, Name.Text, Email.Text, Password.Text, Address.Text, AccountType);
             confirmationMessage.IsVisible = true;
             errorMessage.IsVisible = false;
         }
@@ -49,7 +58,7 @@ public partial class AddUser : ContentPage
         }
         catch (Exception ex)
         {
-            errorMessage.Text = ex.ToString();
+            errorMessage.Text = ex.Message;
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }

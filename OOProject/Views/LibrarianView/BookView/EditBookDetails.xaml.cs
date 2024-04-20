@@ -24,7 +24,11 @@ public partial class EditBookDetails : ContentPage
         errorMessage.FontAttributes = FontAttributes.None;
         confirmationMessage.TextColor = Colors.Green;
     }
-    
+
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
     // Saves the edited book
     private void Save_EditBook(object sender, EventArgs e)
     {
