@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:OOProject.Models"
+             xmlns:local="clr-namespace:OOProject"
              x:Class="OOProject.Views.LibrarianView.UserView.UserList"
              Title="UserList">
-    <ContentPage.BindingContext>
-        <viewModels:Lists></viewModels:Lists>
-    </ContentPage.BindingContext>
+
     <ScrollView>
         <VerticalStackLayout>
             <HorizontalStackLayout HorizontalOptions="Center">
@@ -47,7 +45,7 @@
             <Label Text="Results" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold" Margin="0,10"></Label>
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
                 <ScrollView Orientation="Both">
-                    <CollectionView ItemsSource="{Binding UsersList}">
+                    <CollectionView x:Name="UserSearchList" ItemsSource="{x:Static local:UserManager.Users}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame>

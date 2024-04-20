@@ -11,12 +11,6 @@ public partial class AddUser : ContentPage
         base.OnAppearing();
 
         UserManager.UpdateUserList();
-        ID.Text = string.Empty;
-        Password.Text = string.Empty;
-        Name.Text = string.Empty;
-        Email.Text = string.Empty;
-        Address.Text = string.Empty;
-        Account.Text = string.Empty;
     }
     private void AddButton_AddUser_Clicked(object sender, EventArgs e)
     {
@@ -40,13 +34,13 @@ public partial class AddUser : ContentPage
         }
         catch (FormatException)
         {
-            errorMessage.Text = "Please enter a positive integer for the ISBN and the Quantity";
+            errorMessage.Text = "Please enter a positive integer for the LibraryId" ;
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
-        catch (Exception)
+        catch (Exception ex)
         {
-            errorMessage.Text = "The ISBN number must be unique";
+            errorMessage.Text = ex.ToString();
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }

@@ -1,5 +1,8 @@
 namespace OOProject.Views.LibrarianView.UserView;
 using OOProject.Models;
+using System.Net;
+using System.Security.Principal;
+using System.Xml.Linq;
 
 
 public partial class UserList : ContentPage
@@ -8,6 +11,14 @@ public partial class UserList : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        UserManager.UpdateUserList();
+        UserSearchList.ItemsSource = UserManager.Users;
+    }
 
     private void AddUser_Navigation(object sender, EventArgs e)
     {

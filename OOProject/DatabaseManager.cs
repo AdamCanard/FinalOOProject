@@ -16,6 +16,7 @@ namespace OOProject
         {
             Console.WriteLine(Constants.DatabasePath);
             this.Database = new SQLiteConnection(Constants.DatabasePath);
+            
 
         }
 

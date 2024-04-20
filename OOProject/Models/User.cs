@@ -7,7 +7,7 @@ namespace OOProject.Models
     {
 
         [Required]
-        [PrimaryKey, AutoIncrement]
+        [PrimaryKey]
         public int library_id{ get; set; }
 
         [Required]
@@ -29,9 +29,9 @@ namespace OOProject.Models
         public User(int id, string name, string email, string password, string address, string account) 
         {
             library_id = id;
-            name = name;
-            email = email;
-            password = password;
+            this.name = name;
+            this.email = email;
+            this.password = password;
             Address = address;
             Account = account;
         }
