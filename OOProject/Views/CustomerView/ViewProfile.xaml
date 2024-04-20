@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.CustomerView.ViewProfile"
+             xmlns:local="clr-namespace:OOProject"
+             xmlns:models="clr-namespace:OOProject.Models"
              Title="ViewProfile">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -13,153 +15,143 @@
         </ResourceDictionary>
     </ContentPage.Resources>
 
+    <ContentPage.BindingContext>
+        <models:User/>
+    </ContentPage.BindingContext>
+
     <ScrollView>
-        <VerticalStackLayout BackgroundColor="#FBF9F1">
+        <VerticalStackLayout>
+            <Label 
+            Margin="25"
+            Text="User Details"
+            HorizontalOptions="Center"
+            FontSize="30"
+            FontAttributes="Bold"></Label>
 
-            <Grid>
-                <Image Source="useraccount_image.png"/>
-            </Grid>
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                Text="Library Id"
+                FontSize="25"
+                FontAttributes="Bold"
+                WidthRequest="300"></Label>
+                <Label
+                Text="{Binding library_id}"
+                HorizontalTextAlignment="End"
+                FontSize="25"
+                FontAttributes="Bold"
+                WidthRequest="300"></Label>
+            </HorizontalStackLayout>
 
-            <BoxView HeightRequest="60" BackgroundColor="Transparent"/>
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                Text="Name"
+                FontSize="15"
+                FontAttributes="Italic"
+                WidthRequest="300"></Label>
+                <Label
+                Text="{Binding name}"
+                HorizontalTextAlignment="End"
+                FontSize="15"
+                FontAttributes="Italic"
+                WidthRequest="300"></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                    Text="Email"
+                    FontSize="15"
+                    FontAttributes="None"
+                    WidthRequest="300"></Label>
+                <Label
+                    Text="{Binding email}"
+                    HorizontalTextAlignment="End"
+                    FontSize="15"
+                    FontAttributes="None"
+                    WidthRequest="300"></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                Text="Password"
+                FontSize="15"
+                FontAttributes="None"
+                WidthRequest="300"></Label>
+                <Label
+                Text="{Binding password}"
+                HorizontalTextAlignment="End"
+                FontSize="15"
+                FontAttributes="None"
+                WidthRequest="300"></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                Text="Address"
+                FontSize="15"
+                FontAttributes="Bold"
+                WidthRequest="300"></Label>
+                <Label
+                Text="{Binding Address}"
+                HorizontalTextAlignment="End"
+                FontSize="20"
+                FontAttributes="Bold"
+                WidthRequest="300"></Label>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="5">
+                <Label
+                Text="Account Type"
+                FontSize="15"
+                FontAttributes="Bold"
+                WidthRequest="300"></Label>
+                <Label
+                Text="{Binding Account}"
+                HorizontalTextAlignment="End"
+                FontSize="20"
+                FontAttributes="Bold"
+                WidthRequest="300"></Label>
+            </HorizontalStackLayout>
 
             <Label 
-                Padding="0, 20"
-                Text ="My Information"
-                FontAttributes="Bold" 
-                FontSize="40"
-                HorizontalOptions="Center"></Label>
+            Margin="0, 20, 0, 0"
+            Text="Fine List"
+            HorizontalOptions="Center"
+            FontSize="30"
+            FontAttributes="Bold"></Label>
 
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource FrameNoBorder}" >
-                <HorizontalStackLayout>
-                    <Label Text="User ID" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
-
-                        WidthRequest="300"
-                        FontSize="20"
-                        HorizontalOptions="Center"
-                        BackgroundColor="White"></Entry>
-                </HorizontalStackLayout>
-            </Frame>
-
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource FrameNoBorder}">
-                <HorizontalStackLayout>
-                    <Label Text="Password" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
-                        WidthRequest="300"
-                        FontSize="20"
-                        HorizontalOptions="Center"
-                        BackgroundColor="White"></Entry>
-                </HorizontalStackLayout>
-            </Frame>
-
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource FrameNoBorder}">
-                <HorizontalStackLayout>
-                    <Label Text="Name" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
-                        WidthRequest="300"
-                        FontSize="20"
-                        HorizontalOptions="Center"
-                        BackgroundColor="White"></Entry>
-                </HorizontalStackLayout>
-            </Frame>
-
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource FrameNoBorder}">
-                <HorizontalStackLayout>
-                    <Label Text="Date of Birth" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
-                        WidthRequest="300"
-                        FontSize="20"
-                        HorizontalOptions="Center"
-                        BackgroundColor="White"></Entry>
-                </HorizontalStackLayout>
-            </Frame>
-
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource FrameNoBorder}">
-                <HorizontalStackLayout>
-                    <Label Text="Phone" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
-                        WidthRequest="300"
-                        FontSize="20"
-                        HorizontalOptions="Center"
-                        BackgroundColor="White"></Entry>
-                </HorizontalStackLayout>
-            </Frame>
-
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource FrameNoBorder}">
-                <HorizontalStackLayout>
-                    <Label Text="E-mail" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
-                        WidthRequest="300"
-                        FontSize="20"
-                        HorizontalOptions="Center"
-                        BackgroundColor="White"></Entry>
-                </HorizontalStackLayout>
-            </Frame>
-
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource FrameNoBorder}">
-                <HorizontalStackLayout>
-                    <Label Text="Home Address" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
-                        WidthRequest="300"
-                        FontSize="20"
-                        HorizontalOptions="Center"
-                        BackgroundColor="White"></Entry>
-                </HorizontalStackLayout>
-            </Frame>
-
-            <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-
-            </Grid>
-
-            <BoxView HeightRequest="40" BackgroundColor="Transparent"/>
-
-            <Label Text="Rental List"
-                FontAttributes="Bold" 
-                FontSize="40"
-                HorizontalOptions="Center"/>
+            <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 40">
+                <Entry
+                Placeholder="ID, Name,Account Type, etc..."
+                WidthRequest="480"
+                FontSize="20"
+                HorizontalOptions="Center"></Entry>
+                <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
+                <Button
+                Text="Search"
+                FontAttributes="Bold"
+                FontSize="20"
+                WidthRequest="120"
+                BackgroundColor="#B0A695"></Button>
+            </HorizontalStackLayout>
 
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
                 <ScrollView Orientation="Both">
-                    <!--<CollectionView ItemsSource="{Binding BooksList}">
-             <CollectionView.ItemTemplate>
-                 <DataTemplate>-->
-                    <Frame>
-                        <!--<HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-                             <Label Text="{Binding ISBN}" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
-                             <Label Text="{Binding Title}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
-                             <Label Text="{Binding Quantity}" WidthRequest="50" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                             <Label Text="{Binding Author}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                             <Label Text="{Binding Genre}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                             <Button Clicked="ViewBookDetails_Navigation" Text="Search"  FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
-                         </HorizontalStackLayout>-->
-                    </Frame>
-                    <!--</DataTemplate>
-             </CollectionView.ItemTemplate>
-         </CollectionView>-->
+                    <CollectionView x:Name="FineList" ItemsSource="{x:Static local:FineManager.Fines}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame>
+                                    <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
+                                        <Label Text="{Binding fine_id}" WidthRequest="50" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
+                                        <Label Text="{Binding library_id}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
+                                        <Label Text="{Binding amount}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                    </HorizontalStackLayout>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
                 </ScrollView>
             </Frame>
 
-            <StackLayout Orientation="Horizontal">
-                <Label 
-                    FontSize="30" 
-                    TextColor="Red" 
-                    FontAttributes="Bold" 
-                    Padding="20"
-                    HorizontalOptions="StartAndExpand">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Fines: " />
-                            <Span Text="{Binding Amount, StringFormat='{0:C}'}" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-
-            </StackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
