@@ -4,10 +4,10 @@ namespace OOProject.Views.LibrarianView.BookView;
 
 public partial class BookList : ContentPage
 {
-	public BookList()
-	{
-		InitializeComponent();
-	}
+    public BookList()
+    {
+        InitializeComponent();
+    }
 
     protected override void OnAppearing()
     {
@@ -15,9 +15,10 @@ public partial class BookList : ContentPage
         BookSearchList.ItemsSource = BookManager.Books;
     }
 
-    private void AddBook_Navigation(object sender, EventArgs e)
+    private async void AddBook_Navigation(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//AddBook");
+        var addBookPage = new AddBook();
+        await Navigation.PushAsync(addBookPage);
     }
 
     private async void ViewBookDetails_Navigation(object sender, EventArgs e)

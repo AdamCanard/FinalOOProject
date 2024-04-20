@@ -48,9 +48,10 @@ public partial class AddBook : ContentPage
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
-        catch (Exception) 
+        // Need a new exception for catching conflicting primary/foreign keys
+        catch (Exception ex) 
         {
-            errorMessage.Text = "The ISBN number must be unique";
+            errorMessage.Text = ex.Message;
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }

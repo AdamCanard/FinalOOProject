@@ -12,6 +12,7 @@ public partial class UserList : ContentPage
 		InitializeComponent();
 	}
 
+
     protected override void OnAppearing()
     {
         base.OnAppearing();
@@ -20,10 +21,12 @@ public partial class UserList : ContentPage
         UserSearchList.ItemsSource = UserManager.Users;
     }
 
+
     private void AddUser_Navigation(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync("//AddUser");
     }
+
 
     private async void ViewUserDetails_Navigation(object sender, EventArgs e)
     {
@@ -50,4 +53,5 @@ public partial class UserList : ContentPage
             }
         }
     }
+
 }

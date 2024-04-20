@@ -21,18 +21,6 @@
 
             <BoxView HeightRequest="60" BackgroundColor="Transparent"/>
 
-            <Label Text="* Select a membership type."
-                FontAttributes="Bold" 
-                FontSize="20"
-                HorizontalOptions="Center"
-                   Margin="0,0,0,20"></Label>
-
-            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                <CheckBox></CheckBox>
-                <CheckBox></CheckBox>
-                <CheckBox></CheckBox>
-            </HorizontalStackLayout>
-
             <Label Text="* Please enter user information"
                 FontAttributes="Bold" 
                 FontSize="20"

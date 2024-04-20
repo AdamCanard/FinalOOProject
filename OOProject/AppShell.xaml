@@ -23,16 +23,15 @@
     <!-- Application Pages -->
     <ShellContent Title="MainPage" Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}"/>
     <ShellContent Title="Login" Route="Login" ContentTemplate="{DataTemplate views:Login}"/>
+    <ShellContent Title="CustomerMenu" Route="CustomerMenu" ContentTemplate="{DataTemplate customerView:CustomerMenu }"/>
+    <ShellContent Title="SearchBook" Route="SearchBook" ContentTemplate="{DataTemplate customerView:SearchBook }"/>
+    <ShellContent Title="BorrowBookDetails" Route="BorrowBookDetails" ContentTemplate="{DataTemplate customerView:BorrowBookDetails }"/>
+    <ShellContent Title="ViewProfile" Route="ViewProfile" ContentTemplate="{DataTemplate customerView:ViewProfile }"/>
+    <ShellContent Title="LibrarianMenu" Route="LibrarianMenu" ContentTemplate="{DataTemplate librarianView:LibrarianMenu }"/>
     <ShellContent Title="AddBook" Route="AddBook" ContentTemplate="{DataTemplate bookView:AddBook}"/>
     <ShellContent Title="BookList" Route="BookList" ContentTemplate="{DataTemplate bookView:BookList}"/>
     <ShellContent Title="AddUser" Route="AddUser" ContentTemplate="{DataTemplate userView:AddUser}"/>
     <ShellContent Title="UserList" Route="UserList" ContentTemplate="{DataTemplate userView:UserList}"/>
-    <ShellContent Title="ViewUserDetails" Route="ViewUserDetails" ContentTemplate="{DataTemplate userView:ViewUserDetails}"/>
-    <ShellContent Title="LibrarianMenu" Route="LibrarianMenu" ContentTemplate="{DataTemplate librarianView:LibrarianMenu }"/>
-    <ShellContent Title="BorrowBookDetails" Route="BorrowBookDetails" ContentTemplate="{DataTemplate customerView:BorrowBookDetails }"/>
-    <ShellContent Title="SearchBook" Route="SearchBook" ContentTemplate="{DataTemplate customerView:SearchBook }"/>
-    <ShellContent Title="ViewProfile" Route="ViewProfile" ContentTemplate="{DataTemplate customerView:ViewProfile }"/>
-    <ShellContent Title="CustomerMenu" Route="CustomerMenu" ContentTemplate="{DataTemplate customerView:CustomerMenu }"/>
 
     <Shell.FlyoutHeader>
         <Grid ColumnDefinitions="Auto,*" Padding="20">
@@ -48,4 +47,5 @@
                VerticalOptions="Center"/>
         </Grid>
     </Shell.FlyoutHeader>
+
 </Shell>

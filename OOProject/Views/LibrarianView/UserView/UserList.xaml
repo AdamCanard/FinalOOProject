@@ -16,8 +16,10 @@
                     FontAttributes="Bold"
                     ></Label>
                 <Button 
+
                     Clicked="AddUser_Navigation"
                     Text="Add"  
+
                     HeightRequest="50"
                     FontAttributes="Bold"
                     FontSize="20" 
