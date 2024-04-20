@@ -89,32 +89,33 @@
                     WidthRequest="300"></Label>
             </HorizontalStackLayout>
 
-            <HorizontalStackLayout HorizontalOptions="Center" Margin="80,0" >
-                <Button 
-                    Text="Edit"
-                    FontSize="20"
-                    FontAttributes="Bold"
-                    WidthRequest="120"
-                    TextColor="Red"
-                    BackgroundColor="#AFC8AD"
-                    Margin="10"></Button>
-                <Button 
-                    Text="Delete"
-                    FontSize="20"
-                    FontAttributes="Bold"
-                    WidthRequest="120"
-                    TextColor="Red"
-                    BackgroundColor="#AFC8AD"
-                    Margin="10"></Button>
-            </HorizontalStackLayout>
+            <!-- Confirmation Messages -->
+            <Label Text="Confirmation Message" 
+                   x:Name="confirmationMessage" 
+                   HeightRequest="40" 
+                   FontSize="15" 
+                   TextColor="Blue"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   IsVisible="false"></Label>
+
+            <!-- Error Messages -->
+            <Label Text="Error Message" 
+                   x:Name="errorMessage" 
+                   HeightRequest="40" 
+                   FontSize="15" 
+                   TextColor="Red" 
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" 
+                   IsVisible="false"></Label>
 
             <Label 
-                Margin="0, 20, 0, 0"
+                Margin="0, 10, 0, 0"
                 Text="Rental List"
                 HorizontalOptions="Center"
                 FontSize="30"
                 FontAttributes="Bold"></Label>
-            
+
             <HorizontalStackLayout HorizontalOptions="Center" Margin="0, 0, 0, 40">
                 <Entry
                     Placeholder="ID, Name,Account Type, etc..."
@@ -159,6 +160,7 @@
                     </CollectionView>
                 </ScrollView>
             </Frame>
+            <Label Margin ="10" Text="Note: Return dates with an '*' symbol indicate that they have been extended, and can no longer be extended again"></Label>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

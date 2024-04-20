@@ -1,4 +1,5 @@
 using OOProject.Models;
+using OOProject.Models.UserTypes;
 
 namespace OOProject;
 
@@ -55,5 +56,30 @@ public class RentalManager
     public static void UpdateRentalsList()
     {
         Rentals = Database.GetAllRental();
+    }
+
+    public static void ExtendRentalDuration(int rentalToUpdateId)
+    {
+        Rental rentalToUpdate = Database.GetRentalByID(rentalToUpdateId);
+        User associatedUser = UserManager.GetUserByID(rentalToUpdate.library_id);
+        switch (associatedUser is Instructor)
+        {
+            case true:
+                {
+                    DateTime currentReturnDate = Convert.ToDateTime(rentalToUpdate.return_date);
+                    string newReturnDate = currentReturnDate.AddDays(14).ToShortDateString() + " *";
+                    rentalToUpdate.return_date = newReturnDate;
+                    break;
+                }
+            case false:
+                {
+                    DateTime currentReturnDate = Convert.ToDateTime(rentalToUpdate.return_date);
+                    string newReturnDate = currentReturnDate.AddDays(7).ToShortDateString() + " *";
+                    rentalToUpdate.return_date = newReturnDate;
+                    break;
+                }
+        }
+        Database.UpdateRental(rentalToUpdate);
+        UpdateRentalsList();
     }
 }
