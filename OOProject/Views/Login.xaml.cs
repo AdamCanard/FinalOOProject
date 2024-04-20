@@ -44,11 +44,13 @@ public partial class Login : ContentPage
                         FineManager.AddFine(fines.Count, user.library_id, 10);
                     }
                 }
+
                 //TODO go to student/instructor Page
                 UserManager.CurrentUser = user;
                 Shell.Current.GoToAsync("//CustomerMenu");
                 
                 return;
+
             }
 
         }
