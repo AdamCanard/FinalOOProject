@@ -64,6 +64,7 @@ public partial class ViewBookDetails : ContentPage
             Rental rental = (Rental)button.BindingContext;
             
             RentalManager.DeleteRental(rental.rental_id);
+            BookRef.Quantity += 1;
             RentalList.ItemsSource = null;
             RentalList.ItemsSource = RentalManager.GetAllRentalsByBook(BookRef.ISBN);
             confirmationMessage.Text = $"A copy of {BookRef.Title} has been returned.";
