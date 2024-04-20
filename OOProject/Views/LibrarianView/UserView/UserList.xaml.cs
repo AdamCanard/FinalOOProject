@@ -7,4 +7,9 @@ public partial class UserList : ContentPage
 		InitializeComponent();
 	}
 
+    private void AddUser_Navigation(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//AddUser");
+    }
+
 }

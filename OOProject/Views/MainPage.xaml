@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="OOProject.Views.MainPage"
              Title="MainPage">
+
     <ScrollView>
         <VerticalStackLayout BackgroundColor="#FBF9F1">
             <Grid>
@@ -22,7 +23,8 @@
 
             <Button
             x:Name="CounterBtn"
-            Text="Login" 
+            Text="Log in" 
+            FontSize="25"
             SemanticProperties.Hint="Goes to Login Page"
             Clicked="CounterBtn_Clicked"
             WidthRequest="200"
@@ -30,7 +32,8 @@
             HorizontalOptions="Center"
             VerticalOptions="Center"
             BackgroundColor="#D9D9D9"
-            TextColor="Black"/>
+            TextColor="Black"
+            FontAttributes="Bold"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -6,10 +6,13 @@
     <ScrollView>
         <VerticalStackLayout HorizontalOptions="Center" Spacing="30" BackgroundColor="#FBF9F1">
             <Grid>
-                <Image Source="work_image.png" />
+                <Image Source="main_image.png"/>
             </Grid>
 
+            <BoxView HeightRequest="60" BackgroundColor="Transparent"/>
+
             <Label Text="CUSTOMER MENU" FontSize="25" FontAttributes="Bold" HorizontalOptions="Center"/>
+            <BoxView BackgroundColor="Transparent"/>
             <HorizontalStackLayout Spacing="30" HorizontalOptions="Center">
                 <Button
                 Text="Search for Books" 
@@ -33,6 +36,7 @@
                 TextColor="Black"
                 FontAttributes="Bold"/>
             </HorizontalStackLayout>
+            <BoxView HeightRequest="60" BackgroundColor="Transparent"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
