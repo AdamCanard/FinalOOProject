@@ -29,7 +29,7 @@
 
             <HorizontalStackLayout HorizontalOptions="Center" Margin="30">
                 <Entry
-                    x:Name="SearchBarEntry"
+                    x:Name="BookSearchBarEntry"
                     Placeholder="Title, Author, Category, etc..."
                     WidthRequest="480"
                     FontSize="20"

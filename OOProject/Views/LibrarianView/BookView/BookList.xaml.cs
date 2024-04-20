@@ -49,7 +49,7 @@ public partial class BookList : ContentPage
 
     private void Search_Books(object sender, EventArgs e)
     {
-        string searchQuery = SearchBarEntry.Text;
+        string searchQuery = BookSearchBarEntry.Text;
         BookSearchList.ItemsSource = BookManager.SearchBooksGeneric(searchQuery);
     }
 }

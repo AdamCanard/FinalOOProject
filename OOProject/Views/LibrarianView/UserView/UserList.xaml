@@ -37,6 +37,7 @@
                     HorizontalOptions="Center"></Entry>
                 <Button
                     Text="Search"
+                    x:Name="UserSearchBarEntry"
                     FontAttributes="Bold"
                     FontSize="20"
                     WidthRequest="120"
