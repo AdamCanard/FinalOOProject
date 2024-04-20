@@ -9,17 +9,6 @@ namespace OOProject
         {
             DatabaseManager db = new DatabaseManager();
 
-            //Book book = new Book()
-            //{
-            //    ISBN = 1,
-            //    Quantity = 101,
-            //    Author = "Adam",
-            //    Title = "Title",
-            //    Genre = "Horror"
-                
-            //};
-            //db.UpdateBook(book);
-
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
