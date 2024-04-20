@@ -17,16 +17,6 @@ public partial class LibrarianMenu : ContentPage
         Shell.Current.GoToAsync("//BookList");
     }
 
-    private void Librarian_EditBookDetails(object sender, EventArgs e)
-    {
-        Shell.Current.GoToAsync("//EditBookDetails");
-    }
-
-    private void Librarian_ViewBookDetails(object sender, EventArgs e)
-    {
-        Shell.Current.GoToAsync("//ViewBookDetails");
-    }
-
     private void Librarian_AddUser(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync("//AddUser");
@@ -37,13 +27,4 @@ public partial class LibrarianMenu : ContentPage
         Shell.Current.GoToAsync("//UserList");
     }
 
-    private void Librarian_EditUserDetails(object sender, EventArgs e)
-    {
-        Shell.Current.GoToAsync("//EditUserDetails");
-    }
-
-    private void Librarian_ViewUserDetails(object sender, EventArgs e)
-    {
-        Shell.Current.GoToAsync("//ViewUserDetails");
-    }
 }

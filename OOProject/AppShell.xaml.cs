@@ -14,6 +14,11 @@ namespace OOProject
 
             Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
             Routing.RegisterRoute(nameof(Login), typeof(Login));
+            Routing.RegisterRoute(nameof(CustomerMenu), typeof(CustomerMenu));
+            Routing.RegisterRoute(nameof(SearchBook), typeof(SearchBook));
+            Routing.RegisterRoute(nameof(BorrowBookDetails), typeof(BorrowBookDetails));
+            Routing.RegisterRoute(nameof(ViewProfile), typeof(ViewProfile));
+            Routing.RegisterRoute(nameof(LibrarianMenu), typeof(LibrarianMenu));
             Routing.RegisterRoute(nameof(AddBook), typeof(AddBook));
             Routing.RegisterRoute(nameof(BookList), typeof(BookList));
             Routing.RegisterRoute(nameof(EditBookDetails), typeof(EditBookDetails));
@@ -22,11 +27,8 @@ namespace OOProject
             Routing.RegisterRoute(nameof(UserList), typeof(UserList));
             Routing.RegisterRoute(nameof(EditUserDetails), typeof(EditUserDetails));
             Routing.RegisterRoute(nameof(ViewUserDetails), typeof(ViewUserDetails));
-            Routing.RegisterRoute(nameof(LibrarianMenu), typeof(LibrarianMenu));
-            Routing.RegisterRoute(nameof(BorrowBookDetails), typeof(BorrowBookDetails));
-            Routing.RegisterRoute(nameof(SearchBook), typeof(SearchBook));
-            Routing.RegisterRoute(nameof(ViewProfile), typeof(ViewProfile));
-            Routing.RegisterRoute(nameof(CustomerMenu), typeof(CustomerMenu));
+
         }
+
     }
 }
