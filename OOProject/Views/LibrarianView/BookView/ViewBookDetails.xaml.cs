@@ -20,6 +20,11 @@ public partial class ViewBookDetails : ContentPage
         
     }
 
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
+
     private void ExtendBookDuration(object sender, EventArgs e)
     {
         if (sender is Button button)

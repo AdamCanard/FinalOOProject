@@ -25,6 +25,12 @@ public partial class EditBookDetails : ContentPage
         confirmationMessage.TextColor = Colors.Green;
     }
 
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
+
+
     private void Save_EditBook(object sender, EventArgs e)
     {
         try

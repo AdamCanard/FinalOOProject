@@ -12,6 +12,12 @@ public partial class AddUser : ContentPage
 
         UserManager.UpdateUserList();
     }
+
+    private void Go_Menu_L(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//LibrarianMenu");
+    }
+
     private void AddButton_AddUser_Clicked(object sender, EventArgs e)
     {
         try

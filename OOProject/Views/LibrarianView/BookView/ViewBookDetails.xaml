@@ -10,6 +10,12 @@
         <models:Book/>
     </ContentPage.BindingContext>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Menu"
+                 Clicked="Go_Menu_L"/>
+        <ToolbarItem Text="Log Out" />
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Frame" x:Key="FrameNoBorder">
