@@ -31,13 +31,14 @@
 
             <HorizontalStackLayout HorizontalOptions="Center" Margin="30">
                 <Entry
+                    x:Name="UserSearchBarEntry"
                     Placeholder="ID, Name, Phone, etc..."
                     WidthRequest="480"
                     FontSize="20"
                     HorizontalOptions="Center"></Entry>
                 <Button
                     Text="Search"
-                    x:Name="UserSearchBarEntry"
+                    Clicked="Search_Users"
                     FontAttributes="Bold"
                     FontSize="20"
                     WidthRequest="120"
@@ -55,8 +56,7 @@
                                     <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
                                         <Label Text="{Binding library_id}" WidthRequest="100" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
                                         <Label Text="{Binding name}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
-                                        <Label Text="{Binding email}" WidthRequest="50" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                        <Label Text="{Binding password}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
+                                        <Label Text="{Binding email}" WidthRequest="250" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Label Text="{Binding Address}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Label Text="{Binding Account}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Button Clicked="ViewUserDetails_Navigation" Text="Details"  FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
