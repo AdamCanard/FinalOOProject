@@ -12,6 +12,7 @@ public partial class Login : ContentPage
     protected override void OnAppearing()
     {
         base.OnAppearing();
+        UserManager.UpdateUserList();
         Password.Text = string.Empty;
         errorMessage.IsVisible = false;
         confirmationMessage.IsVisible = false;
@@ -43,10 +44,9 @@ public partial class Login : ContentPage
                         List<Fine> fines = FineManager.Fines;
                         FineManager.AddFine(fines.Count, user.library_id, 10);
                     }
-
-                    UserManager.CurrentUser = user;
-                    Shell.Current.GoToAsync("//CustomerMenu");
                 }
+                UserManager.CurrentUser = user;
+                Shell.Current.GoToAsync("//CustomerMenu");
                 return;
             }
         }
