@@ -9,16 +9,10 @@
     xmlns:bookView="clr-namespace:OOProject.Views.LibrarianView.BookView"
     xmlns:userView="clr-namespace:OOProject.Views.LibrarianView.UserView"
     xmlns:customerView="clr-namespace:OOProject.Views.CustomerView"
-    Shell.FlyoutBehavior="Flyout"
-    Shell.TabBarIsVisible="False"
+    FlyoutBehavior="Disabled"
     BackgroundColor="#EBD9B4"
     Shell.TitleColor="Black"
     Title="OOProject">
-
-    <FlyoutItem
-    Title="Items"
-    FlyoutDisplayOptions="AsSingleItem"
-    Route="Header_Items" />
 
     <!-- Application Pages -->
     <ShellContent Title="MainPage" Route="MainPage" ContentTemplate="{DataTemplate views:MainPage}"/>
@@ -31,20 +25,5 @@
     <ShellContent Title="BookList" Route="BookList" ContentTemplate="{DataTemplate bookView:BookList}"/>
     <ShellContent Title="AddUser" Route="AddUser" ContentTemplate="{DataTemplate userView:AddUser}"/>
     <ShellContent Title="UserList" Route="UserList" ContentTemplate="{DataTemplate userView:UserList}"/>
-
-    <Shell.FlyoutHeader>
-        <Grid ColumnDefinitions="Auto,*" Padding="20">
-            <Image Source="airplain_mark.png"
-               Grid.Column="0"
-               Aspect="AspectFill"
-               HeightRequest="50"/>
-            <Label Grid.Column="1"
-               Text="G1 Library"
-               FontAttributes="Bold"
-               FontSize="Subtitle"
-               Padding="20"
-               VerticalOptions="Center"/>
-        </Grid>
-    </Shell.FlyoutHeader>
 
 </Shell>
