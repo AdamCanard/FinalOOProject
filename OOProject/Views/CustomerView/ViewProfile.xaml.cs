@@ -91,5 +91,7 @@ public partial class ViewProfile : ContentPage
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
+
+
     }
 }
