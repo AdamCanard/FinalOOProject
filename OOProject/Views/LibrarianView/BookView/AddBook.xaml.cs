@@ -73,7 +73,12 @@ public partial class AddBook : ContentPage
             
             // Convert quantity text to int
             int stock = Convert.ToInt32(Quantity_AddBook.Text);
-            
+
+            if (stock <= 0)
+            {
+                throw new FormatException();
+            }
+
             // Add new book to Database
             BookManager.AddNewBook(isbn, stock, Title_AddBook.Text, Author_AddBook.Text, Category_AddBook.Text);
             confirmationMessage.IsVisible = true;
