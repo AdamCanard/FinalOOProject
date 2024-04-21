@@ -12,6 +12,11 @@ public partial class AddUser : ContentPage
         base.OnAppearing();
         Account.SelectedIndex = 3;
         UserManager.UpdateUserList();
+        ID_AddEntry.Text = string.Empty;
+        Name_AddEntry.Text = string.Empty;
+        Password_AddEntry.Text = string.Empty;
+        Email_AddEntry.Text = string.Empty;
+        Address_AddEntry.Text= string.Empty;
     }
 
     private void Go_Menu_L(object sender, EventArgs e)
@@ -85,9 +90,9 @@ public partial class AddUser : ContentPage
         }
         
         // Make sure all fields are filled
-        catch (NullReferenceException)
+        catch (ArgumentException)
         {
-            errorMessage.Text = "Please fill out all the required fields";
+            errorMessage.Text = "Please fill out all the fields";
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }

@@ -43,14 +43,24 @@ public partial class EditBookDetails : ContentPage
             // throw an exception if the quantity is null or empty
             if (string.IsNullOrEmpty(Quantity_EditEntry.Text))
             {
-                throw new ArgumentException();
+                throw new FormatException();
             }
 
             // throws a FormatException if the quantity is not a number
             int newStock = Convert.ToInt32(Quantity_EditEntry.Text);
 
             // throw an exception if the quantity is equal to or less than 0
-            if (newStock <= 0) 
+            if (newStock <= 0)
+            {
+                throw new FormatException();
+            }
+
+            if (string.IsNullOrEmpty(Title_EditEntry.Text))
+            {
+                throw new ArgumentException();
+            }
+
+            if (string.IsNullOrEmpty(Category_EditEntry.Text))
             {
                 throw new ArgumentException();
             }
@@ -74,13 +84,13 @@ public partial class EditBookDetails : ContentPage
         // Catches the exceptions and displays the appropiate text to the user.
         catch (ArgumentException)
         {
-            errorMessage.Text = "*Required* Quantity must be a positive integer.";
+            errorMessage.Text = "Please fill out all the fields";
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
         catch (FormatException)
         {
-            errorMessage.Text = "*Required* Quantity must be numeric.";
+            errorMessage.Text = "*Required* Quantity must be positive integer.";
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }

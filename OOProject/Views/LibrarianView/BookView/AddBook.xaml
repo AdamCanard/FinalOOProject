@@ -44,7 +44,7 @@
                     <Label Text="Title:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
                         x:Name="Title_AddBook"
-                        Placeholder="Title" 
+                        Placeholder="Title *Required*" 
                         WidthRequest="300"
                         FontSize="20"
                         HorizontalOptions="Center"></Entry>
@@ -56,7 +56,7 @@
                     <Label Text="Category:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
                         x:Name ="Category_AddBook"
-                        Placeholder="Category" 
+                        Placeholder="Category *Required*" 
                         WidthRequest="300"
                         FontSize="20"
                         HorizontalOptions="Center"></Entry>
@@ -68,7 +68,7 @@
                     <Label Text="Author:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
                         x:Name="Author_AddBook"
-                        Placeholder="Author" 
+                        Placeholder="Author *Required*" 
                         WidthRequest="300"
                         FontSize="20"
                         HorizontalOptions="Center"></Entry>

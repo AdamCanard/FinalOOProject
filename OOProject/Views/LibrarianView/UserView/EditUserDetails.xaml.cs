@@ -77,14 +77,14 @@ public partial class EditUserDetails : ContentPage
         // Catches the exceptions and displays the appropriate text to the user.
         catch (ArgumentException)
         {
-            errorMessage.Text = "All Fields must be filled";
+            errorMessage.Text = "Please fill out all the fields";
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
         
-        catch (Exception ex)
+        catch (Exception)
         {
-            errorMessage.Text = ex.Message;
+            errorMessage.Text = "That user ID is taken by another user please try again";
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }

@@ -36,6 +36,31 @@ public partial class AddBook : ContentPage
     {
         try
         {
+            if (string.IsNullOrEmpty(ISBN_AddBook.Text))
+            {
+                throw new ArgumentException();
+            }
+
+            if (string.IsNullOrEmpty(Quantity_AddBook.Text))
+            {
+                throw new ArgumentException();
+            }
+
+            if (string.IsNullOrEmpty(Author_AddBook.Text))
+            {
+                throw new ArgumentException();
+            }
+
+            if (string.IsNullOrEmpty(Title_AddBook.Text))
+            {
+                throw new ArgumentException();
+            }
+
+            if (string.IsNullOrEmpty(Category_AddBook.Text))
+            {
+                throw new ArgumentException();
+            }
+
             // If add book quantity is 0
             if (Quantity_AddBook.Text == "0")
             {
@@ -56,9 +81,9 @@ public partial class AddBook : ContentPage
         }
         
         // Make sure all fields are filled out
-        catch (NullReferenceException) 
+        catch (ArgumentException) 
         {
-            errorMessage.Text = "Please fill out all the required fields";
+            errorMessage.Text = "Please fill out all the fields";
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
@@ -66,14 +91,14 @@ public partial class AddBook : ContentPage
         // Make sure fields are filled out correctly
         catch (FormatException) 
         {
-            errorMessage.Text = "Please enter a positive integer for the ISBN and the Quantity";
+            errorMessage.Text = "Please enter a positive integer for the ISBN and the quantity.";
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
         // Need a new exception for catching conflicting primary/foreign keys
-        catch (Exception ex) 
+        catch (Exception) 
         {
-            errorMessage.Text = ex.Message;
+            errorMessage.Text = "That ISBN number is taken by another book, please enter a new one.";
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
