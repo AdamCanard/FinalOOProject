@@ -27,7 +27,12 @@ public partial class EditUserDetails : ContentPage
     {
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
-    
+
+    private void Logout(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
+
     // Saves the currently edited user
     private void Save_EditUser(object sender, EventArgs e)
     {

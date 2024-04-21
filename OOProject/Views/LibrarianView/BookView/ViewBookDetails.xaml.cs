@@ -26,6 +26,11 @@ public partial class ViewBookDetails : ContentPage
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
 
+    private void Logout(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
+
     // Extends the Book Rental duration
     private void ExtendBookDuration(object sender, EventArgs e)
     {

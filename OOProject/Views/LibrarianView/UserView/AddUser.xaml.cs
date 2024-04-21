@@ -17,6 +17,12 @@ public partial class AddUser : ContentPage
     {
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
+
+    private void Logout(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
+
     // Adds the User to the Database based on the data input
     private void AddButton_AddUser_Clicked(object sender, EventArgs e)
     {
@@ -62,5 +68,5 @@ public partial class AddUser : ContentPage
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
-    }
+    }    
 }

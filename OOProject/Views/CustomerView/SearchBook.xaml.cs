@@ -19,6 +19,11 @@ public partial class SearchBook : ContentPage
         Shell.Current.GoToAsync("//CustomerMenu");
     }
 
+    private void Logout(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
+
     // Searches books database using the search query
     private void Search_Books(object sender, EventArgs e)
     {

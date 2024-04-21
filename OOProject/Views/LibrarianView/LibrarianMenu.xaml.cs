@@ -7,6 +7,11 @@ public partial class LibrarianMenu : ContentPage
 		InitializeComponent();
 	}
 
+    private void Logout(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
+
     private void Librarian_AddBook(object sender, EventArgs e)
     {
         Shell.Current.GoToAsync("//AddBook");

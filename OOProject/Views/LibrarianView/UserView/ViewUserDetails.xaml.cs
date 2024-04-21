@@ -17,6 +17,11 @@ public partial class ViewUserDetails : ContentPage
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
 
+    private void Logout(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
+
     // Pays the fine for respective user
     private void Pay_Fine(object sender, EventArgs e)
     {
