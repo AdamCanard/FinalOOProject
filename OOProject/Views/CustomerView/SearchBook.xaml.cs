@@ -55,7 +55,7 @@ public partial class SearchBook : ContentPage
                         throw new FormatException();
                     }
 
-                    List<Rental> userRentalList = RentalManager.GetAllRentalsByBook(UserManager.CurrentUser.library_id);
+                    List<Rental> userRentalList = RentalManager.GetAllRentalsByUser(UserManager.CurrentUser.library_id);
 
                     foreach (Rental rental in userRentalList)
                     {
