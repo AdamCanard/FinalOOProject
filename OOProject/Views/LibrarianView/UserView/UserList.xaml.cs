@@ -33,9 +33,10 @@ public partial class UserList : ContentPage
     }
 
     // Move to the add user page
-    private void AddUser_Navigation(object sender, EventArgs e)
+    private async void AddUser_Navigation(object sender, EventArgs e)
     {
-        Shell.Current.GoToAsync("//AddUser");
+        var addUserPage = new AddUser();
+        await Navigation.PushAsync(addUserPage);
     }
 
 

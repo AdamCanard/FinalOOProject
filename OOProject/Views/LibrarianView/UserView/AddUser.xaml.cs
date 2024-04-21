@@ -1,3 +1,4 @@
+using OOProject.Models;
 namespace OOProject.Views.LibrarianView.UserView;
 
 public partial class AddUser : ContentPage
@@ -33,17 +34,52 @@ public partial class AddUser : ContentPage
         try
         {
             // Check if ID text is empty
-            if (ID.Text == "")
+            if (ID_AddEntry.Text == "")
             {
                 // Throw exception if it is
                 throw new FormatException();
             }
+
+            // throw an exception if the quantity is null or empty
+            if (string.IsNullOrEmpty(Email_AddEntry.Text))
+            {
+                throw new ArgumentException();
+            }
+
+            if (string.IsNullOrEmpty(Address_AddEntry.Text))
+            {
+                throw new ArgumentException();
+            }
+
+            if (string.IsNullOrEmpty(Password_AddEntry.Text))
+            {
+                throw new ArgumentException();
+            }
+
+            if (string.IsNullOrEmpty(Name_AddEntry.Text))
+            {
+                throw new ArgumentException();
+            }
+
             // Try to convert ID text to int32
-            int library_id = Convert.ToInt32(ID.Text);
+            int library_id = Convert.ToInt32(ID_AddEntry.Text);
+
+            bool userExists = UserManager.GetUserByID(library_id) is not null;
+
+            if (userExists)
+            {
+                throw new Exception();
+            }
+
+            string Name = Name_AddEntry.Text;
+            string Password = Password_AddEntry.Text;
+            string Address = Address_AddEntry.Text;
+            string Email = Email_AddEntry.Text;
+
 
             string? AccountType = Account.SelectedItem.ToString();
 
-            UserManager.AddNewUser(library_id, Name.Text, Email.Text, Password.Text, Address.Text, AccountType);
+            UserManager.AddNewUser(library_id, Name_AddEntry.Text, Email_AddEntry.Text, Password_AddEntry.Text, Address_AddEntry.Text, AccountType);
             confirmationMessage.IsVisible = true;
             errorMessage.IsVisible = false;
         }
@@ -62,9 +98,9 @@ public partial class AddUser : ContentPage
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            errorMessage.Text = ex.Message;
+            errorMessage.Text = "That user ID is taken by another user please try again";
             errorMessage.IsVisible = true;
             confirmationMessage.IsVisible = false;
         }
