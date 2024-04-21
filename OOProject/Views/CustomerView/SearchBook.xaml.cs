@@ -12,6 +12,8 @@ public partial class SearchBook : ContentPage
     {
         base.OnAppearing();
         BookSearchList.ItemsSource = BookManager.Books;
+        confirmationMessage.IsVisible = false;
+        errorMessage.IsVisible = false;
     }
 
     private void Go_Menu_C(object sender, EventArgs e)
@@ -52,6 +54,16 @@ public partial class SearchBook : ContentPage
                     {
                         throw new FormatException();
                     }
+
+                    List<Rental> userRentalList = RentalManager.GetAllRentalsByBook(UserManager.CurrentUser.library_id);
+
+                    foreach (Rental rental in userRentalList)
+                    {
+                        if (rental.ISBN == book.ISBN) 
+                        {
+                            throw new ArgumentException();
+                        }
+                    }
                     
                     // Find last rental in rental list and save its ID
                     Rental lastRental = RentalManager.Rentals.Last();
@@ -79,13 +91,19 @@ public partial class SearchBook : ContentPage
                     errorMessage.IsVisible = false;
                 }
             }
-            catch (FormatException ex)
+            catch (FormatException)
             {
                 errorMessage.Text = "Book is out of stock, please borrow a different one";
                 errorMessage.IsVisible = true;
                 confirmationMessage.IsVisible = false;
             }
-            catch (Exception ex)
+            catch(ArgumentException)
+            {
+                errorMessage.Text = "You have already rented that book, please choose another";
+                errorMessage.IsVisible = true;
+                confirmationMessage.IsVisible = false;
+            }
+            catch (Exception)
             {
                 errorMessage.Text = "Please pay all fines before borrowing a book";
                 errorMessage.IsVisible = true;
