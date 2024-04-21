@@ -29,6 +29,12 @@ public partial class EditBookDetails : ContentPage
     {
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
+
+    private void Logout(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
+
     // Saves the edited book
     private void Save_EditBook(object sender, EventArgs e)
     {

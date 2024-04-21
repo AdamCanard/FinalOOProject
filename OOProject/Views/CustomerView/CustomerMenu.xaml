@@ -5,7 +5,8 @@
              Title="CustomerMenu">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Log Out" />
+        <ToolbarItem Text="Log Out" 
+                     Clicked="Logout"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>

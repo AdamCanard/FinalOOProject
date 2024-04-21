@@ -27,6 +27,11 @@ public partial class UserList : ContentPage
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
 
+    private void Logout(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
+
     // Move to the add user page
     private void AddUser_Navigation(object sender, EventArgs e)
     {

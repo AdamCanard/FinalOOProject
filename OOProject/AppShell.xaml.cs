@@ -16,7 +16,6 @@ namespace OOProject
             Routing.RegisterRoute(nameof(Login), typeof(Login));
             Routing.RegisterRoute(nameof(CustomerMenu), typeof(CustomerMenu));
             Routing.RegisterRoute(nameof(SearchBook), typeof(SearchBook));
-            Routing.RegisterRoute(nameof(BorrowBookDetails), typeof(BorrowBookDetails));
             Routing.RegisterRoute(nameof(ViewProfile), typeof(ViewProfile));
             Routing.RegisterRoute(nameof(LibrarianMenu), typeof(LibrarianMenu));
             Routing.RegisterRoute(nameof(AddBook), typeof(AddBook));

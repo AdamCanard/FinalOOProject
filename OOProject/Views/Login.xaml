@@ -39,11 +39,12 @@
                 <VerticalStackLayout>
                     <Label Text="Password " HeightRequest="30" FontSize="20"></Label>
                     <Entry x:Name="Password" 
-                   Placeholder="Password" 
-                   WidthRequest="400"
-                   FontSize="20"
-                   HorizontalOptions="Center"
-                   BackgroundColor="White"></Entry>
+                           Placeholder="Password"
+                           IsPassword="True"
+                           WidthRequest="400"
+                           FontSize="20"
+                           HorizontalOptions="Center"
+                           BackgroundColor="White"></Entry>
                 </VerticalStackLayout>
             </Frame>
 

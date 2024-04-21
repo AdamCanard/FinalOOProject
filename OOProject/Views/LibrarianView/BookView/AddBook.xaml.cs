@@ -27,6 +27,10 @@ public partial class AddBook : ContentPage
         Shell.Current.GoToAsync("//LibrarianMenu");
     }
 
+    private void Logout(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
 
     private void AddButton_AddBook_Clicked(object sender, EventArgs e)
     {

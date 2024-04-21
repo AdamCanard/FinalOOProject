@@ -14,4 +14,9 @@ public partial class ViewProfile : ContentPage
     {
         Shell.Current.GoToAsync("//CustomerMenu");
     }
+
+    private void Logout(object sender, EventArgs e)
+    {
+        Shell.Current.GoToAsync("//MainPage");
+    }
 }

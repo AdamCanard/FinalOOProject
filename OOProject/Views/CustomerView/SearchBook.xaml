@@ -17,7 +17,8 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Menu"
                  Clicked="Go_Menu_C"/>
-        <ToolbarItem Text="Log Out" />
+        <ToolbarItem Text="Log Out" 
+                     Clicked="Logout"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
