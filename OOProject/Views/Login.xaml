@@ -61,25 +61,16 @@
             VerticalOptions="Center"
             BackgroundColor="#B0A695"
             />
-            <!-- Confirmation Message -->
-            <Label Text="The User has been successfully added to the Database" 
-       x:Name="confirmationMessage" 
-       HeightRequest="80" 
-       FontSize="15" 
-       TextColor="Blue"
-       HorizontalOptions="Center"
-       HorizontalTextAlignment="Center"
-       IsVisible="false"></Label>
 
             <!-- Error Messages -->
             <Label Text="Error Message" 
-       x:Name="errorMessage" 
-       HeightRequest="40" 
-       FontSize="15" 
-       TextColor="Red" 
-       HorizontalOptions="Center"
-       HorizontalTextAlignment="Center" 
-       IsVisible="false"></Label>
+                   x:Name="errorMessage" 
+                   HeightRequest="40" 
+                   FontSize="15" 
+                   TextColor="Red" 
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" 
+                   IsVisible="false"></Label>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

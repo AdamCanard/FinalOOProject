@@ -22,8 +22,8 @@ namespace OOProject.Models
         public Fine(int fineid, int library_id, int amount)
         {
             fine_id = fineid;
-            library_id = library_id;
-            amount = amount;
+            this.library_id = library_id;
+            this.amount = amount;
         }
 
         public override string ToString()
