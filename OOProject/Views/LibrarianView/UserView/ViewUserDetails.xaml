@@ -151,7 +151,8 @@
                 Placeholder="ID, Name,Account Type, etc..."
                 WidthRequest="480"
                 FontSize="20"
-                HorizontalOptions="Center"></Entry>
+                HorizontalOptions="Center"
+                BackgroundColor="White"></Entry>
                 <BoxView WidthRequest="60" BackgroundColor="Transparent"/>
                 <Button
                 Text="Search"
@@ -164,11 +165,24 @@
             <Frame HorizontalOptions="FillAndExpand" HeightRequest="500">
                 <ScrollView Orientation="Both">
                     <CollectionView x:Name="FineList" ItemsSource="{x:Static local:FineManager.Fines}">
+                        <CollectionView.Header>
+                            <Grid HorizontalOptions="Center" VerticalOptions="StartAndExpand">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="170"/>
+                                    <ColumnDefinition Width="170"/>
+                                    <ColumnDefinition Width="220"/>
+                                    <ColumnDefinition Width="160"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="Fine Id" FontAttributes="Bold" FontSize="20" HorizontalOptions="StartAndExpand"/>
+                                <Label Grid.Column="1" Text="Library Id" FontAttributes="Bold" FontSize="20" HorizontalOptions="StartAndExpand"/>
+                                <Label Grid.Column="2" Text="Amount" FontAttributes="Bold" FontSize="20" HorizontalOptions="StartAndExpand"/>
+                            </Grid>
+                        </CollectionView.Header>
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Frame>
                                     <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-                                        <Label Text="{Binding fine_id}" WidthRequest="50" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
+                                        <Label Text="{Binding fine_id}" WidthRequest="150" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
                                         <Label Text="{Binding library_id}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
                                         <Label Text="{Binding amount}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
                                         <Button Clicked="Pay_Fine" Text="Pay" FontAttributes="Bold" FontSize="20" WidthRequest="100" Margin="30,0" TextColor="Red" BackgroundColor="#AFC8AD"/>
