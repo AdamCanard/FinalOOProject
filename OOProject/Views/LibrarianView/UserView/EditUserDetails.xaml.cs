@@ -108,7 +108,7 @@ public partial class EditUserDetails : ContentPage
         // Check if a this user has a fine
         foreach (Fine fine in FineManager.Fines)
         {
-            if (fine.LibraryId == UserToUpdate.library_id)
+            if (fine.library_id == UserToUpdate.library_id)
             {
                 canDeleteFine = false;
                 Delete_Button.IsEnabled = false;

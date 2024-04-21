@@ -78,13 +78,13 @@ namespace OOProject
 
         public List<Fine> GetAllFinesByUser(User user)
         {
-            return this.Database.Table<Fine>().Where(fine => fine.LibraryId == user.library_id).ToList();
+            return this.Database.Table<Fine>().Where(fine => fine.library_id == user.library_id).ToList();
         }
 
         //get fine by id
         public Fine GetFineByID(int id)
         {
-            return this.Database.Table<Fine>().Where(fine => fine.FineId == id).FirstOrDefault();
+            return this.Database.Table<Fine>().Where(fine => fine.fine_id == id).FirstOrDefault();
         }
 
         //add new rental
