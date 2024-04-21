@@ -94,7 +94,6 @@
                         SelectedIndex="3"
                         ItemsSource="{x:Static local:UserManager.ValidAccountTypes}" HorizontalOptions="Center" WidthRequest="500">
                 </Picker>
-
             </HorizontalStackLayout>
 
             <Button

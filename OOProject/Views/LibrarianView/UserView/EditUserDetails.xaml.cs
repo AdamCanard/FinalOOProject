@@ -39,16 +39,6 @@ public partial class EditUserDetails : ContentPage
         try
         {
             // throw an exception if the quantity is null or empty
-            if (string.IsNullOrEmpty(Account_EditEntry.Text))
-            {
-                throw new ArgumentException();
-            }
-
-            if (string.IsNullOrEmpty(password_EditEntry.Text))
-            {
-                throw new ArgumentException();
-            }
-
             if (string.IsNullOrEmpty(email_EditEntry.Text))
             {
                 throw new ArgumentException();
@@ -65,13 +55,11 @@ public partial class EditUserDetails : ContentPage
             }
             
             string Name = name_EditEntry.Text;
-            string Account = Account_EditEntry.Text;
             string Address = Address_EditEntry.Text;
-            string Password = password_EditEntry.Text;
             string Email = email_EditEntry.Text;
 
             // Call the UpdateUser() method to save the changes made to the user object
-            UserManager.UpdateUser(UserToUpdate.library_id, Name, Email, Password, Address, Account);
+            UserManager.UpdateUser(UserToUpdate.library_id, Name, Email, UserToUpdate.password, Address, UserToUpdate.Account);
             errorMessage.IsVisible = false;
             confirmationMessage.IsVisible = true;
 

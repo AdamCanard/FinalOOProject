@@ -26,7 +26,7 @@
              HorizontalOptions="Center"></Label>
             <Label 
               Padding="0, 20"
-              Text="*Change details or remove from inventory"
+              Text="*Change user details or remove them from the list."
               VerticalOptions="Center" 
               HorizontalOptions="Center"></Label>
 
@@ -70,18 +70,6 @@
 
             <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
                 <HorizontalStackLayout>
-                    <Label Text="Password:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
-                    x:Name="password_EditEntry"
-                    Text="{Binding password}"
-                    WidthRequest="300"
-                    FontSize="20"
-                    HorizontalOptions="Center"></Entry>
-                </HorizontalStackLayout>
-            </Frame>
-
-            <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
-                <HorizontalStackLayout>
                     <Label Text="Address:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
                     x:Name="Address_EditEntry"
@@ -96,13 +84,11 @@
             <Frame HorizontalOptions="Center" VerticalOptions="Center" Margin="5">
                 <HorizontalStackLayout>
                     <Label Text="Account:" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
-                    <Entry 
-                        x:Name="Account_EditEntry"
+                    <Label 
                         Text="{Binding Account}"
-                        Placeholder="Stock *Required*" 
                         WidthRequest="300"
                         FontSize="20"
-                        HorizontalOptions="Center"></Entry> 
+                        HorizontalOptions="Center"></Label> 
                 </HorizontalStackLayout>
             </Frame>
 
