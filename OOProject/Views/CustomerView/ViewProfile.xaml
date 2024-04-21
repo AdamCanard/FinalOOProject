@@ -47,7 +47,7 @@
                 <HorizontalStackLayout>
                     <Label Text="Name" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                    x:Name="Name"
+                    x:Name="Name_Entry"
                     Placeholder="Name *Required*" 
                     Text="{Binding name}"
                     WidthRequest="300"
@@ -60,7 +60,7 @@
                 <HorizontalStackLayout>
                     <Label Text="LibraryID" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Label 
-                    x:Name="ID"
+                    x:Name="ID_Entry"
                     Text="{Binding library_id}"
                     WidthRequest="300"
                     FontSize="20"
@@ -72,7 +72,7 @@
                 <HorizontalStackLayout>
                     <Label Text="Password" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                    x:Name="Password"
+                    x:Name="Password_Entry"
                     Text="{Binding password}"
                     IsPassword="True"
                     Placeholder="Password *Required*" 
@@ -86,7 +86,7 @@
                 <HorizontalStackLayout>
                     <Label Text="E-mail" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                        x:Name="Email"
+                        x:Name="Email_Entry"
                         Placeholder="Email *Required*" 
                         Text="{Binding email}"
                         WidthRequest="300"
@@ -99,7 +99,7 @@
                 <HorizontalStackLayout>
                     <Label Text="Home Address" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Entry 
-                    x:Name="Address"
+                    x:Name="Address_Entry"
                     Text="{Binding Address}"
                     Placeholder="Address *Required*" 
                     WidthRequest="300"
@@ -112,7 +112,6 @@
                 <HorizontalStackLayout>
                     <Label Text="Account Type" FontAttributes="Bold" WidthRequest="200" HeightRequest="30" FontSize="20"></Label>
                     <Label
-                    x:Name = "AccountType" 
                     Text = "{Binding Account}"
                     WidthRequest="300"
                     FontSize="20"
@@ -120,33 +119,59 @@
                 </HorizontalStackLayout>
             </Frame>
 
+            <!-- Confirmation Message -->
+            <Label Text="User details have been successfully saved." 
+                   x:Name="confirmationMessage" 
+                   Margin="5"
+                   HeightRequest="20" 
+                   FontSize="15" 
+                   TextColor="Green"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   IsVisible="false"></Label>
+
+            <!-- Error Messages -->
+            <Label Text="Error Message" 
+                   x:Name="errorMessage" 
+                   Margin="5"
+                   HeightRequest="40" 
+                   FontSize="15" 
+                   TextColor="Red" 
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center" 
+                   IsVisible="false"></Label>
+
+            <Button
+                Text="Save"
+                Clicked="Save_ViewProfile"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Margin="10"
+                WidthRequest="100"
+                FontAttributes="Bold"
+                BackgroundColor="#B0A695"></Button>
+
 
             <Label 
             Margin="0, 20"
-            Text="Fines"
+            Text="Fines To Pay"
             HorizontalOptions="Center"
             FontSize="30"
             FontAttributes="Bold"></Label>
 
-
-            <Frame WidthRequest="800" HeightRequest="100">
-                <ScrollView Orientation="Both">
-                    <CollectionView x:Name="FineList" ItemsSource="{x:Static local:FineManager.Fines}">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <Frame>
-                                    <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="FillAndExpand">
-                                        <Label Text="{Binding fine_id}" WidthRequest="50" FontSize="15" VerticalOptions="Center" Margin="0,10"/>
-                                        <Label Text="{Binding library_id}" WidthRequest="150" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10, 0"/>
-                                        <Label Text="{Binding amount}" WidthRequest="200" FontSize="15" VerticalOptions="Center" LineBreakMode="TailTruncation" Margin="10,0"/>
-                                    </HorizontalStackLayout>
-                                </Frame>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </ScrollView>
+            <Frame WidthRequest="800" HeightRequest="100" Margin="0,0,0,50">
+                <CollectionView x:Name="FineList" ItemsSource="{x:Static local:FineManager.Fines}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame>
+                                <HorizontalStackLayout HorizontalOptions="Center">
+                                    <Label Text="{Binding amount,StringFormat='You must pay ${0} next time you visit the library!'}" WidthRequest="500" HeightRequest="80" FontSize="15" VerticalOptions="Center" TextColor="Red" HorizontalTextAlignment="Center" Margin="10, 0"/>
+                                </HorizontalStackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </Frame>
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
